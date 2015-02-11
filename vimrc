@@ -28,12 +28,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-vinegar'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
 Plugin 'vim-scripts/ZoomWin'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'tomasr/molokai'
-Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'sickill/vim-pasta'
 
@@ -152,6 +152,7 @@ let g:multi_cursor_quit_key='<Esc>'
 map <Leader>bi :!bundle install<CR>
 map <Leader>bb :PluginInstall<CR>
 map <Leader>h :CtrlP<CR>
+map <Leader>b :CtrlPBuffer<CR>
 map <Leader>c :Rcontroller
 map <Leader>sc :RScontroller
 map <Leader>vc :RVcontroller
