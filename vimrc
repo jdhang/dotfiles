@@ -36,6 +36,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'tomasr/molokai'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'sickill/vim-pasta'
+Plugin 'marijnh/tern_for_vim'
 
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
