@@ -11,32 +11,47 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Define bundles via Github repos
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
+Plugin 'wincent/Command-T'
 Plugin 'pbrisbin/vim-mkdir'
 Plugin 'danro/rename.vim'
 Plugin 'ervandew/supertab'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'scrooloose/syntastic'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-vinegar'
-Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
 Plugin 'vim-scripts/ZoomWin'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tomasr/molokai'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'sickill/vim-pasta'
+Plugin 'vim-scripts/matchit.zip'
+
+" Language syntax
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'tpope/vim-haml'
+Plugin 'lunaru/vim-less'
+
+" Ruby/Rails
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+
+" javascript plugins
 Plugin 'marijnh/tern_for_vim'
+Plugin 'moll/vim-node'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'maksimr/vim-jsbeautify'
+
+" color schemes
+Plugin 'tomasr/molokai'
 
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
@@ -140,6 +155,7 @@ let g:vim_markdown_folding_disabled=1
 let g:syntastic_check_on_open=1
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_ruby_checkers = ['mir', 'rubocop']
+let g:syntastic_javascript_checkers = ['jshint']
 
 " Always use vertical diffs
 set diffopt+=vertical
@@ -148,6 +164,10 @@ set diffopt+=vertical
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-d>'
 let g:multi_cursor_quit_key='<Esc>'
+
+" command-t settings
+let g:CommandTMaxHeight=20
+noremap <leader>f :CommandTFlush<CR>
 
 " personal remaps
 map <Leader>bi :!bundle install<CR>
