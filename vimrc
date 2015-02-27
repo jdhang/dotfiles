@@ -167,7 +167,7 @@ let g:multi_cursor_quit_key='<Esc>'
 
 " command-t settings
 let g:CommandTMaxHeight=20
-let g:CommandTCancellMap=['<Esc>']
+let g:CommandTCancellMap=['<C-c>', '<Esc>']
 noremap <leader>f :CommandTFlush<CR>
 
 " personal remaps
