@@ -29,6 +29,7 @@ Plugin 'vim-scripts/ZoomWin'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'sickill/vim-pasta'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'mattn/emmet-vim'
 
 " Language syntax
 Plugin 'thoughtbot/vim-rspec'
@@ -169,6 +170,9 @@ let g:multi_cursor_quit_key='<Esc>'
 let g:CommandTMaxHeight=20
 let g:CommandTCancelMap=['<C-c>', '<Esc>']
 noremap <leader>f :CommandTFlush<CR>
+
+" emmet settings
+let g:user_emmet_leader_keys='<C-z>'
 
 " personal remaps
 map <Leader>bi :!bundle install<CR>
