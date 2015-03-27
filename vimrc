@@ -38,6 +38,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'tpope/vim-haml'
 Plugin 'lunaru/vim-less'
+Plugin 'elzr/vim-json'
 
 " Ruby/Rails
 Plugin 'tpope/vim-bundler'
@@ -53,6 +54,8 @@ Plugin 'maksimr/vim-jsbeautify'
 
 " color schemes
 Plugin 'tomasr/molokai'
+Plugin 'gosukiwi/vim-atom-dark'
+Plugin 'Slava/vim-colors-tomorrow'
 
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
@@ -64,7 +67,7 @@ filetype plugin indent on     " required
 
 " Color scheme
 set t_Co=256
-colorscheme molokai
+colorscheme atom-dark-256
 
 " Leader
 let mapleader = ","
