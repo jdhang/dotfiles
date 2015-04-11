@@ -30,6 +30,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'sickill/vim-pasta'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'mattn/emmet-vim'
+Plugin 'Townk/vim-autoclose'
 
 " Language syntax
 Plugin 'thoughtbot/vim-rspec'
@@ -118,7 +119,6 @@ set expandtab
 " Make it obvious where 80 characters is
 set textwidth=80
 set colorcolumn=+1
-set wrap
 
 " Numbers
 set number
@@ -180,8 +180,6 @@ let g:user_emmet_leader_keys='<C-z>'
 " personal remaps
 map <Leader>bi :!bundle install<CR>
 map <Leader>bb :PluginInstall<CR>
-map <Leader>h :CtrlP<CR>
-map <Leader>b :CtrlPBuffer<CR>
 map <Leader>c :Rcontroller
 map <Leader>sc :RScontroller
 map <Leader>vc :RVcontroller
