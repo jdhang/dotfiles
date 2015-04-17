@@ -30,6 +30,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'sickill/vim-pasta'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'mattn/emmet-vim'
+Plugin 'Townk/vim-autoclose'
 
 " Language syntax
 Plugin 'thoughtbot/vim-rspec'
@@ -51,11 +52,11 @@ Plugin 'moll/vim-node'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'mxw/vim-jsx'
 
 " color schemes
 Plugin 'tomasr/molokai'
 Plugin 'gosukiwi/vim-atom-dark'
-Plugin 'Slava/vim-colors-tomorrow'
 
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
@@ -177,6 +178,9 @@ noremap <leader>f :CommandTFlush<CR>
 " emmet settings
 let g:user_emmet_leader_keys='<C-z>'
 
+" jsx highlighting in js files as well
+let g:jsx_ext_required = 0
+
 " personal remaps
 map <Leader>bi :!bundle install<CR>
 map <Leader>bb :PluginInstall<CR>
@@ -211,7 +215,7 @@ command! Qall qall
 map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 map <C-t> <esc>:tabnew<CR>
-inoremap {<CR>  {<CR>}<Esc>O
+"  inoremap {<CR>  {<CR>}<Esc>O
 
 " edit files and split windows easier
 map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') .  '/'<CR>
