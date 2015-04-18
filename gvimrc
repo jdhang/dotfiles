@@ -13,4 +13,4 @@ if filereadable($HOME . "/.gvimrc.local")
 endif
 
 " Set font
-set guifont=Menlo\ for\ Powerline:h11
+set guifont=Source\ Code\ Pro\ Light:h12

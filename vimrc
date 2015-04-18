@@ -31,6 +31,7 @@ Plugin 'sickill/vim-pasta'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'mattn/emmet-vim'
 Plugin 'Townk/vim-autoclose'
+Plugin 'bling/vim-airline'
 
 " Language syntax
 Plugin 'thoughtbot/vim-rspec'
