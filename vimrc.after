@@ -1,5 +1,6 @@
 " Color Scheme
-color atom-dark-256
+syntax enable
+color xoria256
 
 " Leader
 let mapleader = ","
