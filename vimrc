@@ -25,11 +25,9 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-vinegar'
 Plugin 'vim-scripts/tComment'
-Plugin 'vim-scripts/ZoomWin'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'sickill/vim-pasta'
 Plugin 'vim-scripts/matchit.zip'
-Plugin 'mattn/emmet-vim'
 Plugin 'Townk/vim-autoclose'
 Plugin 'bling/vim-airline'
 
@@ -54,10 +52,10 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'mxw/vim-jsx'
+Plugin 'othree/javascript-libraries-syntax.vim'
 
 " color schemes
-Plugin 'tomasr/molokai'
-Plugin 'gosukiwi/vim-atom-dark'
+Plugin 'chriskempson/base16-vim'
 
 " nelstrom's plugin depends on kana's
 Plugin 'kana/vim-textobj-user'
@@ -69,7 +67,8 @@ filetype plugin indent on     " required
 
 " Color scheme
 set t_Co=256
-colorscheme atom-dark-256
+set background=dark
+colorscheme base16-monokai
 
 " Leader
 let mapleader = ","
@@ -155,6 +154,7 @@ nnoremap <C-l> <C-w>l
 
 " turn off vim-markdown folding
 let g:vim_markdown_folding_disabled=1
+au BufNewFile,BufFilePre,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
@@ -180,6 +180,16 @@ let g:user_emmet_leader_keys='<C-z>'
 
 " jsx highlighting in js files as well
 let g:jsx_ext_required = 0
+
+" jsx highlighting in js files as well
+let g:jsx_ext_required = 0
+
+" enable html/css highlighting in js file
+let g:javascript_enable_domhtmlcss=1
+
+" config javascript lib syntax
+let g:used_javascript_libs = 'underscore,backbone,jquery,react,flux,jasmine,chai,handlebars,angularjs'
+
 
 " personal remaps
 map <Leader>bi :!bundle install<CR>
