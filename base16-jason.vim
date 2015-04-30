@@ -25,12 +25,13 @@ let s:gui08 = "f2777a"
 let s:gui09 = "f99157"
 let s:gui0A = "ffcc66"
 let s:gui0B = "99cc99"
-let s:gui0C = "5e99ac"
-" 66cccc
+let s:gui0C = "66bbbb"
+" 66cccc 5e99ac
 let s:gui0D = "668ddd"
 let s:gui0E = "cc99cc"
 let s:gui0F = "d27b53"
-
+"ec6500"
+"
 " Terminal color definitions
 let s:cterm00 = "00"
 let s:cterm03 = "08"
@@ -232,7 +233,7 @@ call <sid>hi("DiffRemoved",  s:gui08, s:gui00,  s:cterm08, s:cterm00, "")
 " Git highlighting
 call <sid>hi("gitCommitOverflow",  s:gui08, "", s:cterm08, "", "")
 call <sid>hi("gitCommitSummary",   s:gui0B, "", s:cterm0B, "", "")
-  
+
 " GitGutter highlighting
 call <sid>hi("GitGutterAdd",     s:gui0B, s:gui01, s:cterm0B, s:cterm01, "")
 call <sid>hi("GitGutterChange",  s:gui0D, s:gui01, s:cterm0D, s:cterm01, "")
