@@ -1,0 +1,7 @@
+" color scheme
+set background=dark
+syntax on
+color base16-jason
+
+" set font
+set guifont=Source\ Code\ Pro\ Light:h12
