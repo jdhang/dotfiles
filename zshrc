@@ -1,8 +1,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# ZSH_THEME="jdhang"
-ZSH_THEME="jdhang2"
+ZSH_THEME="jdhang"
+# ZSH_THEME="jdhang2"
 
 plugin=(git brew osx vagrant wd gem)
 

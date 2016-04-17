@@ -1,7 +1,7 @@
 [init]
   templatedir = ~/.git_template
 [push]
-  default = current
+  default = simple
 [color]
   ui = auto
 [alias]
@@ -30,5 +30,5 @@
 [include]
   path = ~/.gitconfig.local
 [user]
-	email = jason.d.hang@gmail.com
+	email = dev.jdhang@gmail.com
 	name = Jason Hang

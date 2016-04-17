@@ -34,9 +34,18 @@ let g:used_javascript_libs = 'jquery,underscore,backbone,react,flux'
 let g:javascript_enable_domhtmlcss=1
 let g:jsx_ext_required=0
 
+" Multiple Cursor Bindings
+let g:multi_cursor_next_key='<C-d>'
+
 " better split window feel
 set splitbelow
 set splitright
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " personal remaps
 command! Q q
