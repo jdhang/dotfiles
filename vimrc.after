@@ -37,6 +37,9 @@ let g:jsx_ext_required=0
 " Multiple Cursor Bindings
 let g:multi_cursor_next_key='<C-d>'
 
+" Supertab so Enter doesn't create newline on tabbed selection
+let g:SuperTabCrMapping = 1
+
 " better split window feel
 set splitbelow
 set splitright
