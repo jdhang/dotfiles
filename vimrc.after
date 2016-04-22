@@ -9,6 +9,9 @@ color xoria256
 set textwidth=80
 set colorcolumn=+1
 
+" set line highlighting
+set cursorline
+
 " relative numbering
 set relativenumber
 
