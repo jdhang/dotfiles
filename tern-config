@@ -1,18 +1,19 @@
 {
-  "libs": [
-    "browser",
-    "jquery",
-    "chai",
-    "ecma5",
-    "ecma6"
-  ],
-  "loadEagerly": [
-    "./*.js"
-  ],
-  "plugins": {
-    "requirejs": {
-      "baseURL": "./",
-      "paths": {}
-    }
-  }
+ "ecmaVersion": 6,
+ "libs": [
+     "browser",
+     "jquery"
+   ],
+ "plugins": {
+     "complete_strings": {},
+     "node": {},
+     "lint": {},
+     "angular": {},
+     "requirejs": {},
+     "modules": {},
+     "es_modules": {},
+     "doc_comment": {
+           "fullDocs": true
+     }
+   }
 }
