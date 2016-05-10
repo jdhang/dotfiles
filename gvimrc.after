@@ -1,7 +1,11 @@
 " color scheme
 set background=dark
 syntax on
-colorscheme base16-jason
+" colorscheme base16-jason
+colorscheme onedark
+" colorscheme PaperColor
 
 " set font
-set guifont=Source\ Code\ Pro\ Light:h12
+set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+" set guifont=Inconsolata\ for\ Powerline
+" set guifont=Roboto\ Mono\ Light\ for\ Powerline

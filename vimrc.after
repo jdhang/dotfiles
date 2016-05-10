@@ -50,6 +50,11 @@ let g:jsx_ext_required = 0
 " vim-indent-guides settings
 " let g:indent_guides_guide_size = 1
 
+" vim-airline settings
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='onedark'
+" let g:airline_theme='PaperColor'
+
 " Multiple Cursor Bindings
 
 " NERDCommenter, add space after each comment
