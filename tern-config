@@ -7,9 +7,6 @@
  "plugins": {
      "complete_strings": {},
      "node": {},
-     "lint": {},
-     "angular": {},
-     "requirejs": {},
      "modules": {},
      "es_modules": {},
      "doc_comment": {

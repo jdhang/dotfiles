@@ -1,9 +1,24 @@
+" set mapleader
 let mapleader = ","
 
 " vim-airline settings
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='onedark'
+" let g:airline_theme='PaperColor'
 
-" let g:airline_left_sep = '»'
-" let g:airline_left_sep = '▶'
-" let g:airline_right_sep = '«'
-" let g:airline_right_sep = '◀'
+" vundle setups
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'maksimr/vim-jsbeautify'
+
+call vundle#end()
+filetype plugin indent on
