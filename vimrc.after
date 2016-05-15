@@ -56,6 +56,22 @@ let g:ycm_register_as_syntastic_checker = 0
 let g:ycm_add_preview_to_completeopt = 0
 set completeopt-=preview
 
+" ultisnips settings to work with YCM
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+" alternative
+" let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
+" let g:SuperTabDefaultCompletionType = '<C-TAB>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+
 " NERDCommenter, add space after each comment
 let g:NERDSpaceDelims = 1
 
