@@ -96,6 +96,7 @@ map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
 map <Leader>sp :split
 map <Leader>vp :vsplit
 map <Leader>d :Dash 
+map <Leader>ss :set syntax=
 
 " stop using arrow keys
 nnoremap <Left> :echoe "Use h"<CR>

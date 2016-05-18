@@ -18,6 +18,7 @@ alias dbprep='rdm && rdtp'
 alias dr='cd ~/dropbox'
 alias drop='cd ~/dropbox'
 alias -g G='| grep'
+alias jan='cd ~/.janus'
 
 # git
 alias ga='git add'
