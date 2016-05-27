@@ -1,7 +1,7 @@
 " color scheme
 set background=dark
 syntax on
-color xoria256
+color onedark
 
 " make ie obvious where 80 char is
 set textwidth=80
@@ -48,6 +48,10 @@ let g:jsx_ext_required = 0
 " vim-indent-guides settings
 " let g:indent_guides_guide_size = 1
 
+" vim-closetag
+let g:closetag_filenames = "*.xml,*.html,*.xhtml,*.phtml,*.php"
+au FileType xml,html,phtml,php,xhtml,js let b:delimitMate_matchpairs = "(:),[:],{:}"
+
 " vim-jsbeautify
 map <C-F> :call JsBeautify()<CR>
 
@@ -93,10 +97,15 @@ map <C-s> <esc>:w<CR>
 imap <C-s> <esc>:w<CR>
 map <C-t> <esc>:tabnew<CR>
 map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
-map <Leader>sp :split
-map <Leader>vp :vsplit
+map <Leader>sp :split<CR>
+map <Leader>vp :vsplit<CR>
 map <Leader>d :Dash 
 map <Leader>ss :set syntax=
+
+" Buffer management
+map <Leader>bd :bd<CR>
+map <Leader>bn :bnext<CR>
+map <Leader>bv :bprevious<CR>
 
 " stop using arrow keys
 nnoremap <Left> :echoe "Use h"<CR>

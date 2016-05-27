@@ -19,7 +19,6 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'maksimr/vim-jsbeautify'
-Plugin 'qpkorr/vim-bufkill'
 Plugin 'SirVer/ultisnips'
 
 call vundle#end()
