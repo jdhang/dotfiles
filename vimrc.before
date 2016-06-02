@@ -18,8 +18,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'SirVer/ultisnips'
 
 call vundle#end()
 filetype plugin indent on
