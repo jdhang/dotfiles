@@ -11,7 +11,12 @@ set colorcolumn=+1
 set cursorline
 
 " relative numbering
-" set relativenumber
+set relativenumber
+
+" vim code climate settings
+nmap <Leader>aa :CodeClimateAnalyzeProject<CR>
+nmap <Leader>ao :CodeClimateAnalyzeOpenFiles<CR>
+nmap <Leader>af :CodeClimateAnalyzeCurrentFile<CR>
 
 " configure syntastic checking
 let g:syntastic_check_on_open=1
@@ -21,7 +26,8 @@ let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_javascript_checkers = ['standard']
 
 " ctrl p config
-let g:ctrlp_match_window = 'top,order:btt,min:1,max:10,results:10'
+" let g:ctrlp_match_window = 'top,order:btt,min:1,max:10,results:10'
+let g:ctrlp_match_window = 'top'
 
 " switch between two last files
 " nnoremap <leader><leader> <c-^>
@@ -40,13 +46,17 @@ let g:vim_markdown_folding_disabled = 1
 " let g:jsx_ext_required = 0
 
 " vim-javascript settings
-let g:javascript_enable_domhtmlcss=1
+let g:javascript_enable_domhtmlcss = 1
 
 " vim-jsx settings
 let g:jsx_ext_required = 0
 
 " vim-indent-guides settings
 " let g:indent_guides_guide_size = 1
+
+" vim hard time settings
+" let g:list_of_disabled_keys = ["+"]
+nnoremap <leader>h :HardTimeToggle<CR>
 
 " vim-closetag
 let g:closetag_filenames = "*.xml,*.html,*.xhtml,*.phtml,*.php,*.js,*.jsx"
@@ -112,3 +122,7 @@ map <Leader>bv :bprevious<CR>
 " nnoremap <Right> :echoe "Use l"<CR>
 " nnoremap <Up> :echoe "Use k"<CR>
 " nnoremap <Down> :echoe "Use j"<CR>
+
+" stop using delete in insert mode
+inoremap <BS> <Nop>
+inoremap <Del> <Nop>
