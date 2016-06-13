@@ -2,10 +2,22 @@
 set background=dark
 syntax on
 " colorscheme base16-jason
-colorscheme onedark
+" colorscheme onedark
 " colorscheme PaperColor
+" colorscheme duotone-dark
+" colorscheme duotone-darkearth
+" colorscheme duotone-darkdesert
+" colorscheme duotone-darkforest
+colorscheme duotone-darkpark
+" colorscheme duotone-darkmeadow
+" colorscheme duotone-darksea
+" colorscheme duotone-darklake
+" colorscheme duotone-darkpool
+" colorscheme duotone-darkspace
+" colorscheme duotone-darkheath
+" colorscheme duotone-darkcave
 
 " set font
 set guifont=Source\ Code\ Pro\ for\ Powerline:h13
-" set guifont=Inconsolata\ for\ Powerline
+" set guifont=Inconsolata-dz\ for\ Powerline:h13
 " set guifont=Roboto\ Mono\ Light\ for\ Powerline
