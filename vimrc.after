@@ -1,9 +1,9 @@
 " color scheme
 set background=dark
 syntax on
-color onedark
+colorscheme PaperColor
 
-" make ie obvious where 80 char is
+" make it obvious where 80 char is
 set textwidth=80
 set colorcolumn=+1
 
@@ -21,9 +21,9 @@ nmap <Leader>af :CodeClimateAnalyzeCurrentFile<CR>
 " configure syntastic checking
 let g:syntastic_check_on_open=1
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_javascript_checkers = ['jsxhint']
-" let g:syntastic_javascript_checkers = ['standard']
+let g:syntastic_javascript_checkers = ['standard']
 
 " ctrl p config
 " let g:ctrlp_match_window = 'top,order:btt,min:1,max:10,results:10'
@@ -63,7 +63,7 @@ let g:closetag_filenames = "*.xml,*.html,*.xhtml,*.phtml,*.php,*.js,*.jsx"
 au FileType xml,html,phtml,php,xhtml,js,jsx let b:delimitMate_matchpairs = "(:),[:],{:}"
 
 " vim-jsbeautify
-map <C-F> :call JsBeautify()<CR>
+map <C-f> :call JsBeautify()<CR>
 
 " YouCompleteMe settings
 let g:ycm_register_as_syntastic_checker = 0
@@ -126,3 +126,6 @@ map <Leader>bv :bprevious<CR>
 " stop using delete in insert mode
 inoremap <BS> <Nop>
 inoremap <Del> <Nop>
+
+" toggle background color
+map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark")<CR>

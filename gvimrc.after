@@ -1,16 +1,17 @@
 " color scheme
 set background=dark
 syntax on
+set linespace=4
 " colorscheme base16-jason
 " colorscheme onedark
-" colorscheme PaperColor
+colorscheme PaperColor
 " colorscheme duotone-dark
 " colorscheme duotone-darkearth
 " colorscheme duotone-darkdesert
 " colorscheme duotone-darkforest
-colorscheme duotone-darkpark
+" colorscheme duotone-darkpark
 " colorscheme duotone-darkmeadow
-" colorscheme duotone-darksea
+ " colorscheme duotone-darksea
 " colorscheme duotone-darklake
 " colorscheme duotone-darkpool
 " colorscheme duotone-darkspace
@@ -18,6 +19,6 @@ colorscheme duotone-darkpark
 " colorscheme duotone-darkcave
 
 " set font
-set guifont=Source\ Code\ Pro\ for\ Powerline:h13
+" set guifont=Source\ Code\ Pro\ for\ Powerline:h13
 " set guifont=Inconsolata-dz\ for\ Powerline:h13
-" set guifont=Roboto\ Mono\ Light\ for\ Powerline
+set guifont=Roboto\ Mono\ Light\ for\ Powerline:h13

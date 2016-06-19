@@ -88,8 +88,10 @@ alias track='git checkout -t'
 alias u='cd ..'
 alias undeployed='git fetch --multiple production origin && git log
 production/master..origin/master'
+alias tcinode='docker run -it quay.io/travisci/travis-node-js /bin/bash'
 
-
+alias m='mvim'
+alias a='atom'
 alias v='vim'
 alias vi='vim'
 alias sv='sudo vim'
