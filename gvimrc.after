@@ -1,17 +1,27 @@
 " color scheme
 set background=dark
 syntax on
+
+" set linespace
 set linespace=4
+
+" remove left and right scrollbar
+set guioptions-=r
+set guioptions-=L
+
+" vast colorschemes
+
 " colorscheme base16-jason
 " colorscheme onedark
-colorscheme PaperColor
+" colorscheme PaperColor
+colorscheme deep-space
 " colorscheme duotone-dark
 " colorscheme duotone-darkearth
 " colorscheme duotone-darkdesert
 " colorscheme duotone-darkforest
 " colorscheme duotone-darkpark
 " colorscheme duotone-darkmeadow
- " colorscheme duotone-darksea
+" colorscheme duotone-darksea
 " colorscheme duotone-darklake
 " colorscheme duotone-darkpool
 " colorscheme duotone-darkspace
@@ -21,4 +31,4 @@ colorscheme PaperColor
 " set font
 " set guifont=Source\ Code\ Pro\ for\ Powerline:h13
 " set guifont=Inconsolata-dz\ for\ Powerline:h13
-set guifont=Roboto\ Mono\ Light\ for\ Powerline:h13
+set guifont=Roboto\ Mono\ Light\ for\ Powerline:h14

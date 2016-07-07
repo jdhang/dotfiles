@@ -1,7 +1,8 @@
 " color scheme
 set background=dark
 syntax on
-colorscheme PaperColor
+" colorscheme PaperColor
+colorscheme deep-space
 
 " make it obvious where 80 char is
 set textwidth=80
@@ -13,7 +14,13 @@ set cursorline
 " relative numbering
 set relativenumber
 
-" vim code climate settings
+" better split window feel
+set splitbelow
+set splitright
+
+" === Plugin Settings === "
+
+" vim codeclimate settings
 nmap <Leader>aa :CodeClimateAnalyzeProject<CR>
 nmap <Leader>ao :CodeClimateAnalyzeOpenFiles<CR>
 nmap <Leader>af :CodeClimateAnalyzeCurrentFile<CR>
@@ -21,13 +28,13 @@ nmap <Leader>af :CodeClimateAnalyzeCurrentFile<CR>
 " configure syntastic checking
 let g:syntastic_check_on_open=1
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['standard']
+let g:syntastic_javascript_checkers = ['eslint', 'standard']
 " let g:syntastic_javascript_checkers = ['jsxhint']
-let g:syntastic_javascript_checkers = ['standard']
 
-" ctrl p config
-" let g:ctrlp_match_window = 'top,order:btt,min:1,max:10,results:10'
+" ctrlp settings
 let g:ctrlp_match_window = 'top'
+" let g:ctrlp_match_window = 'top,order:btt,min:1,max:10,results:10'
 
 " switch between two last files
 " nnoremap <leader><leader> <c-^>
@@ -39,36 +46,30 @@ let g:vim_markdown_folding_disabled = 1
 " SuperTab settings
 " let g:SuperTabDefaultCompletionType = "context"
 
-" javascript files
-" au BufNewFile,BufFilePre,BufRead *.{jsx,javascript,es,es6,js} set filetype=javascript
-" let g:used_javascript_libs = 'jquery,underscore,backbone,react,flux'
-" let g:javascript_enable_domhtmlcss=1
-" let g:jsx_ext_required = 0
-
 " vim-javascript settings
 let g:javascript_enable_domhtmlcss = 1
 
 " vim-jsx settings
 let g:jsx_ext_required = 0
 
-" vim-indent-guides settings
-" let g:indent_guides_guide_size = 1
-
-" vim hard time settings
-" let g:list_of_disabled_keys = ["+"]
-nnoremap <leader>h :HardTimeToggle<CR>
-
-" vim-closetag
+" vim-closetag settings
 let g:closetag_filenames = "*.xml,*.html,*.xhtml,*.phtml,*.php,*.js,*.jsx"
 au FileType xml,html,phtml,php,xhtml,js,jsx let b:delimitMate_matchpairs = "(:),[:],{:}"
 
-" vim-jsbeautify
-map <C-f> :call JsBeautify()<CR>
+" sneak.vim settings
+let g:sneak#streak = 1 "minimalist EasyMotion
+
+" vim-flow settings
+let g:flow#enable = 0
 
 " YouCompleteMe settings
+set completeopt-=preview
 let g:ycm_register_as_syntastic_checker = 0
 let g:ycm_add_preview_to_completeopt = 0
-set completeopt-=preview
+if !exists("g:ycm_semantic_triggers")
+    let g:ycm_semantic_triggers = {}
+  endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
 
 " ultisnips settings to work with YCM
 
@@ -86,33 +87,76 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
 let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 
-" NERDCommenter, add space after each comment
-let g:NERDSpaceDelims = 1
+" NERDCommenter settings
+let g:NERDSpaceDelims = 1  "add space after each comment
 
-" better split window feel
-set splitbelow
-set splitright
+" rainbow parentheses on by default
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
-" Quicker window movement
+" === END Plugin Settings === "
+
+" === Plugin Remaps === "
+
+" sneak.vim remaps
+" replace 'f' with sneak
+" nmap f <Plug>Sneak_s
+" nmap F <Plug>Sneak_S
+" xmap f <Plug>Sneak_s
+" xmap F <Plug>Sneak_S
+" omap f <Plug>Sneak_s
+" omap F <Plug>Sneak_S
+
+"replace 'f' with 1-char Sneak
+nmap f <Plug>Sneak_f
+nmap F <Plug>Sneak_F
+xmap f <Plug>Sneak_f
+xmap F <Plug>Sneak_F
+omap f <Plug>Sneak_f
+omap F <Plug>Sneak_F
+"replace 't' with 1-char Sneak
+nmap t <Plug>Sneak_t
+nmap T <Plug>Sneak_T
+xmap t <Plug>Sneak_t
+xmap T <Plug>Sneak_T
+omap t <Plug>Sneak_t
+omap T <Plug>Sneak_T
+
+" vim hard time remaps
+nnoremap <leader>h :HardTimeToggle<CR>
+
+" vim-jsbeautify remaps
+map <C-f> :call JsBeautify()<CR>
+
+" rainbow earentheses toggle
+map <Leader>rp :RainbowParenthesesToggle<CR>
+
+" === END Plugin Remaps === "
+
+" === Personal Remaps === '
+command! Q q
+command! W w
+command! Wq wq
+command! WQ wq
+command! Qall qall
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
+map <Leader>sp :split<CR>
+map <Leader>vp :vsplit<CR>
+map <Leader>d :Dash 
+map <Leader>ss :set syntax=
+map <Leader>cs :colorscheme 
+map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
+
+" quicker window movement
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" personal remaps
-command! Q q
-command! Qall qall
-" map <Leader>w <C-w>w
-map <C-s> <esc>:w<CR>
-imap <C-s> <esc>:w<CR>
-map <C-t> <esc>:tabnew<CR>
-map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') . '/'<CR>
-map <Leader>sp :split<CR>
-map <Leader>vp :vsplit<CR>
-map <Leader>d :Dash 
-map <Leader>ss :set syntax=
-
-" Buffer management
+" buffer management
 map <Leader>bd :bd<CR>
 map <Leader>bn :bnext<CR>
 map <Leader>bv :bprevious<CR>
@@ -123,9 +167,14 @@ map <Leader>bv :bprevious<CR>
 " nnoremap <Up> :echoe "Use k"<CR>
 " nnoremap <Down> :echoe "Use j"<CR>
 
-" stop using delete in insert mode
-inoremap <BS> <Nop>
-inoremap <Del> <Nop>
+" stop using backspace / delete in insert mode
+" inoremap <BS> <Nop>
+" inoremap <Del> <Nop>
 
 " toggle background color
 map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark")<CR>
+
+" === old remaps === "
+"
+" map <Leader>w <C-w>w
+" map <C-t> <esc>:tabnew<CR>

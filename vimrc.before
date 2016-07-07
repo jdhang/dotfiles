@@ -8,7 +8,11 @@ let g:airline_theme='onedark'
 " let g:airline_theme='PaperColor'
 
 " vim hardtime settings
-let g:hardtime_default_on = 1
+let g:hardtime_default_on = 0
+
+" ack.vim settings
+let g:ackprg = 'ag --nogroup --nocolor --column'
+" let g:ackprg = 'ag --vimgrep'
 
 " vundle setups
 set nocompatible
