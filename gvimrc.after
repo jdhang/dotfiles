@@ -3,7 +3,7 @@ set background=dark
 syntax on
 
 " set linespace
-set linespace=4
+set linespace=3
 
 " remove left and right scrollbar
 set guioptions-=r
