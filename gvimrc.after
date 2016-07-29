@@ -13,8 +13,9 @@ set guioptions-=L
 
 " colorscheme base16-jason
 " colorscheme onedark
-" colorscheme PaperColor
-colorscheme deep-space
+colorscheme PaperColor
+" colorscheme deep-space
+" colorscheme one
 " colorscheme duotone-dark
 " colorscheme duotone-darkearth
 " colorscheme duotone-darkdesert

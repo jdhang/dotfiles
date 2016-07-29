@@ -1,3 +1,14 @@
 {
-  "extends": "fullstack"
+  "plugins": [
+    "react"
+  ],
+  "extends": ["fullstack", "eslint:recommended", "plugin:react/recommended"],
+  "parser": "babel-eslint",
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "rules": {
+    "no-unused-vars": 0,
+    "strict": 0
+  }
 }

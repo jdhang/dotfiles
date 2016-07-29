@@ -4,8 +4,24 @@ let mapleader = ","
 " vim-airline settings
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tmuxline#enabled = 0
 let g:airline_theme='onedark'
 " let g:airline_theme='PaperColor'
+" let g:airline_theme = 'simple'
+" let g:airline_theme='one'
+
+" tmuxline settings"
+let g:tmuxline_preset = {
+  \'a'          : '#S:#I',
+  \'b'          : '#W',
+  \'c disabled' : '',
+  \'win'        : ['#I', '#W'],
+  \'cwin'       : ['#I', '#W'],
+  \'y'          : ['%a', '%Y-%m-%d', '%H:%M'],
+  \'z'          : ['#(whoami)']}
+
+" vim-indent-guides
+" let g:indent_guides_enable_on_vim_startup=1
 
 " vim hardtime settings
 let g:hardtime_default_on = 0
