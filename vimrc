@@ -1,7 +1,7 @@
 """ Appearance
 "{{{
 
-  " nocompatible mode
+  " nocompatible mode, enable IMproved
   set nocompatible
 
   " syntax highlighting
@@ -16,11 +16,17 @@
   set numberwidth=5
 
   " make it obvious where 80 char is
-  set textwidth=80
+  " set textwidth=80
   set colorcolumn=+1
 
-  set cursorline                          " line highlighing
+  " status line
   set laststatus=2                        " display status line
+  set statusline=%F
+  set wildmenu
+  set showcmd
+
+
+  set cursorline                          " line highlighing
   set nowrap                              " don't wrap lines
   set backspace=indent,eol,start          " backspace through everything
 
@@ -39,10 +45,15 @@
   " set esc keys to timeout faster
   set ttimeoutlen=100
 
-  " List chars
-  set listchars=""                        " Reset the listchars
-  set listchars=tab:\ \                   " a tab should display as " ", trailing whitespace as "."
-  set listchars+=trail:.                  " show trailing spaces as dots
+	" List chars
+  set list
+	set listchars=""                  " Reset the listchars
+  set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
+  set listchars+=trail:.            " show trailing spaces as dots
+	set listchars+=extends:>          " The character to show in the last column when wrap is
+																		" off and the line continues beyond the right of the screen
+	set listchars+=precedes:<         " The character to show in the last column when wrap is
+																		" off and the line continues beyond the left of the screen
 
 "}}}
 
@@ -82,7 +93,7 @@
     map <Leader>ss :set syntax=
 
     " quicker switching of colorscheme
-    map <Leader>cs :colorscheme 
+    map <Leader>cs :colorscheme<Space>
 
     " quicker window movements
     nnoremap <C-h> <C-w>h
@@ -99,12 +110,25 @@
     " Toggle highlight
     nmap <Leader>hs :set hlsearch! hlsearch?<CR>
 
+    " set space to toggle folds
+    nnoremap <Space> za
+
+    " open file in new tab
+    noremap gt <C-w>gf
+
+    " open file in new split
+    noremap gs <C-w>vgf
+    noremap gi <C-w>f
+
   "}}}
 
 "}}}
 
 """ Auto Modifiers
 "{{{
+
+  " autosave on blur
+  au FocusLost * silent! wall
 
   " search settings
   set ignorecase
@@ -119,15 +143,24 @@
   set nospell
   autocmd FileType gitcommit setlocal spell
 
+  " set foldmarker
+  set foldmethod=marker
+
   " Wild Settings
   " Disable output and VCS files
-  set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem
+  set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem,*.so
 
   " Disable archive files
-  set wildignore+=8.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+  set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 
   " Ignore bundler and sass cache
-  set wildignore+=*/vendor//gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+  set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+
+  " Ignore librarian-chef, vagrant, test-kitchen and Berkshelf cache
+  set wildignore+=*/tmp/librarian/*,*/.vagrant/*,*/.kitchen/*,*/vendor/cookbooks/*
+
+  " Ignore rails temporary asset caches
+  set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
 
   " Disable temp and backup files
   set wildignore+=*.swp,*~,._*
@@ -139,7 +172,7 @@
 "}}}
 
 """ Plugins
-"{{{
+" "{{{
 
   filetype off
 
@@ -161,7 +194,7 @@
   Plugin 'elzr/vim-json'                       " Better JSON highlighting
   Plugin 'jeetsukumaran/vim-buffergator'       " Buffer management
   Plugin 'terryma/vim-multiple-cursors'        " Sublime like multiple selections
-  Plugin 'bronson/vim-trailing-whitespace'     " Highlight trailig whitespaces
+  Plugin 'bronson/vim-trailing-whitespace'     " Highlight trailing whitespaces
   " SnipMate
 
   " status bar
@@ -175,7 +208,7 @@
   Plugin 'mxw/vim-jsx'                         " React JSX syntax highlighting and indenting
   Plugin 'othree/yajs.vim'                     " Yet Another Javascript Syntax
   Plugin 'othree/es.next.syntax.vim'           " ES.Next syntax
-  Plugin 'isRuslan/vim-es6'                    " Snippets for es6
+  Plugin 'isRuslan/vim-es6'                    " Snippets for ES6
   " vim-flow
   " vim-js-indent
   " typescript-vim
@@ -194,7 +227,7 @@
   " autocomplete
   Plugin 'Raimondi/delimitMate'                " auto-completion of quotes, parens, brackets
   Plugin 'tpope/vim-surround'                  " Easy way to add parentheses, brackets, quotes, etc.
-  Plugin 'tpope/vim-endwise'                   " wisely add end to ruby and vimscripts
+  Plugin 'tpope/vim-endwise'                   " wisely add end to ruby and vim scripts
   Plugin 'Valloric/YouCompleteMe'              " Code completion engine
   Plugin 'SirVer/ultisnips'                    " Ultimate snippets solution
   Plugin 'alvan/vim-closetag'                  " Auto close xml/html tags
@@ -220,24 +253,40 @@
   "{{{
 
     " Ack
-    " ctrl-f
-    if executable('ag')
-      let g:ackprg = 'ag --vimgrep'
-    endif
-    nnoremap <C-f> :Ack 
+    "{{{
+      if executable('ag')
+        let g:ackprg = 'ag --vimgrep'
+      endif
+      nnoremap <C-f> :Ack<Space>
+    "}}}
 
     " CtrlP
-    let g:ctrlp_match_window = 'top'
+    "{{{
+      let g:ctrlp_match_window = 'top'
+      let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+      let g:ctrl_map = ''
+      let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\v[\/]\.(git|hg|svn)$|bower_components|node_modules',
+      \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
+      \ }
+    "}}}
 
     " NERDCommenter
-    let g:NERDSpaceDelims = 1 " add space after each comment
+    "{{{
+      let g:NERDSpaceDelims = 1 " add space after each comment
+    "}}}
 
     " NERDTree
-    nnoremap <Leader>n :NERDTreeToggle<CR>
+    "{{{
+      let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
+      map <Leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
+    "}}}
 
     " Syntastic
+    let g:syntastic_enable_signs = 1
+    let g:syntastic_quiet_messages = {'level': 'warnings'}
     let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_auto_loc_list = 2
     let g:syntastic_check_on_open = 1
     let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
     let g:syntastic_javascript_checkers = ['jshint', 'eslint']
@@ -277,6 +326,7 @@
     let g:UltiSnipsJumpBackwardTrigger='<C-h>'
 
     " vim-sneak
+    let g:sneak#streak = 1
     "replace 'f' with 1-char Sneak
     nmap f <Plug>Sneak_f
     nmap F <Plug>Sneak_F
@@ -291,7 +341,7 @@
     xmap T <Plug>Sneak_T
     omap t <Plug>Sneak_t
     omap T <Plug>Sneak_T
-    hi link SneakPluginTarget ErrorMsg
+    " hi link SneakPluginTarget ErrorMsg
 
     " vim-vertigo
     nnoremap <silent> <Space>j :<C-U>VertigoDown n<CR>
@@ -304,28 +354,28 @@
     " rainbow brackets
     let g:rainbow_active = 1
     let g:rainbow_conf = {
-    \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-    \   'ctermfgs': ['darkblue', 'darkyellow', 'red', 'darkgreen', 'darkmagenta'],
-    \   'operators': '_,_',
-    \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-    \   'separately': {
-    \       '*': {},
-    \       'javascript': {
-    \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/'],
-    \       },
-    \       'tex': {
-    \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-    \       },
-    \       'lisp': {
-    \           'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-    \       },
-    \       'vim': {
-    \           'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-    \       },
-    \       'html': {
-    \           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-    \       },
-    \       'css': 0,
+    \ 'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+    \ 'ctermfgs': ['darkblue', 'darkyellow', 'red', 'darkgreen', 'darkmagenta'],
+    \ 'operators': '_,_',
+    \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+    \ 'separately': {
+    \   '*': {},
+    \   'javascript': {
+    \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/'],
+    \   },
+    \   'tex': {
+    \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+    \   },
+    \   'lisp': {
+    \     'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+    \   },
+    \   'vim': {
+    \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+    \   },
+    \   'html': {
+    \     'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+    \   },
+    \   'css': 0,
     \   }
     \}
     nmap <Leader>rp :RainbowToggle<CR>
@@ -341,5 +391,31 @@
       \'z'            : ['#(whoami)']}
 
   "}}}
+
+"}}}
+
+""" File Types
+"{{{
+
+  filetype plugin indent on
+
+  if has("autocmd")
+    " In Makefiles, use real tabs, not tabs expanded to spaces
+    au FileType make setlocal noexpandtab
+
+    " Make sure all markdown files have the correct filetype set and setup wrapping
+    au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
+    if !exists("g:disable_markdown_autostyle")
+      au FileType markdown setlocal wrap linebreak textwidth=72 nolist
+    endif
+
+    " make Python follow PEP8 for whitespace ( http://www.python.org/dev/peps/pep-0008/ )
+    au FileType python setlocal tabstop=4 shiftwidth=4>
+
+    "Remember last location in file, but not for commit message.
+    au BufReadPost * if &filetype !~ '^git\c' && line("'\"") > 0 && line("'\"") <= line("$")
+      \| exe "normal! g`\"" | endif
+
+  endif
 
 "}}}
