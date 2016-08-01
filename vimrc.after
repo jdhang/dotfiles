@@ -31,7 +31,11 @@ set pastetoggle=<F2>
 " === Plugin Settings === "
 
 " vim-indent-guides
-let g:indent_guides_guide_size=1
+" let g:indent_guides_guide_size=1
+
+" rainbow
+let g:rainbow_active=1
+autocmd VimEnter * RainbowToggle
 
 " vim-move settings
 let g:move_key_modifier='C'
@@ -110,10 +114,10 @@ let g:UltiSnipsJumpBackwardTrigger="<c-h>"
 let g:NERDSpaceDelims = 1  "add space after each comment
 
 " rainbow parentheses on by default
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+" au VimEnter * RainbowParenthesesToggle
+" au Syntax * RainbowParenthesesLoadRound
+" au Syntax * RainbowParenthesesLoadSquare
+" au Syntax * RainbowParenthesesLoadBraces
 
 " === END Plugin Settings === "
 
