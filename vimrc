@@ -1,190 +1,252 @@
-" Use Vim settings, rather then Vi settings. This setting must be as early as
-" possible, as it has side effects.
-set nocompatible " required by vundle
-filetype off     " required by vundle
+""" Appearance
+"{{{
 
-" sets runtime path to include Vundle
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
+  " nocompatible mode
+  set nocompatible
 
-" Let Vundle manage Vundle
-Plugin 'gmarik/Vundle.vim'
-
-" Define bundles via Github repos
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
-Plugin 'ddollar/nerdcommenter'
-Plugin 'alvan/vim-closetag'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-vinegar'
-Plugin 'sickill/vim-pasta'
-Plugin 'vim-scripts/matchit.zip'
-Plugin 'bling/vim-airline'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'Valloric/YouCompleteMe'
-
-" Language syntax
-Plugin 'plasticboy/vim-markdown'
-Plugin 'elzr/vim-json'
-
-" javascript plugins
-Plugin 'marijnh/tern_for_vim'
-Plugin 'moll/vim-node'
-Plugin 'pangloss/vim-javascript'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'mxw/vim-jsx'
-
-" color schemes
-Plugin 'chriskempson/base16-vim'
-Plugin 'joshdick/onedark.vim'
-
-" All plugins must be added before this line
-call vundle#end()             " required
-filetype plugin indent on     " required
-
-" Color scheme
-set t_Co=256
-set background=dark
-colorscheme onedark
-
-" Leader
-let mapleader = ","
-
-" Enable built-in matchit plugin
-runtime macros/matchit.vim
-
-set backspace=2   " Backspace deletes like most programs in insert mode
-set nobackup
-set nowritebackup
-set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
-set history=50
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  " syntax highlighting
   syntax on
-endif
 
-augroup vimrcEx
-  " Enable spellchecking for Markdown
-  autocmd FileType markdown setlocal spell
-augroup END
+  " set color theme
+  colorscheme onedark
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  " line numbers
+  set ruler
+  set number relativenumber
+  set numberwidth=5
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " make it obvious where 80 char is
+  set textwidth=80
+  set colorcolumn=+1
 
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
+  set cursorline                          " line highlighing
+  set laststatus=2                        " display status line
+  set nowrap                              " don't wrap lines
+  set backspace=indent,eol,start          " backspace through everything
 
-" Softtabs, 2 spaces
-set tabstop=2
-set shiftwidth=2
-set shiftround
-set expandtab
+  " indenting
+  set cindent
+  set expandtab
+  set shiftround
+  set shiftwidth=2                        " an autoindent is two spaces
+  set tabstop=2                           " a tab is two spaces
+  set softtabstop=2
 
-" Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
+  " better split window feel
+  set splitbelow
+  set splitright
 
-" set line highlighting
-set cursorline
+  set ttimeoutlen=100                     " set esckeys to timeout faster
 
-" relative numbering
-set relativenumber
+  " List chars
+  set listchars=""                        " Reset the listchars
+  set listchars=tab:\ \                   " a tab should display as " ", trailing whitespace as "."
+  set listchars+=trail:.                  " show trailing spaces as dots
 
-" Numbers
-set number
-set numberwidth=5
+"}}}
 
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+""" Function Keys
+"{{{
 
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
+  " set paste mode
+  set pastetoggle=<F2>
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
+"}}}
 
-" Always use vertical diff
-set diffopt+=vertical
+""" Behavior Modifiers
+"{{{
 
-" All Plugin Settings Below
+  " Key Modifiers
+  "{{{
 
-" Treat <li> and <p> tags like the block tags they are
-let g:html_indent_tags = 'li\|p'
+    " map leader key
+    let mapleader=','
 
-" turn off vim-markdown folding
-let g:vim_markdown_folding_disabled=1
-au BufNewFile,BufFilePre,BufRead *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
+    " more robust exiting commands
+    command! Q q
+    command! W w
+    command! Wq wq
+    command! WQ wq
+    command! Qall qall
 
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-let g:syntastic_javascript_checkers = ['eslint']
+    " Save using ctrl-s
+    map <C-s> <esc>:w<CR>
+    imap <C-s> <esc>:w<CR>
 
-" ctrlp settings
-let g:ctrlp_map = '<Leader>t'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_match_window = 'top,min:1,max:10'
+    " quicker splitting
+    map <Leader>sp :split<CR>
+    map <Leader>vp :vsplit<CR>
 
-" jsx highlighting in js files as well
-let g:jsx_ext_required = 0
+    " quicker switching of syntax
+    map <Leader>ss :set syntax=
 
-" enable html/css highlighting in js file
-let g:javascript_enable_domhtmlcss = 1
+    " quicker switching of colorscheme
+    map <Leader>cs :colorscheme 
 
-" config javascript lib syntax
-let g:used_javascript_libs = 'underscore,backbone,jquery,react,flux,jasmine,chai,handlebars,angularjs'
+    " quicker window movements
+    nnoremap <C-h> <C-w>h
+    nnoremap <C-l> <C-w>l
 
-" vim-airline settings
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='onedark'
+    " buffer management
+    map <Leader>bd :bd<CR>
+    map <Leader>bn :bnext<CR>
+    map <Leader>bv :bprevious<CR>
 
-" NERDCommenter, add space after each comment
-let g:NERDSpaceDelims = 1
+    " toggle background color
+    map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark")<CR>
 
-" personal remaps below
-map <Leader>bi :!bundle install<CR>
-map <Leader>bb :PluginInstall<CR>
-" map <Leader>w <C-w>w
-map <Leader>n :NERDTreeToggle<CR>
-map <Leader>t :CtrlPBuffer<CR>
+    " Toggle highlight
+    nmap <Leader>hs :set hlsearch! hlsearch?<CR>
 
-command! Q q
-command! Qall qall
-map <C-s> <esc>:w<CR>
-imap <C-s> <esc>:w<CR>
-map <C-t> <esc>:tabnew<CR>
+  "}}}
 
-" edit files and split windows easier
-map <Leader>e :e <C-R>=escape(expand("%:p:h"),' ') .  '/'<CR>
-map <Leader>sp :split
-map <Leader>vp :vsplit
+"}}}
+
+""" Auto Modifiers
+"{{{
+
+  " search settings
+  set ignorecase
+  set incsearch
+  set smartcase
+  set scrolloff=10
+  set hlsearch!
+
+  " spelling
+  setlocal spell spelllang=en
+  nmap ss :set spell!<CR>
+  set nospell
+  autocmd FileType gitcommit setlocal spell
+
+"}}}
+
+""" Plugins
+"{{{
+
+  filetype off
+
+  set rtp+=~/.vim/bundle/Vundle.vim
+  call vundle#begin()
+
+  Plugin 'VundleVim/Vundle.vim'                " Let Vundle manage Vundle
+
+  " janus base
+  Plugin 'mileszs/ack.vim'                     " File searching
+  Plugin 'kien/ctrlp.vim'                      " File searching
+  Plugin 'scrooloose/nerdcommenter'            " Quick commenter
+  Plugin 'scrooloose/nerdtree'                 " File tree browser
+  Plugin 'Xuyuanp/nerdtree-git-plugin'         " Git for NERDTree
+  Plugin 'ervandew/supertab'                   " Insert completions
+  Plugin 'scrooloose/syntastic'                " Syntax checking
+  " SnipMate
+  Plugin 'tpope/vim-fugitive'                  " Git integration
+  Plugin 'airblade/vim-gitgutter'              " Git changes in the gutter
+  Plugin 'elzr/vim-json'                       " Better JSON highlighting
+  Plugin 'jeetsukumaran/vim-buffergator'       " Buffer management
+  Plugin 'terryma/vim-multiple-cursors'        " Sublime like multiple selections
+  Plugin 'bronson/vim-trailing-whitespace'     " Highlight trailig whitespaces
+
+  " status bar
+  Plugin 'vim-airline/vim-airline'             " Better status/tabline
+  Plugin 'vim-airline/vim-airline-themes'      " More colorschemes
+
+  " javascript
+  " tern_for_vim
+  Plugin 'moll/vim-node'                       " better node.js development
+  Plugin 'pangloss/vim-javascript'             " improved javascript indention and syntax
+  " vim-js-indent
+  Plugin 'mxw/vim-jsx'                         " React JSX syntax highlighting and indenting
+  " vim-flow
+  " vim-es6
+  Plugin 'othree/yajs.vim'                     " Yet Another Javascript Syntax
+  Plugin 'othree/es.next.syntax.vim'           " ES.Next syntax
+  Plugin 'isRuslan/vim-es6'                    " Snippets for es6
+  " typescript-vim
+  " yats.vim
+
+  " movement
+  Plugin 'matze/vim-move'                      " Move lines and selections up and down
+  " vim-sneak
+  " vim-vertigo
+
+  " code display
+  " rainbow
+  " vim-indent-guides
+
+  " autocomplete
+  " vim-surround
+  " vim-endwise
+  Plugin 'Valloric/YouCompleteMe'              " Code completion engine
+  " ultisnips
+  " vim-closetag
+  " MatchTagAlways
+
+  " extras
+  Plugin 'tpope/vim-vinegar'                   " Easier file browser
+  " vim-bufkill
+  " vim-eunuch
+  " vim-hardtime
+  " tmuxline.vim
+  " vim-mkdir
+  " vim-fetch
+
+  " colorscheme
+  " vim-deep-space
+  " papercolor-theme
+
+  call vundle#end()
+  filetype plugin indent on
+
+  " Plugin Configuration
+  "{{{
+
+    " Ack
+    " ctrl-f
+    if executable('ag')
+      let g:ackprg = 'ag --vimgrep'
+    endif
+    nnoremap <C-f> :Ack 
+
+    " CtrlP
+    let g:ctrlp_match_window = 'top'
+
+    " NERDCommenter
+    let g:NERDSpaceDelims = 1 " add space after each comment
+
+    " NERDTree
+    nnoremap <Leader>n :NERDTreeToggle<CR>
+
+    " Syntastic
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
+    let g:syntastic_javascript_checkers = ['jshint', 'eslint']
+
+    " Fugitive
+    nnoremap <Leader>gb :Gblame<CR>
+    nnoremap <Leader>gs :Gstatus<CR>
+    nnoremap <Leader>gd :Gdiff<CR>
+    nnoremap <Leader>gl :Glog<CR>
+    nnoremap <Leader>gc :Gcommit<CR>
+    nnoremap <Leader>gp :Git push<CR>
+
+    " vim-trailing-whitespaces
+
+    " vim-airline
+    let g:airline_powerline_fonts = 1
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline_theme = 'onedark'
+
+    " vim-move
+    let g:move_key_modifer = 'C'
+
+    " rainbow brackets
+    " autocmd VimEnter * RainbowParenthesesToggle
+    " autocmd Syntax * RainbowParenthesesLoadRound
+    " autocmd Syntax * RainbowParenthesesLoadSquare
+    " autocmd Syntax * RainbowParenthesesLoadBraces
+
+  "}}}
+
+"}}}
