@@ -120,6 +120,9 @@
     noremap gs <C-w>vgf
     noremap gi <C-w>f
 
+    " create and open new file
+    map <Leader>e :e <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
+
   "}}}
 
 "}}}
@@ -195,7 +198,7 @@
   Plugin 'jeetsukumaran/vim-buffergator'       " Buffer management
   Plugin 'terryma/vim-multiple-cursors'        " Sublime like multiple selections
   Plugin 'bronson/vim-trailing-whitespace'     " Highlight trailing whitespaces
-  " SnipMate
+  Plugin 'garbas/vim-snipmate'                 " TextMate snippets in vim
 
   " status bar
   Plugin 'vim-airline/vim-airline'             " Better status/tabline
@@ -263,7 +266,8 @@
     " CtrlP
     "{{{
       let g:ctrlp_match_window = 'top'
-      let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+      " let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+      let g:ctrlp_dont_split = 'NERD'
       let g:ctrl_map = ''
       let g:ctrlp_custom_ignore = {
       \ 'dir':  '\v[\/]\.(git|hg|svn)$|bower_components|node_modules',
@@ -273,23 +277,39 @@
 
     " NERDCommenter
     "{{{
+
       let g:NERDSpaceDelims = 1 " add space after each comment
+
     "}}}
 
     " NERDTree
     "{{{
+
       let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
+      let NERDTreeShowHidden = 0         " 1 to show hidden files by default
       map <Leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
+      autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+			autocmd VimEnter * call s:CheckDirectory()
+
+      function s:CheckDirectory()
+        if argc() != 0 && argv() == ['.']
+          bd
+          NERDTree
+        endif
+      endfunction
+
     "}}}
 
     " Syntastic
-    let g:syntastic_enable_signs = 1
-    let g:syntastic_quiet_messages = {'level': 'warnings'}
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 2
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
-    let g:syntastic_javascript_checkers = ['jshint', 'eslint']
+    "{{{
+      let g:syntastic_enable_signs = 1
+      let g:syntastic_quiet_messages = {'level': 'warnings'}
+      let g:syntastic_always_populate_loc_list = 1
+      let g:syntastic_auto_loc_list = 2
+      let g:syntastic_check_on_open = 1
+      let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
+      let g:syntastic_javascript_checkers = ['jshint', 'eslint']
+    "}}}
 
     " Fugitive
     nnoremap <Leader>gb :Gblame<CR>
@@ -324,6 +344,10 @@
     let g:UltiSnipsExpandTrigger='<tab>'
     let g:UltiSnipsJumpForwardTrigger='<C-l>'
     let g:UltiSnipsJumpBackwardTrigger='<C-h>'
+
+    " vim-closetag
+    let g:closetag_filenames = "*.xml,*.html,*.xhtml,*.phtml,*.php,*.js,*.jsx"
+    au FileType xml,html,phtml,php,xhtml,js,jsx let b:delimitMate_matchpairs = "(:),[:],{:}"
 
     " vim-sneak
     let g:sneak#streak = 1
