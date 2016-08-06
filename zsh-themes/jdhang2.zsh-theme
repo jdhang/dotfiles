@@ -118,11 +118,11 @@ prompt_git() {
     if [[ $dirty = '' ]]; then
       # prompt_right_segment '157' black
       prompt_segment green white
-      echo -n " ${ref/refs\/heads\//$BRANCH} $CLEAN "
+      echo -n "${ref/refs\/heads\//$BRANCH} $CLEAN "
     else
       # prompt_right_segment '227' black
       prompt_segment yellow black
-      echo -n " ${ref/refs\/heads\//$BRANCH} $DIRTY "
+      echo -n "${ref/refs\/heads\//$BRANCH} $DIRTY "
     fi
     # echo -n "${ref/refs\/heads\/}$dirty "
   fi
