@@ -73,9 +73,11 @@ prompt_right_segment() {
   [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
   [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
   if [[ $CURRENT_BG != 'NONE' && $1 != $CURRENT_BG ]]; then
-    echo -n "%{$bg%F{$CURRENT_BG}%}$RIGHT_SEGMENT_SEPARATOR%{$fg%}"
+    echo -n "%{%F{$1}%K{$CURRENT_BG}%}$RIGHT_SEGMENT_SEPARATOR%{$bg%}%{$fg%}"
+    # echo -n "%{$bg%F{$CURRENT_BG}%}%{$bg%}$RIGHT_SEGMENT_SEPARATOR%{$fg%}"
   else
-    echo -n "%{$bg%}%{$fg%} "
+    echo -n "%{%F{$1}%}$RIGHT_SEGMENT_SEPARATOR%{$bg%}%{$fg%}"
+    # echo -n "%{$bg%}%{$fg%} "
   fi
   CURRENT_BG=$1
   [[ -n $3 ]] && echo -n $3
@@ -93,7 +95,6 @@ prompt_end() {
 
 prompt_start() {
   [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
-  [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
   CURRENT_BG=$1
   if [[ -n $CURRENT_BG ]]; then
     echo -n "%{%k%F{$CURRENT_BG}%}$RIGHT_SEGMENT_SEPARATOR"
@@ -104,7 +105,6 @@ prompt_start() {
   CURRENT_BG=$1
 }
 
-
  prompt_git() {
   local ref dirty
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
@@ -113,10 +113,8 @@ prompt_start() {
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
     if [[ $dirty = $DIRTY ]]; then
-      prompt_start yellow
       prompt_right_segment yellow black
     else
-      prompt_start green
       prompt_right_segment green white
     fi
     echo -n " ${ref/refs\/heads\//$BRANCH}$dirty "
@@ -125,11 +123,15 @@ prompt_start() {
 }
 
 prompt_user() {
-  prompt_segment black white ' %n '
+  prompt_segment black white '%n '
 }
 
 prompt_dir() {
   prompt_segment cyan white ' %3c '
+}
+
+prompt_right_time() {
+  prompt_right_segment blue white ' %T '
 }
 
 prompt_time() {
@@ -138,7 +140,7 @@ prompt_time() {
 
 build_prompt() {
   RETVAL=$?
-  prompt_time
+  # prompt_time
   prompt_user
   prompt_dir
   prompt_end
@@ -146,6 +148,7 @@ build_prompt() {
 
 build_right_prompt() {
   prompt_git
+  prompt_right_time
 }
 
 RPROMPT='$(build_right_prompt)'
