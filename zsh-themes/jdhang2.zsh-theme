@@ -45,8 +45,10 @@ SEGMENT_SEPARATOR='\ue0b0'
 RIGHT_SEGMENT_SEPARATOR='\ue0b2'
 SEGMENT_SEPARATOR_SKINNY='⮁'
 SEGMENT_SEPARATOR_LEFT='⮂ '
-DIRTY=' ✘'
-CLEAN=' ✔'
+# DIRTY=' ✘'
+DIRTY="\u2718"
+# CLEAN=' ✔'
+CLEAN="\u2713"
 PLUSMINUS="\u00b1"
 BRANCH="\ue0a0 "
 DETACHED="\u27a6"
@@ -109,18 +111,19 @@ prompt_start() {
 prompt_git() {
   local ref dirty
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-    ZSH_THEME_GIT_PROMPT_DIRTY=$DIRTY
-    ZSH_THEME_GIT_PROMPT_CLEAN=$CLEAN
+    # ZSH_THEME_GIT_PROMPT_DIRTY=$DIRTY
+    # ZSH_THEME_GIT_PROMPT_CLEAN=$CLEAN
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
-    if [[ $dirty = $DIRTY ]]; then
-      # prompt_right_segment yellow black
-      prompt_segment yellow black
+    if [[ $dirty = '' ]]; then
+      prompt_right_segment '157' black
+      # prompt_segment green white
+      echo -n " ${ref/refs\/heads\//$BRANCH} $CLEAN "
     else
-      # prompt_right_segment green white
-      prompt_segment green white
+      prompt_right_segment '227' black
+      # prompt_segment yellow black
+      echo -n " ${ref/refs\/heads\//$BRANCH} $DIRTY "
     fi
-    echo -n " ${ref/refs\/heads\//$BRANCH}$dirty "
     # echo -n "${ref/refs\/heads\/}$dirty "
   fi
 }
@@ -129,7 +132,8 @@ prompt_node_version() {
   local node_version=$(node -v 2>/dev/null)
   [[ -z "${node_version}" ]] && return
 
-  prompt_right_segment green white " $NODE_ICON ${node_version:1} "
+  # prompt_right_segment green white " $NODE_ICON ${node_version:1} "
+  prompt_right_segment '34' '7' " $NODE_ICON ${node_version:1} "
 }
 
 prompt_user() {
@@ -153,11 +157,11 @@ build_prompt() {
   # prompt_time
   prompt_user
   prompt_dir
-  prompt_git
   prompt_end
 }
 
 build_right_prompt() {
+  prompt_git
   prompt_node_version
   prompt_right_time
 }
