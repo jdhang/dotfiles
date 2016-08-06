@@ -63,7 +63,7 @@ prompt_segment() {
   [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
   [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
   if [[ $CURRENT_BG != 'NONE' && $1 != $CURRENT_BG ]]; then
-    echo -n "%{$bg%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%{$fg%}"
+    echo -n "%{$bg%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR%{$fg%} "
   else
     echo -n "%{$bg%}%{$fg%} "
   fi
@@ -116,12 +116,12 @@ prompt_git() {
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
     if [[ $dirty = '' ]]; then
-      prompt_right_segment '157' black
-      # prompt_segment green white
+      # prompt_right_segment '157' black
+      prompt_segment green white
       echo -n " ${ref/refs\/heads\//$BRANCH} $CLEAN "
     else
-      prompt_right_segment '227' black
-      # prompt_segment yellow black
+      # prompt_right_segment '227' black
+      prompt_segment yellow black
       echo -n " ${ref/refs\/heads\//$BRANCH} $DIRTY "
     fi
     # echo -n "${ref/refs\/heads\/}$dirty "
@@ -132,16 +132,21 @@ prompt_node_version() {
   local node_version=$(node -v 2>/dev/null)
   [[ -z "${node_version}" ]] && return
 
-  # prompt_right_segment green white " $NODE_ICON ${node_version:1} "
-  prompt_right_segment '34' '7' " $NODE_ICON ${node_version:1} "
+  prompt_right_segment green white " $NODE_ICON ${node_version:1} "
+  # prompt_right_segment '34' white " $NODE_ICON ${node_version:1} "
 }
 
 prompt_user() {
-  prompt_segment black white '%n '
+  local user=$(whoami)
+  if [[ $user = 'jdhang' ]]; then
+    return
+  else
+    prompt_segment black white '%n '
+  fi
 }
 
 prompt_dir() {
-  prompt_segment cyan white ' %3c '
+  prompt_segment cyan white '%3c '
 }
 
 prompt_right_time() {
@@ -157,11 +162,12 @@ build_prompt() {
   # prompt_time
   prompt_user
   prompt_dir
+  prompt_git
   prompt_end
 }
 
 build_right_prompt() {
-  prompt_git
+  # prompt_git
   prompt_node_version
   prompt_right_time
 }
