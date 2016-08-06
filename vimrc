@@ -64,77 +64,77 @@
   set rtp+=~/.vim/bundle/Vundle.vim
   call vundle#begin()
 
-  Plugin 'VundleVim/Vundle.vim'                " Let Vundle manage Vundle
+  Plugin 'VundleVim/Vundle.vim'                            " Let Vundle manage Vundle
 
   " janus base
-  Plugin 'mileszs/ack.vim'                     " File searching
-  Plugin 'kien/ctrlp.vim'                      " File searching
-  Plugin 'scrooloose/nerdcommenter'            " Quick commenter
-  " Plugin 'scrooloose/nerdtree'                 " File tree browser
-  " Plugin 'Xuyuanp/nerdtree-git-plugin'         " Git for NERDTree
-  Plugin 'ervandew/supertab'                   " Insert completions
-  Plugin 'scrooloose/syntastic'                " Syntax checking
-  Plugin 'tpope/vim-fugitive'                  " Git integration
-  Plugin 'airblade/vim-gitgutter'              " Git changes in the gutter
-  Plugin 'elzr/vim-json'                       " Better JSON highlighting
-  Plugin 'jeetsukumaran/vim-buffergator'       " Buffer management
-  Plugin 'terryma/vim-multiple-cursors'        " Sublime like multiple selections
-  Plugin 'bronson/vim-trailing-whitespace'     " Highlight trailing whitespaces
-  Plugin 'MarcWeber/vim-addon-mw-utils'        " Dependency for snipMate
-  Plugin 'tomtom/tlib_vim'                     " Dependencies for snipMate
-  Plugin 'garbas/vim-snipmate'                 " TextMate snippets in vim
-	Plugin 'honza/vim-snippets'                  " Extra vim snippets
+  Plugin 'mileszs/ack.vim'                                 " File searching
+  Plugin 'kien/ctrlp.vim'                                  " File searching
+  Plugin 'scrooloose/nerdcommenter'                        " Quick commenter
+  Plugin 'ervandew/supertab'                               " Insert completions
+  Plugin 'scrooloose/syntastic'                            " Syntax checking
+  Plugin 'tpope/vim-fugitive'                              " Git integration
+  Plugin 'airblade/vim-gitgutter'                          " Git changes in the gutter
+  Plugin 'elzr/vim-json'                                   " Better JSON highlighting
+  Plugin 'jeetsukumaran/vim-buffergator'                   " Buffer management
+  Plugin 'terryma/vim-multiple-cursors'                    " Sublime like multiple selections
+  Plugin 'bronson/vim-trailing-whitespace'                 " Highlight trailing whitespaces
+  Plugin 'MarcWeber/vim-addon-mw-utils'                    " Dependency for snipMate
+  Plugin 'tomtom/tlib_vim'                                 " Dependencies for snipMate
+  Plugin 'garbas/vim-snipmate'                             " TextMate snippets in vim
+	Plugin 'honza/vim-snippets'                              " Extra vim snippets
+  " Plugin 'scrooloose/nerdtree'                           " File tree browser
+  " Plugin 'Xuyuanp/nerdtree-git-plugin'                   " Git for NERDTree
 
   " status bar
-  Plugin 'vim-airline/vim-airline'             " Better status/tabline
-  Plugin 'vim-airline/vim-airline-themes'      " More colorschemes
+  Plugin 'vim-airline/vim-airline'                         " Better status/tabline
+  Plugin 'vim-airline/vim-airline-themes'                  " More colorschemes
 
   " javascript
-  Plugin 'ternjs/tern_for_vim'                 " tern plugin for vim
-  Plugin 'moll/vim-node'                       " better node.js development
-  Plugin 'pangloss/vim-javascript'             " improved javascript indention and syntax
-  Plugin 'mxw/vim-jsx'                         " React JSX syntax highlighting and indenting
-  Plugin 'othree/yajs.vim'                     " Yet Another Javascript Syntax
-  Plugin 'othree/es.next.syntax.vim'           " ES.Next syntax
-  Plugin 'isRuslan/vim-es6'                    " Snippets for ES6
+  Plugin 'ternjs/tern_for_vim'                             " tern plugin for vim
+  Plugin 'moll/vim-node'                                   " better node.js development
+  Plugin 'mxw/vim-jsx'                                     " React JSX syntax highlighting and indenting
+  Plugin 'othree/yajs.vim'                                 " Yet Another Javascript Syntax
+  Plugin 'othree/es.next.syntax.vim'                       " ES.Next syntax
+  Plugin 'isRuslan/vim-es6'                                " Snippets for ES6
   Plugin 'gavocanov/vim-js-indent'                         " JS indentation for VIM
   Plugin 'othree/javascript-libraries-syntax.vim'          " JS Syntax for libraries
   Plugin 'burnettk/vim-angular'                            " angularjs with vim
+  " Plugin 'pangloss/vim-javascript'                         " improved javascript indention and syntax
   " vim-flow
   " typescript-vim
   " yats.vim
 
   " movement
-  Plugin 'matze/vim-move'                      " Move lines and selections up and down
-  Plugin 'justinmk/vim-sneak'                  " Easier movement in vim
-  Plugin 'prendradjaja/vim-vertigo'            " Better way to move vertically
+  Plugin 'matze/vim-move'                                  " Move lines and selections up and down
+  Plugin 'justinmk/vim-sneak'                              " Easier movement in vim
+  Plugin 'prendradjaja/vim-vertigo'                        " Better way to move vertically
 
   " code display
-  " Plugin 'luochen1990/rainbow'                 " rainbow parentheses
-  Plugin 'kien/rainbow_parentheses.vim'        " rainbow parentheses
-  Plugin 'Valloric/MatchTagAlways'             " highlight enclosing html/xml tags
+  Plugin 'luochen1990/rainbow'                             " rainbow parentheses
+  " Plugin 'kien/rainbow_parentheses.vim'                    " rainbow parentheses
+  Plugin 'Valloric/MatchTagAlways'                         " highlight enclosing html/xml tags
   " vim-indent-guides
 
   " autocomplete
-  Plugin 'Raimondi/delimitMate'                " auto-completion of quotes, parens, brackets
-  Plugin 'tpope/vim-surround'                  " Easy way to add parentheses, brackets, quotes, etc.
-  Plugin 'tpope/vim-endwise'                   " wisely add end to ruby and vim scripts
-  Plugin 'Valloric/YouCompleteMe'              " Code completion engine
-  Plugin 'SirVer/ultisnips'                    " Ultimate snippets solution
-  Plugin 'alvan/vim-closetag'                  " Auto close xml/html tags
+  Plugin 'Raimondi/delimitMate'                            " auto-completion of quotes, parens, brackets
+  Plugin 'tpope/vim-surround'                              " Easy way to add parentheses, brackets, quotes, etc.
+  Plugin 'tpope/vim-endwise'                               " wisely add end to ruby and vim scripts
+  Plugin 'Valloric/YouCompleteMe'                          " Code completion engine
+  Plugin 'SirVer/ultisnips'                                " Ultimate snippets solution
+  Plugin 'alvan/vim-closetag'                              " Auto close xml/html tags
 
   " extras
-  Plugin 'tpope/vim-vinegar'                   " Easier file browser
-  Plugin 'qpkorr/vim-bufkill'                  " Kill buffer without closing window
-  Plugin 'edkolev/tmuxline.vim'                " vim-airline but in tmux
-  Plugin 'pbrisbin/vim-mkdir'                  " Automatically create non-existent directories
+  Plugin 'tpope/vim-vinegar'                               " Easier file browser
+  Plugin 'qpkorr/vim-bufkill'                              " Kill buffer without closing window
+  Plugin 'edkolev/tmuxline.vim'                            " vim-airline but in tmux
+  Plugin 'pbrisbin/vim-mkdir'                              " Automatically create non-existent directories
+  Plugin 'kopischke/vim-fetch'                             " Allow vim to handle line and column numbers
   " vim-eunuch
-  " vim-fetch
   " vim-hardtime
 
   " colorscheme
-  Plugin 'joshdick/airline-onedark.vim'        " onedark airline theme
-  Plugin 'NLKNguyen/papercolor-theme'          " Paper color inspired by Google Material Design
+  Plugin 'joshdick/airline-onedark.vim'                    " onedark airline theme
+  Plugin 'NLKNguyen/papercolor-theme'                      " Paper color inspired by Google Material Design
   " vim-deep-space
 
   call vundle#end()
@@ -143,60 +143,49 @@
   " Plugin Configuration
   "{{{
 
+    " Vundle
+    nnoremap <C-i> :PluginInstall<CR>
+
     " Ack
-    "{{{
-      if executable('ag')
-        let g:ackprg = 'ag --vimgrep'
-      endif
-      nnoremap <C-f> :Ack<Space>
-    "}}}
+    if executable('ag')
+      let g:ackprg = 'ag --vimgrep'
+    endif
+    nnoremap <C-f> :Ack<Space>
 
     " CtrlP
-    "{{{
-      let g:ctrlp_match_window = 'top'
-      " let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
-      let g:ctrl_map = ''
-      let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v[\/]\.(git|hg|svn)$|bower_components|node_modules',
-      \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
-      \ }
-    "}}}
+    let g:ctrlp_match_window = 'top'
+    " let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
+    let g:ctrl_map = ''
+    let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn)$|bower_components|node_modules',
+    \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
+    \ }
 
     " NERDCommenter
-    "{{{
-
-      let g:NERDSpaceDelims = 1 " add space after each comment
-
-    "}}}
+    let g:NERDSpaceDelims = 1 " add space after each comment
 
     " NERDTree
-    "{{{
+    " let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
+    " let NERDTreeShowHidden = 0         " 1 to show hidden files by default
+    " autocmd VimEnter * nnoremap <Leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
+    " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    " autocmd VimEnter * call s:CheckDirectory()
 
-      " let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
-      " let NERDTreeShowHidden = 0         " 1 to show hidden files by default
-      autocmd VimEnter * nnoremap <Leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
-      " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-			" autocmd VimEnter * call s:CheckDirectory()
-
-      " function s:CheckDirectory()
-      "   if argc() != 0 && argv() == ['.']
-      "     bd
-      "     NERDTree
-      "   endif
-      " endfunction
-
-    "}}}
+    " function s:CheckDirectory()
+    "   if argc() != 0 && argv() == ['.']
+    "     bd
+    "     NERDTree
+    "   endif
+    " endfunction
 
     " Syntastic
-    "{{{
-      let g:syntastic_enable_signs = 1
-      let g:syntastic_quiet_messages = {'level': 'warnings'}
-      let g:syntastic_always_populate_loc_list = 1
-      let g:syntastic_auto_loc_list = 2
-      let g:syntastic_check_on_open = 1
-      let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
-      let g:syntastic_javascript_checkers = ['jshint', 'eslint']
-    "}}}
+    let g:syntastic_enable_signs = 1
+    let g:syntastic_quiet_messages = {'level': 'warnings'}
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 2
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
+    let g:syntastic_javascript_checkers = ['jshint', 'eslint']
 
     " Fugitive
     nnoremap <Leader>gb :Gblame<CR>
@@ -255,12 +244,12 @@
     " hi link SneakPluginTarget ErrorMsg
 
     " vim-vertigo
-    " nnoremap <silent> <Space>j :<C-U>VertigoDown n<CR>
-    " vnoremap <silent> <Space>j :<C-U>VertigoDown v<CR>
-    " onoremap <silent> <Space>j :<C-U>VertigoDown o<CR>
-    " nnoremap <silent> <Space>k :<C-U>VertigoUp n<CR>
-    " vnoremap <silent> <Space>k :<C-U>VertigoUp v<CR>
-    " onoremap <silent> <Space>k :<C-U>VertigoUp o<CR>
+    nnoremap <silent> <Space>j :<C-U>VertigoDown n<CR>
+    vnoremap <silent> <Space>j :<C-U>VertigoDown v<CR>
+    onoremap <silent> <Space>j :<C-U>VertigoDown o<CR>
+    nnoremap <silent> <Space>k :<C-U>VertigoUp n<CR>
+    vnoremap <silent> <Space>k :<C-U>VertigoUp v<CR>
+    onoremap <silent> <Space>k :<C-U>VertigoUp o<CR>
 
     " javascript-libraries-syntax
     let g:used_javascript_libs = 'jquery,underscore,angularjs,angularui,angularuirouter,react'
@@ -270,34 +259,35 @@
     " au Syntax * RainbowParenthesesLoadRound
     " au Syntax * RainbowParenthesesLoadSquare
     " au Syntax * RainbowParenthesesLoadBraces
-    " let g:rainbow_active = 1
-    " let g:rainbow_conf = {
-    " \ 'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-    " \ 'ctermfgs': ['darkblue', 'darkyellow', 'red', 'darkgreen', 'darkmagenta'],
-    " \ 'operators': '_,_',
-    " \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-    " \ 'separately': {
-    " \   '*': {},
-    " \   'javascript': {
-    " \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/'],
-    " \   },
-    " \   'tex': {
-    " \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-    " \   },
-    " \   'lisp': {
-    " \     'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-    " \   },
-    " \   'vim': {
-    " \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-    " \   },
-    " \   'html': {
-    " \     'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-    " \   },
-    " \   'css': 0,
-    " \   }
-    " \}
-    " nmap <Leader>rp :RainbowToggle<CR>
     " au VimEnter * map <Leader>rp :RainbowParenthesesToggle<CR>
+
+    let g:rainbow_active = 1
+    let g:rainbow_conf = {
+    \ 'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+    \ 'ctermfgs': ['darkblue', 'lightyellow', 'red', 'darkgreen', 'darkmagenta'],
+    \ 'operators': '_,_',
+    \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+    \ 'separately': {
+    \   '*': {},
+    \   'javascript': {
+    \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/'],
+    \   },
+    \   'tex': {
+    \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+    \   },
+    \   'lisp': {
+    \     'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+    \   },
+    \   'vim': {
+    \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+    \   },
+    \   'html': {
+    \     'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+    \   },
+    \   'css': 0,
+    \   }
+    \}
+    nmap <Leader>rp :RainbowToggle<CR>
 
     " vim-jex
     let g:jsx_ext_required = 0
