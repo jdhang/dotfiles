@@ -53,6 +53,7 @@ DETACHED="\u27a6"
 CROSS="\u2718"
 LIGHTNING="\u26a1"
 GEAR="\u2699"
+NODE_ICON='\U2B22'
 
 
 prompt_segment() {
@@ -97,15 +98,15 @@ prompt_start() {
   [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
   CURRENT_BG=$1
   if [[ -n $CURRENT_BG ]]; then
-    echo -n "%{%k%F{$CURRENT_BG}%}$RIGHT_SEGMENT_SEPARATOR"
+    echo -n "%{%k%F{$CURRENT_BG}%}$RIGHT_SEGMENT_SEPARATOR "
   else
-    echo -n "%{%k%}$RIGHT_SEGMENT_SEPARATOR"
+    echo -n "%{%k%}$RIGHT_SEGMENT_SEPARATOR "
   fi
   echo -n "%{%f%}"
   CURRENT_BG=$1
 }
 
- prompt_git() {
+prompt_git() {
   local ref dirty
   if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
     ZSH_THEME_GIT_PROMPT_DIRTY=$DIRTY
@@ -113,13 +114,22 @@ prompt_start() {
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
     if [[ $dirty = $DIRTY ]]; then
-      prompt_right_segment yellow black
+      # prompt_right_segment yellow black
+      prompt_segment yellow black
     else
-      prompt_right_segment green white
+      # prompt_right_segment green white
+      prompt_segment green white
     fi
     echo -n " ${ref/refs\/heads\//$BRANCH}$dirty "
     # echo -n "${ref/refs\/heads\/}$dirty "
   fi
+}
+
+prompt_node_version() {
+  local node_version=$(node -v 2>/dev/null)
+  [[ -z "${node_version}" ]] && return
+
+  prompt_right_segment green white " $NODE_ICON ${node_version:1} "
 }
 
 prompt_user() {
@@ -143,11 +153,12 @@ build_prompt() {
   # prompt_time
   prompt_user
   prompt_dir
+  prompt_git
   prompt_end
 }
 
 build_right_prompt() {
-  prompt_git
+  prompt_node_version
   prompt_right_time
 }
 
