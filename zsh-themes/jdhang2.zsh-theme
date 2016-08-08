@@ -154,12 +154,7 @@ prompt_user() {
 }
 
 prompt_dir() {
-  local user=$(whoami)
-  if [[ $user = 'jdhang' ]]; then
-    prompt_segment black white '%3c '
-  else
-    prompt_segment cyan white '%3c '
-  fi
+  prompt_segment cyan white '%3c '
 }
 
 prompt_right_time() {
