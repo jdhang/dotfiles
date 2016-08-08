@@ -136,6 +136,14 @@ prompt_node_version() {
   # prompt_right_segment '34' white " $NODE_ICON ${node_version:1} "
 }
 
+prompt_status() {
+  if [[ "$RETVAL" -ne 0 ]]; then
+    prompt_right_segment white red " $DIRTY "
+  else
+    prompt_right_segment white green " $CLEAN "
+  fi
+}
+
 prompt_user() {
   local user=$(whoami)
   if [[ $user = 'jdhang' ]]; then
@@ -146,7 +154,12 @@ prompt_user() {
 }
 
 prompt_dir() {
-  prompt_segment cyan white '%3c '
+  local user=$(whoami)
+  if [[ $user = 'jdhang' ]]; then
+    prompt_segment black white '%3c '
+  else
+    prompt_segment cyan white '%3c '
+  fi
 }
 
 prompt_right_time() {
