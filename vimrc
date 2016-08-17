@@ -8,7 +8,8 @@
   syntax on
 
   " set color theme
-  colorscheme onedark
+  " colorscheme onedark
+  colorscheme ir_black
 
   " line numbers
   set ruler
@@ -24,7 +25,7 @@
   set wildmenu
   set showcmd
 
-
+  set lazyredraw                          " enable better scroll with syntastic
   set cursorline                          " line highlighing
   set nowrap                              " don't wrap lines
   set backspace=indent,eol,start          " backspace through everything
@@ -53,6 +54,119 @@
 																		" off and the line continues beyond the right of the screen
 	set listchars+=precedes:<         " The character to show in the last column when wrap is
 																		" off and the line continues beyond the left of the screen
+
+  " Enable the mouse
+  set mouse=a
+
+"}}}
+
+""" Function Keys
+"{{{
+
+  " set paste mode
+  set pastetoggle=<F2>
+
+"}}}
+
+""" Behavior Modifiers
+"{{{
+
+  " Key Modifiers
+  "{{{
+
+    " map leader key
+    let mapleader=','
+
+    " more robust exiting commands
+    command! Q q
+    command! W w
+    command! Wq wq
+    command! WQ wq
+    command! Qall qall
+
+    " Save using ctrl-s
+    map <C-s> <esc>:w<CR>
+    imap <C-s> <esc>:w<CR>
+
+    " quicker splitting
+    map <Leader>sp :split<CR>
+    map <Leader>vp :vsplit<CR>
+
+    " quicker switching of syntax
+    map <Leader>ss :set syntax=
+
+    " quicker switching of colorscheme
+    au VimEnter * map <Leader>cs :colorscheme<Space>
+
+    " quicker window movements
+    nnoremap <C-h> <C-w>h
+    nnoremap <C-l> <C-w>l
+
+    " buffer management
+    map <Leader>bd :bd<CR>
+    map <Leader>bn :bnext<CR>
+    map <Leader>bv :bprevious<CR>
+
+    " toggle background color
+    map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark")<CR>
+
+    " Toggle highlight
+    nmap <Leader>hs :set hlsearch! hlsearch?<CR>
+
+    " set space to toggle folds
+    nnoremap <Space> za
+
+    " create and open new file
+    map <Leader>e :e <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
+
+  "}}}
+
+"}}}
+
+""" Auto Modifiers
+"{{{
+
+  " autosave on blur
+  au FocusLost * silent! wall
+
+  " search settings
+  set ignorecase
+  set incsearch
+  set smartcase
+  set scrolloff=10
+  set hlsearch!
+
+  " spelling
+  setlocal spell spelllang=en
+  nmap ss :set spell!<CR>
+  set nospell
+  autocmd FileType gitcommit setlocal spell
+
+  " set foldmarker
+  " set foldmethod=marker
+
+  " Wild Settings
+  " Disable output and VCS files
+  set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem,*.so
+
+  " Disable archive files
+  set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+
+  " Ignore bundler and sass cache
+  set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
+
+  " Ignore librarian-chef, vagrant, test-kitchen and Berkshelf cache
+  set wildignore+=*/tmp/librarian/*,*/.vagrant/*,*/.kitchen/*,*/vendor/cookbooks/*
+
+  " Ignore rails temporary asset caches
+  set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
+
+  " Disable temp and backup files
+  set wildignore+=*.swp,*~,._*
+
+  " Backup and swap files
+  set backupdir^=~/.vim/_backup//         " where to put backup files.
+  set directory^=~/.vim/_temp//           " where to put swap files.
 
 "}}}
 
@@ -179,11 +293,12 @@
     " endfunction
 
     " Syntastic
-    let g:syntastic_enable_signs = 1
-    let g:syntastic_quiet_messages = {'level': 'warnings'}
+    let g:syntastic_enable_highlighting = 1
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 2
     let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+    let g:syntastic_quiet_messages = {'level': 'warnings'}
     let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
     let g:syntastic_javascript_checkers = ['jshint', 'eslint']
 
@@ -193,6 +308,7 @@
     nnoremap <Leader>gd :Gdiff<CR>
     nnoremap <Leader>gl :Glog<CR>
     nnoremap <Leader>gc :Gcommit<CR>
+    nnoremap <Leader>gcm :Gcommit -m<CR>
     nnoremap <Leader>gp :Git push<CR>
 
     " vim-airline
@@ -307,116 +423,6 @@
       \'z'            : ['#(whoami)']}
 
   "}}}
-
-"}}}
-
-""" Function Keys
-"{{{
-
-  " set paste mode
-  set pastetoggle=<F2>
-
-"}}}
-
-""" Behavior Modifiers
-"{{{
-
-  " Key Modifiers
-  "{{{
-
-    " map leader key
-    let mapleader=','
-
-    " more robust exiting commands
-    command! Q q
-    command! W w
-    command! Wq wq
-    command! WQ wq
-    command! Qall qall
-
-    " Save using ctrl-s
-    map <C-s> <esc>:w<CR>
-    imap <C-s> <esc>:w<CR>
-
-    " quicker splitting
-    map <Leader>sp :split<CR>
-    map <Leader>vp :vsplit<CR>
-
-    " quicker switching of syntax
-    map <Leader>ss :set syntax=
-
-    " quicker switching of colorscheme
-    au VimEnter * map <Leader>cs :colorscheme<Space>
-
-    " quicker window movements
-    nnoremap <C-h> <C-w>h
-    nnoremap <C-l> <C-w>l
-
-    " buffer management
-    map <Leader>bd :bd<CR>
-    map <Leader>bn :bnext<CR>
-    map <Leader>bv :bprevious<CR>
-
-    " toggle background color
-    map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark")<CR>
-
-    " Toggle highlight
-    nmap <Leader>hs :set hlsearch! hlsearch?<CR>
-
-    " set space to toggle folds
-    nnoremap <Space> za
-
-    " create and open new file
-    map <Leader>e :e <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
-
-  "}}}
-
-"}}}
-
-""" Auto Modifiers
-"{{{
-
-  " autosave on blur
-  au FocusLost * silent! wall
-
-  " search settings
-  set ignorecase
-  set incsearch
-  set smartcase
-  set scrolloff=10
-  set hlsearch!
-
-  " spelling
-  setlocal spell spelllang=en
-  nmap ss :set spell!<CR>
-  set nospell
-  autocmd FileType gitcommit setlocal spell
-
-  " set foldmarker
-  " set foldmethod=marker
-
-  " Wild Settings
-  " Disable output and VCS files
-  set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem,*.so
-
-  " Disable archive files
-  set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
-
-  " Ignore bundler and sass cache
-  set wildignore+=*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*
-
-  " Ignore librarian-chef, vagrant, test-kitchen and Berkshelf cache
-  set wildignore+=*/tmp/librarian/*,*/.vagrant/*,*/.kitchen/*,*/vendor/cookbooks/*
-
-  " Ignore rails temporary asset caches
-  set wildignore+=*/tmp/cache/assets/*/sprockets/*,*/tmp/cache/assets/*/sass/*
-
-  " Disable temp and backup files
-  set wildignore+=*.swp,*~,._*
-
-  " Backup and swap files
-  set backupdir^=~/.vim/_backup//         " where to put backup files.
-  set directory^=~/.vim/_temp//           " where to put swap files.
 
 "}}}
 

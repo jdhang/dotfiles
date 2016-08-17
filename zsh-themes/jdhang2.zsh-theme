@@ -56,6 +56,8 @@ CROSS="\u2718"
 LIGHTNING="\u26a1"
 GEAR="\u2699"
 NODE_ICON='\U2B22'
+OK_ICON='\U2714'
+FAIL_ICON='\U2718'
 
 
 prompt_segment() {
@@ -128,19 +130,46 @@ prompt_git() {
   fi
 }
 
+prompt_right_git() {
+  local ref dirty
+  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
+    # ZSH_THEME_GIT_PROMPT_DIRTY=$DIRTY
+    # ZSH_THEME_GIT_PROMPT_CLEAN=$CLEAN
+    dirty=$(parse_git_dirty)
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git show-ref --head -s --abbrev |head -n1 2> /dev/null)"
+    if [[ $dirty = '' ]]; then
+      prompt_right_segment green white
+      echo -n "${ref/refs\/heads\//$BRANCH} $CLEAN "
+    else
+      prompt_right_segment yellow black
+      echo -n "${ref/refs\/heads\//$BRANCH} $DIRTY "
+    fi
+    # echo -n "${ref/refs\/heads\/}$dirty "
+  fi
+}
+
+
 prompt_node_version() {
   local node_version=$(node -v 2>/dev/null)
   [[ -z "${node_version}" ]] && return
 
   prompt_right_segment green white " $NODE_ICON ${node_version:1} "
-  # prompt_right_segment '34' white " $NODE_ICON ${node_version:1} "
 }
 
 prompt_status() {
   if [[ "$RETVAL" -ne 0 ]]; then
-    prompt_right_segment white red " $DIRTY "
+    prompt_right_segment white red " $FAIL_ICON "
   else
-    prompt_right_segment white green " $CLEAN "
+    prompt_right_segment white green " $OK_ICON "
+  fi
+}
+
+prompt_docker() {
+  local docker_machine="$DOCKER_MACHINE_NAME"
+
+  if [[ -n "$docker_machine" ]]; then
+    prompt_right_segment magenta white " $docker_machine "
+    # prompt_segment magenta white " $docker_machine "
   fi
 }
 
@@ -167,7 +196,6 @@ prompt_time() {
 
 build_prompt() {
   RETVAL=$?
-  # prompt_time
   prompt_user
   prompt_dir
   prompt_git
@@ -175,7 +203,9 @@ build_prompt() {
 }
 
 build_right_prompt() {
-  # prompt_git
+  RETVAL=$?
+  # prompt_right_git
+  prompt_status
   prompt_node_version
   prompt_right_time
 }
