@@ -9,7 +9,8 @@
 
   " set color theme
   " colorscheme onedark
-  colorscheme ir_black
+  " colorscheme ir_black
+  colorscheme grb256
 
   " line numbers
   set ruler
@@ -313,7 +314,7 @@
 
     " vim-airline
     let g:airline_powerline_fonts = 1
-    let g:airline#extensions#tabline#enabled = 1
+    " let g:airline#extensions#tabline#enabled = 1
     let g:airline_theme = 'onedark'
 
     " vim-move
