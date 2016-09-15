@@ -10,6 +10,9 @@
   " set color theme
   " colorscheme onedark
   " colorscheme ir_black
+  " colorscheme deep-space
+  " colorscheme tender
+  " colorscheme vice
   colorscheme grb256
 
   " line numbers
@@ -250,7 +253,9 @@
   " colorscheme
   Plugin 'joshdick/airline-onedark.vim'                    " onedark airline theme
   Plugin 'NLKNguyen/papercolor-theme'                      " Paper color inspired by Google Material Design
-  " vim-deep-space
+  Plugin 'tyrannicaltoucan/vim-deep-space'                 " deep space: intergalactically friendly color scheme
+  Plugin 'jacoborus/tender.vim'                            " 24bit color scheme
+  Plugin 'bcicen/vim-vice'                                 " Dark and vibrant colorscheme
 
   call vundle#end()
   filetype plugin indent on
@@ -301,7 +306,7 @@
     let g:syntastic_check_on_wq = 0
     let g:syntastic_quiet_messages = {'level': 'warnings'}
     let g:syntastic_html_tidy_ignore_errors = [" proprietary attribute \"ng-"]
-    let g:syntastic_javascript_checkers = ['jshint', 'eslint']
+    let g:syntastic_javascript_checkers = ['eslint']
 
     " Fugitive
     nnoremap <Leader>gb :Gblame<CR>
@@ -315,7 +320,10 @@
     " vim-airline
     let g:airline_powerline_fonts = 1
     " let g:airline#extensions#tabline#enabled = 1
-    let g:airline_theme = 'onedark'
+    let g:tender_airline = 1
+    let g:airline_theme = 'tender'
+    " let g:airline_theme = 'onedark'
+
 
     " vim-move
     let g:move_key_modifier = 'C'
