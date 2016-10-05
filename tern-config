@@ -7,10 +7,11 @@
  "plugins": {
      "complete_strings": {},
      "node": {},
+     "react": {},
      "modules": {},
      "es_modules": {},
      "doc_comment": {
-           "fullDocs": true
+       "fullDocs": true
      }
    }
 }
