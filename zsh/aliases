@@ -1,4 +1,5 @@
 alias vim='/usr/local/bin/vim'
+alias emacs='/usr/local/Cellar/emacs-plus/25.1/bin/emacs'
 alias ack='ag'
 alias amend="git commit --amend"
 alias aliases='vim ~/.dotfiles/zsh/aliases'
