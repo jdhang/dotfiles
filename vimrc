@@ -149,6 +149,9 @@
   " set foldmarker
   " set foldmethod=marker
 
+  " VIM share it's clipboard with system clipboard
+  set clipboard=unnamed
+
   " Wild Settings
   " Disable output and VCS files
   set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.rbo,*.class,.svn,*.gem,*.so
