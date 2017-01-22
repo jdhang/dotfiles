@@ -150,7 +150,7 @@
   " set foldmethod=marker
 
   " VIM share it's clipboard with system clipboard
-  set clipboard=unnamed
+  " set clipboard=unnamed
 
   " Wild Settings
   " Disable output and VCS files
