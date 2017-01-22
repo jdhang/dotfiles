@@ -267,7 +267,7 @@
   "{{{
 
     " Vundle
-    nnoremap <C-i> :PluginInstall<CR>
+    " nnoremap <C-i> :PluginInstall<CR>
 
     " Ack
     if executable('ag')
