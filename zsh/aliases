@@ -158,4 +158,7 @@ alias fs6='cd ~/dropbox/prog/js/fullstack/week6'
 alias fsl='cd ~/dropbox/prog/js/fullstack/1604-Library'
 alias ld='cd ~/Desktop/learndot/newlearn'
 alias ldt='cd ~/Desktop/learndot/newlearn && tmux new -s learndot'
+
+# Projects
 alias crop='cd ~/Desktop/craftops/craftops-redux'
+alias wolf='cd ~/Desktop/wolfui-project/wolfui'

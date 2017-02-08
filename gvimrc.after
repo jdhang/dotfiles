@@ -11,8 +11,9 @@ set guioptions-=L
 
 " vast colorschemes
 
-colorscheme breezy
-" colorscheme grb256
+" colorscheme breezy
+colorscheme grb256
+" colorscheme minimalist
 " colorscheme base16-jason
 " colorscheme onedark
 " colorscheme PaperColor

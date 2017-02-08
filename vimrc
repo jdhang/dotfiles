@@ -259,6 +259,7 @@
   Plugin 'tyrannicaltoucan/vim-deep-space'                 " deep space: intergalactically friendly color scheme
   Plugin 'jacoborus/tender.vim'                            " 24bit color scheme
   Plugin 'bcicen/vim-vice'                                 " Dark and vibrant colorscheme
+  Plugin 'dikiaap/minimalist'                              " material theme darker for vim
 
   call vundle#end()
   filetype plugin indent on
