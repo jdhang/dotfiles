@@ -3,16 +3,20 @@ set background=dark
 syntax on
 
 " set linespace
-set linespace=3
+" set linespace=3
+set linespace=1
 
 " remove left and right scrollbar
 set guioptions-=r
 set guioptions-=L
 
 " vast colorschemes
-
 " colorscheme breezy
+" colorscheme vice
+" colorscheme tender
 colorscheme grb256
+" colorscheme spacegray
+" colorscheme vimtom
 " colorscheme minimalist
 " colorscheme base16-jason
 " colorscheme onedark
@@ -35,4 +39,6 @@ colorscheme grb256
 " set font
 " set guifont=Source\ Code\ Pro\ for\ Powerline:h13
 " set guifont=Inconsolata-dz\ for\ Powerline:h13
-set guifont=Roboto\ Mono\ Light\ for\ Powerline:h14
+" set guifont=Roboto\ Mono\ Light\ for\ Powerline:h14
+" set guifont=Consolas\ for\ Powerline:h14
+set guifont=Fira\ Mono\ for\ Powerline:h14

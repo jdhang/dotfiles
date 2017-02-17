@@ -210,20 +210,26 @@
   Plugin 'vim-airline/vim-airline'                         " Better status/tabline
   Plugin 'vim-airline/vim-airline-themes'                  " More colorschemes
 
+  " html5
+  Plugin 'othree/html5.vim'                                " HTML5 omnicomplete and syntax
+
   " javascript
   Plugin 'ternjs/tern_for_vim'                             " tern plugin for vim
   Plugin 'moll/vim-node'                                   " better node.js development
   Plugin 'mxw/vim-jsx'                                     " React JSX syntax highlighting and indenting
-  Plugin 'othree/yajs.vim'                                 " Yet Another Javascript Syntax
+  " Plugin 'othree/yajs.vim'                                 " Yet Another Javascript Syntax
   Plugin 'othree/es.next.syntax.vim'                       " ES.Next syntax
   Plugin 'isRuslan/vim-es6'                                " Snippets for ES6
   Plugin 'gavocanov/vim-js-indent'                         " JS indentation for VIM
   Plugin 'othree/javascript-libraries-syntax.vim'          " JS Syntax for libraries
   Plugin 'burnettk/vim-angular'                            " angularjs with vim
-  " Plugin 'pangloss/vim-javascript'                         " improved javascript indention and syntax
-  " vim-flow
+  Plugin 'pangloss/vim-javascript'                         " improved javascript indention and syntax
+  Plugin 'flowtype/vim-flow'                               " Vim plugin for Flow
   " typescript-vim
   " yats.vim
+
+  " emberjs
+  Plugin 'mustache/vim-mustache-handlebars'                " mustache and handlebars mode for vim
 
   " movement
   Plugin 'matze/vim-move'                                  " Move lines and selections up and down
@@ -250,16 +256,18 @@
   Plugin 'edkolev/tmuxline.vim'                            " vim-airline but in tmux
   Plugin 'pbrisbin/vim-mkdir'                              " Automatically create non-existent directories
   Plugin 'kopischke/vim-fetch'                             " Allow vim to handle line and column numbers
+  Plugin 'w0rp/ale'                                        " Asynchronous Lint Engine
   " vim-eunuch
   " vim-hardtime
 
   " colorscheme
-  Plugin 'joshdick/airline-onedark.vim'                    " onedark airline theme
   Plugin 'NLKNguyen/papercolor-theme'                      " Paper color inspired by Google Material Design
   Plugin 'tyrannicaltoucan/vim-deep-space'                 " deep space: intergalactically friendly color scheme
   Plugin 'jacoborus/tender.vim'                            " 24bit color scheme
   Plugin 'bcicen/vim-vice'                                 " Dark and vibrant colorscheme
   Plugin 'dikiaap/minimalist'                              " material theme darker for vim
+  Plugin 'larsbs/vimtom'                                   " Atom One Dark theme port
+  Plugin 'ajh17/Spacegray.vim'                             " Spacegray Xcode theme
 
   call vundle#end()
   filetype plugin indent on
@@ -281,8 +289,8 @@
     " let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
     let g:ctrl_map = ''
     let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn)$|bower_components|node_modules',
-    \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
+    \ 'dir':  '\v[\/](node_modules|bower_components|tmp)|(\.(git|hg|svn))$',
+    \ 'file': '\.swp\|\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
     \ }
 
     " NERDCommenter
@@ -328,7 +336,6 @@
     let g:airline_theme = 'tender'
     " let g:airline_theme = 'onedark'
 
-
     " vim-move
     let g:move_key_modifier = 'C'
 
@@ -352,7 +359,7 @@
 
     " vim-closetag
     let g:closetag_filenames = "*.xml,*.html,*.xhtml,*.phtml,*.php,*.js,*.jsx"
-    au FileType xml,html,phtml,php,xhtml,js,jsx let b:delimitMate_matchpairs = "(:),[:],{:}"
+    au FileType xml,html,phtml,php,xhtml,js,jsx,hbs let b:delimitMate_matchpairs = "(:),[:],{:}"
 
     " vim-sneak
     let g:sneak#streak = 1
@@ -381,7 +388,7 @@
     onoremap <silent> <Space>k :<C-U>VertigoUp o<CR>
 
     " javascript-libraries-syntax
-    let g:used_javascript_libs = 'jquery,underscore,angularjs,angularui,angularuirouter,react'
+    let g:used_javascript_libs = 'jquery,underscore,angularjs,angularui,angularuirouter,react,flux,jasmine,chai,handlebars,d3'
 
     " rainbow brackets
     " au VimEnter * RainbowParenthesesToggle
@@ -425,6 +432,9 @@
     let g:javascript_enable_domhtmlcss = 1
     let g:javascript_plugin_flow = 1
 
+    " vim-flow
+    let g:flow#enable = 0
+
     " tmuxline
     let g:tmuxline_preset = {
       \'a'            : '#S:#I',
@@ -434,6 +444,10 @@
       \'cwin'         : ['#I', '#W'],
       \'y'            : ['%a', '%Y-%m-%d', '%H:%M'],
       \'z'            : ['#(whoami)']}
+
+    " ale
+    let g:ale_lint_on_save = 1
+    let g:ale_lint_on_text_changed = 0
 
   "}}}
 
