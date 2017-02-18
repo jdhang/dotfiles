@@ -161,4 +161,4 @@ alias ldt='cd ~/Desktop/learndot/newlearn && tmux new -s learndot'
 
 # Projects
 alias crop='cd ~/Desktop/craftops/craftops-redux'
-alias wolf='cd ~/Desktop/wolfui-project/wolfui'
+alias wolf='cd ~/Desktop/wolfui/wolfui'

@@ -112,7 +112,7 @@
     map <Leader>bv :bprevious<CR>
 
     " toggle background color
-    map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark")<CR>
+    map <Leader>bg :let &background = ( &background == "dark" ? "light" : "dark")<CR>
 
     " Toggle highlight
     nmap <Leader>hs :set hlsearch! hlsearch?<CR>
@@ -229,7 +229,8 @@
   " yats.vim
 
   " emberjs
-  Plugin 'mustache/vim-mustache-handlebars'                " mustache and handlebars mode for vim
+  " Plugin 'mustache/vim-mustache-handlebars'                " mustache and handlebars mode for vim
+  Plugin 'jdhang/vim-mustache-handlebars'                " mustache and handlebars mode for vim
 
   " movement
   Plugin 'matze/vim-move'                                  " Move lines and selections up and down
@@ -359,7 +360,9 @@
 
     " vim-closetag
     let g:closetag_filenames = "*.xml,*.html,*.xhtml,*.phtml,*.php,*.js,*.jsx,*.hbs"
-    au FileType xml,html,phtml,php,xhtml,js,jsx,hbs let b:delimitMate_matchpairs = "(:),[:],{:}"
+    au FileType xml,html,phtml,php,xhtml,js,jsx let b:delimitMate_matchpairs = "(:),[:],{:}"
+
+    " MatchTagAlways
 
     " vim-sneak
     let g:sneak#streak = 1
@@ -425,7 +428,10 @@
     \}
     nmap <Leader>rp :RainbowToggle<CR>
 
-    " vim-jex
+    " vim-mustache-handlebars
+    " let g:mustache_abbreviations = 1
+
+    " vim-jsx
     let g:jsx_ext_required = 0
 
     " vim-javascript
