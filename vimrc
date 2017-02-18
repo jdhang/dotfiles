@@ -358,7 +358,7 @@
     let g:UltiSnipsJumpBackwardTrigger='<C-h>'
 
     " vim-closetag
-    let g:closetag_filenames = "*.xml,*.html,*.xhtml,*.phtml,*.php,*.js,*.jsx"
+    let g:closetag_filenames = "*.xml,*.html,*.xhtml,*.phtml,*.php,*.js,*.jsx,*.hbs"
     au FileType xml,html,phtml,php,xhtml,js,jsx,hbs let b:delimitMate_matchpairs = "(:),[:],{:}"
 
     " vim-sneak
