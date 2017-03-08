@@ -218,12 +218,12 @@
   Plugin 'moll/vim-node'                                   " better node.js development
   Plugin 'mxw/vim-jsx'                                     " React JSX syntax highlighting and indenting
   " Plugin 'othree/yajs.vim'                                 " Yet Another Javascript Syntax
+  Plugin 'pangloss/vim-javascript'                         " improved javascript indention and syntax
   Plugin 'othree/es.next.syntax.vim'                       " ES.Next syntax
   Plugin 'isRuslan/vim-es6'                                " Snippets for ES6
   Plugin 'gavocanov/vim-js-indent'                         " JS indentation for VIM
   Plugin 'othree/javascript-libraries-syntax.vim'          " JS Syntax for libraries
   Plugin 'burnettk/vim-angular'                            " angularjs with vim
-  Plugin 'pangloss/vim-javascript'                         " improved javascript indention and syntax
   Plugin 'flowtype/vim-flow'                               " Vim plugin for Flow
   " typescript-vim
   " yats.vim
