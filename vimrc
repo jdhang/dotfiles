@@ -8,17 +8,16 @@
   syntax on
 
   " set color theme
-  " colorscheme onedark
-  " colorscheme ir_black
-  " colorscheme deep-space
-  " colorscheme tender
-  " colorscheme vice
   colorscheme grb256
 
   " line numbers
   set ruler
   set number relativenumber
   set numberwidth=5
+
+  " visible lines when scrolling
+  set scrolloff=0
+  " set scrolloff=10
 
   " make it obvious where 80 char is
   set colorcolumn=80
@@ -216,15 +215,21 @@
   " javascript
   Plugin 'ternjs/tern_for_vim'                             " tern plugin for vim
   Plugin 'moll/vim-node'                                   " better node.js development
-  Plugin 'mxw/vim-jsx'                                     " React JSX syntax highlighting and indenting
   " Plugin 'othree/yajs.vim'                                 " Yet Another Javascript Syntax
   Plugin 'pangloss/vim-javascript'                         " improved javascript indention and syntax
   Plugin 'othree/es.next.syntax.vim'                       " ES.Next syntax
   Plugin 'isRuslan/vim-es6'                                " Snippets for ES6
   Plugin 'gavocanov/vim-js-indent'                         " JS indentation for VIM
   Plugin 'othree/javascript-libraries-syntax.vim'          " JS Syntax for libraries
+
+  " angularjs
   Plugin 'burnettk/vim-angular'                            " angularjs with vim
+
+  " react
+  Plugin 'mxw/vim-jsx'                                     " React JSX syntax highlighting and indenting
   Plugin 'flowtype/vim-flow'                               " Vim plugin for Flow
+
+  " typescript
   " typescript-vim
   " yats.vim
 
@@ -262,13 +267,13 @@
   " vim-hardtime
 
   " colorscheme
-  Plugin 'NLKNguyen/papercolor-theme'                      " Paper color inspired by Google Material Design
-  Plugin 'tyrannicaltoucan/vim-deep-space'                 " deep space: intergalactically friendly color scheme
-  Plugin 'jacoborus/tender.vim'                            " 24bit color scheme
-  Plugin 'bcicen/vim-vice'                                 " Dark and vibrant colorscheme
-  Plugin 'dikiaap/minimalist'                              " material theme darker for vim
-  Plugin 'larsbs/vimtom'                                   " Atom One Dark theme port
-  Plugin 'ajh17/Spacegray.vim'                             " Spacegray Xcode theme
+  " Plugin 'NLKNguyen/papercolor-theme'                      " Paper color inspired by Google Material Design
+  " Plugin 'tyrannicaltoucan/vim-deep-space'                 " deep space: intergalactically friendly color scheme
+  " Plugin 'jacoborus/tender.vim'                            " 24bit color scheme
+  " Plugin 'bcicen/vim-vice'                                 " Dark and vibrant colorscheme
+  " Plugin 'dikiaap/minimalist'                              " material theme darker for vim
+  " Plugin 'larsbs/vimtom'                                   " Atom One Dark theme port
+  " Plugin 'ajh17/Spacegray.vim'                             " Spacegray Xcode theme
 
   call vundle#end()
   filetype plugin indent on
