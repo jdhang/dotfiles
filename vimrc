@@ -15,10 +15,6 @@
   set number relativenumber
   set numberwidth=5
 
-  " visible lines when scrolling
-  set scrolloff=0
-  " set scrolloff=10
-
   " make it obvious where 80 char is
   set colorcolumn=80
 
@@ -136,7 +132,8 @@
   set ignorecase
   set incsearch
   set smartcase
-  set scrolloff=10
+  " set scrolloff=10
+  set scrolloff=0
   set hlsearch!
 
   " spelling
