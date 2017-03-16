@@ -1,0 +1,47 @@
+alias c='clear'
+
+
+# git
+alias ga='git add'
+alias gaa='git add --all .'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gbc='gdc'
+alias gbd='git branch -d'
+alias gbD='git branch -D'
+alias gbv='git branch -v'
+alias gca='git commit -a'
+alias gcaa='git commit -a --amend -C HEAD'
+alias gcl='git clone'
+alias gcm="git commit -m"
+alias gcb='git checkout -b'
+alias gco='git checkout'
+alias gcom='git checkout master'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gdm='git diff master'
+alias gg='git lg'
+alias gl='git log'
+alias gm='git merge'
+alias gmm='git merge master'
+alias gmmff='git merge master --no-ff'
+alias gp='git push'
+alias gpf='git push -f'
+alias gpr='git pull --rebase'
+alias gpuo='git push --set-upstream origin'
+alias gpush='echo "Use gp!" && git push'
+alias grc='git rebase --continue'
+alias gs='git status'
+alias gsb='git show-branch'
+
+# ember
+alias ese='ember server'
+alias est='ember start'
+
+# misspells
+alias msater='master'
+
+# Projects
+alias repos='cd C:\Repos'
+alias gsfc='cd C:\Repos\GSF-com'
+alias gsfa='cd C:\Repos\GSF-API'
