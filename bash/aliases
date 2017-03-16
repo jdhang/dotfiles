@@ -1,5 +1,6 @@
 alias c='clear'
 alias lsa='ls -al'
+alias aliases='vim ~/.dotfiles/bash/aliases'
 
 # git
 alias ga='git add'
@@ -43,5 +44,6 @@ alias msater='master'
 
 # Projects
 alias repos='cd C:\Repos'
-alias gsfc='cd C:\Repos\GSF-com'
-alias gsfa='cd C:\Repos\GSF-API'
+alias gsfc='cd C:\\Repos\\GSF-com\GetSetFly\Contents'
+alias gsf-com='cd C:\\Repos\\GSF-com'
+alias gsfa='cd C:\\Repos\\GSF-API'
