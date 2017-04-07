@@ -1,0 +1,52 @@
+{
+  "http.proxyStrictSSL": false,
+  // editor
+  "editor.fontSize": 11,
+  // "editor.fontFamily": "Fira Mono",
+  "editor.fontFamily": "Roboto Mono",
+  // "editor.fontFamily": "Menlo",
+  "editor.rulers": [80],
+  "editor.tabSize": 2,
+  "editor.lineNumbers": "relative",
+  // terminal
+  // "terminal.integrated.shell.windows": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "terminal.integrated.fontSize": 12,
+  // workbench
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "IR_Black",
+  "workbench.welcome.enabled": false,
+  // search
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/tmp": true,
+  },
+  // window
+  "window.zoomLevel": 0,
+  "window.menuBarVisibility": "toggle",
+  // vim
+  "vim.leader": ",",
+  "vim.easymotion": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-c>": false,
+    "<C-f>": false
+  },
+  "vim.otherModesKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "v", "p"],
+      "after": [],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditor"
+        }
+      ]
+    }
+  ],
+  // "vim.useSystemClipboard": true,
+  // vsicons
+  "vsicons.projectDetection.disableDetect": true,
+  "vsicons.dontShowNewVersionMessage": true,
+  "material-icon-theme.showUpdateMessage": false,
+}
