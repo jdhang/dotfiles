@@ -105,6 +105,7 @@ production/master..origin/master'
 alias tcinode='docker run -it quay.io/travisci/travis-node-js /bin/bash'
 
 # Terminal
+alias nv='nvim'
 alias m='mvim'
 alias a='atom'
 alias v='vim'
