@@ -199,7 +199,7 @@
   Plugin 'tomtom/tlib_vim'                                 " Dependencies for snipMate
   Plugin 'garbas/vim-snipmate'                             " TextMate snippets in vim
 	Plugin 'honza/vim-snippets'                              " Extra vim snippets
-  " Plugin 'scrooloose/nerdtree'                           " File tree browser
+  Plugin 'scrooloose/nerdtree'                             " File tree browser
   " Plugin 'Xuyuanp/nerdtree-git-plugin'                   " Git for NERDTree
 
   " status bar
@@ -237,7 +237,7 @@
   " movement
   Plugin 'matze/vim-move'                                  " Move lines and selections up and down
   Plugin 'justinmk/vim-sneak'                              " Easier movement in vim
-  Plugin 'prendradjaja/vim-vertigo'                        " Better way to move vertically
+  " Plugin 'prendradjaja/vim-vertigo'                        " Better way to move vertically
 
   " code display
   Plugin 'luochen1990/rainbow'                             " rainbow parentheses
@@ -254,12 +254,12 @@
   Plugin 'alvan/vim-closetag'                              " Auto close xml/html tags
 
   " extras
-  Plugin 'tpope/vim-vinegar'                               " Easier file browser
+  " Plugin 'tpope/vim-vinegar'                               " Easier file browser
   Plugin 'qpkorr/vim-bufkill'                              " Kill buffer without closing window
   Plugin 'edkolev/tmuxline.vim'                            " vim-airline but in tmux
-  Plugin 'pbrisbin/vim-mkdir'                              " Automatically create non-existent directories
+  " Plugin 'pbrisbin/vim-mkdir'                              " Automatically create non-existent directories
   Plugin 'kopischke/vim-fetch'                             " Allow vim to handle line and column numbers
-  Plugin 'w0rp/ale'                                        " Asynchronous Lint Engine
+  " Plugin 'w0rp/ale'                                        " Asynchronous Lint Engine
   " vim-eunuch
   " vim-hardtime
 
@@ -300,18 +300,19 @@
     let g:NERDSpaceDelims = 1 " add space after each comment
 
     " NERDTree
-    " let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
-    " let NERDTreeShowHidden = 0         " 1 to show hidden files by default
-    " autocmd VimEnter * nnoremap <Leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
-    " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-    " autocmd VimEnter * call s:CheckDirectory()
+    let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
+    let NERDTreeShowHidden = 0 " 1 to show hidden files by default
+    autocmd VimEnter * nnoremap <Leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
+    autocmd VimEnter * nnoremap <Leader>f :NERDTreeFind<CR>
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    autocmd VimEnter * call s:CheckDirectory()
 
-    " function s:CheckDirectory()
-    "   if argc() != 0 && argv() == ['.']
-    "     bd
-    "     NERDTree
-    "   endif
-    " endfunction
+    function s:CheckDirectory()
+      if argc() != 0 && argv() == ['.']
+        bd
+        NERDTree
+      endif
+    endfunction
 
     " Syntastic
     let g:syntastic_enable_highlighting = 1
@@ -385,12 +386,12 @@
     " hi link SneakPluginTarget ErrorMsg
 
     " vim-vertigo
-    nnoremap <silent> <Space>j :<C-U>VertigoDown n<CR>
-    vnoremap <silent> <Space>j :<C-U>VertigoDown v<CR>
-    onoremap <silent> <Space>j :<C-U>VertigoDown o<CR>
-    nnoremap <silent> <Space>k :<C-U>VertigoUp n<CR>
-    vnoremap <silent> <Space>k :<C-U>VertigoUp v<CR>
-    onoremap <silent> <Space>k :<C-U>VertigoUp o<CR>
+    " nnoremap <silent> <Space>j :<C-U>VertigoDown n<CR>
+    " vnoremap <silent> <Space>j :<C-U>VertigoDown v<CR>
+    " onoremap <silent> <Space>j :<C-U>VertigoDown o<CR>
+    " nnoremap <silent> <Space>k :<C-U>VertigoUp n<CR>
+    " vnoremap <silent> <Space>k :<C-U>VertigoUp v<CR>
+    " onoremap <silent> <Space>k :<C-U>VertigoUp o<CR>
 
     " javascript-libraries-syntax
     let g:used_javascript_libs = 'jquery,underscore,angularjs,angularui,angularuirouter,react,flux,jasmine,chai,handlebars,d3'
@@ -454,8 +455,8 @@
       \'z'            : ['#(whoami)']}
 
     " ale
-    let g:ale_lint_on_save = 1
-    let g:ale_lint_on_text_changed = 0
+    " let g:ale_lint_on_save = 1
+    " let g:ale_lint_on_text_changed = 0
 
   "}}}
 
