@@ -8,12 +8,14 @@
   syntax on
 
   " set color theme
-  colorscheme grb256
+  set t_Co=256
+  set background=dark
+  colorscheme cookie
 
   " line numbers
   set ruler
   set number relativenumber
-  set numberwidth=5
+  set numberwidth=3
 
   " make it obvious where 80 char is
   set colorcolumn=80
@@ -144,6 +146,7 @@
 
   " set foldmarker
   " set foldmethod=marker
+  set foldmethod=syntax
 
   " VIM share it's clipboard with system clipboard
   " set clipboard=unnamed
@@ -188,10 +191,10 @@
   Plugin 'kien/ctrlp.vim'                                  " File searching
   Plugin 'scrooloose/nerdcommenter'                        " Quick commenter
   Plugin 'ervandew/supertab'                               " Insert completions
-  Plugin 'scrooloose/syntastic'                            " Syntax checking
+  " Plugin 'scrooloose/syntastic'                            " Syntax checking
   Plugin 'tpope/vim-fugitive'                              " Git integration
   Plugin 'airblade/vim-gitgutter'                          " Git changes in the gutter
-  Plugin 'elzr/vim-json'                                   " Better JSON highlighting
+  " Plugin 'elzr/vim-json'                                   " Better JSON highlighting
   Plugin 'jeetsukumaran/vim-buffergator'                   " Buffer management
   Plugin 'terryma/vim-multiple-cursors'                    " Sublime like multiple selections
   Plugin 'bronson/vim-trailing-whitespace'                 " Highlight trailing whitespaces
@@ -207,24 +210,24 @@
   Plugin 'vim-airline/vim-airline-themes'                  " More colorschemes
 
   " html5
-  Plugin 'othree/html5.vim'                                " HTML5 omnicomplete and syntax
+  " Plugin 'othree/html5.vim'                                " HTML5 omnicomplete and syntax
 
   " javascript
-  Plugin 'ternjs/tern_for_vim'                             " tern plugin for vim
-  Plugin 'moll/vim-node'                                   " better node.js development
+  " Plugin 'ternjs/tern_for_vim'                             " tern plugin for vim
+  " Plugin 'moll/vim-node'                                   " better node.js development
   " Plugin 'othree/yajs.vim'                                 " Yet Another Javascript Syntax
   Plugin 'pangloss/vim-javascript'                         " improved javascript indention and syntax
   Plugin 'othree/es.next.syntax.vim'                       " ES.Next syntax
   Plugin 'isRuslan/vim-es6'                                " Snippets for ES6
-  Plugin 'gavocanov/vim-js-indent'                         " JS indentation for VIM
-  Plugin 'othree/javascript-libraries-syntax.vim'          " JS Syntax for libraries
+  " Plugin 'gavocanov/vim-js-indent'                         " JS indentation for VIM
+  " Plugin 'othree/javascript-libraries-syntax.vim'          " JS Syntax for libraries
 
   " angularjs
-  Plugin 'burnettk/vim-angular'                            " angularjs with vim
+  " Plugin 'burnettk/vim-angular'                            " angularjs with vim
 
   " react
   Plugin 'mxw/vim-jsx'                                     " React JSX syntax highlighting and indenting
-  Plugin 'flowtype/vim-flow'                               " Vim plugin for Flow
+  " Plugin 'flowtype/vim-flow'                               " Vim plugin for Flow
 
   " typescript
   " typescript-vim
@@ -232,7 +235,7 @@
 
   " emberjs
   " Plugin 'mustache/vim-mustache-handlebars'                " mustache and handlebars mode for vim
-  Plugin 'jdhang/vim-mustache-handlebars'                " mustache and handlebars mode for vim
+  " Plugin 'jdhang/vim-mustache-handlebars'                " mustache and handlebars mode for vim
 
   " movement
   Plugin 'matze/vim-move'                                  " Move lines and selections up and down
@@ -240,7 +243,7 @@
   " Plugin 'prendradjaja/vim-vertigo'                        " Better way to move vertically
 
   " code display
-  Plugin 'luochen1990/rainbow'                             " rainbow parentheses
+  " Plugin 'luochen1990/rainbow'                             " rainbow parentheses
   " Plugin 'kien/rainbow_parentheses.vim'                    " rainbow parentheses
   Plugin 'Valloric/MatchTagAlways'                         " highlight enclosing html/xml tags
   " vim-indent-guides
@@ -248,29 +251,28 @@
   " autocomplete
   Plugin 'Raimondi/delimitMate'                            " auto-completion of quotes, parens, brackets
   Plugin 'tpope/vim-surround'                              " Easy way to add parentheses, brackets, quotes, etc.
-  Plugin 'tpope/vim-endwise'                               " wisely add end to ruby and vim scripts
+  " Plugin 'tpope/vim-endwise'                               " wisely add end to ruby and vim scripts
   Plugin 'Valloric/YouCompleteMe'                          " Code completion engine
   Plugin 'SirVer/ultisnips'                                " Ultimate snippets solution
   Plugin 'alvan/vim-closetag'                              " Auto close xml/html tags
 
   " extras
   " Plugin 'tpope/vim-vinegar'                               " Easier file browser
-  Plugin 'qpkorr/vim-bufkill'                              " Kill buffer without closing window
+  " Plugin 'qpkorr/vim-bufkill'                              " Kill buffer without closing window
   Plugin 'edkolev/tmuxline.vim'                            " vim-airline but in tmux
   " Plugin 'pbrisbin/vim-mkdir'                              " Automatically create non-existent directories
-  Plugin 'kopischke/vim-fetch'                             " Allow vim to handle line and column numbers
-  " Plugin 'w0rp/ale'                                        " Asynchronous Lint Engine
+  " Plugin 'kopischke/vim-fetch'                             " Allow vim to handle line and column numbers
+  Plugin 'w0rp/ale'                                        " Asynchronous Lint Engine
   " vim-eunuch
   " vim-hardtime
 
   " colorscheme
+  " Plugin 'sjl/badwolf'                                      " A Vim color scheme
   " Plugin 'NLKNguyen/papercolor-theme'                      " Paper color inspired by Google Material Design
   " Plugin 'tyrannicaltoucan/vim-deep-space'                 " deep space: intergalactically friendly color scheme
-  Plugin 'jacoborus/tender.vim'                            " 24bit color scheme
+  " Plugin 'jacoborus/tender.vim'                            " 24bit color scheme
   " Plugin 'bcicen/vim-vice'                                 " Dark and vibrant colorscheme
   " Plugin 'dikiaap/minimalist'                              " material theme darker for vim
-  " Plugin 'larsbs/vimtom'                                   " Atom One Dark theme port
-  " Plugin 'ajh17/Spacegray.vim'                             " Spacegray Xcode theme
 
   call vundle#end()
   filetype plugin indent on
@@ -301,7 +303,7 @@
 
     " NERDTree
     let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.rbo$', '\.class$', '\.o$', '\~$']
-    let NERDTreeShowHidden = 0 " 1 to show hidden files by default
+    let NERDTreeShowHidden = 1 " 1 to show hidden files by default
     autocmd VimEnter * nnoremap <Leader>n :NERDTreeToggle<CR> :NERDTreeMirror<CR>
     autocmd VimEnter * nnoremap <Leader>f :NERDTreeFind<CR>
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -336,9 +338,6 @@
     " vim-airline
     let g:airline_powerline_fonts = 1
     " let g:airline#extensions#tabline#enabled = 1
-    let g:tender_airline = 1
-    let g:airline_theme = 'tender'
-    " let g:airline_theme = 'onedark'
 
     " vim-move
     let g:move_key_modifier = 'C'
@@ -394,7 +393,7 @@
     " onoremap <silent> <Space>k :<C-U>VertigoUp o<CR>
 
     " javascript-libraries-syntax
-    let g:used_javascript_libs = 'jquery,underscore,angularjs,angularui,angularuirouter,react,flux,jasmine,chai,handlebars,d3'
+    " let g:used_javascript_libs = 'jquery,underscore,angularjs,angularui,angularuirouter,react,flux,jasmine,chai,handlebars,d3'
 
     " rainbow brackets
     " au VimEnter * RainbowParenthesesToggle
@@ -403,33 +402,33 @@
     " au Syntax * RainbowParenthesesLoadBraces
     " au VimEnter * map <Leader>rp :RainbowParenthesesToggle<CR>
 
-    let g:rainbow_active = 1
-    let g:rainbow_conf = {
-    \ 'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-    \ 'ctermfgs': ['darkblue', 'lightyellow', 'red', 'darkgreen', 'darkmagenta'],
-    \ 'operators': '_,_',
-    \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-    \ 'separately': {
-    \   '*': {},
-    \   'javascript': {
-    \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/'],
-    \   },
-    \   'tex': {
-    \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-    \   },
-    \   'lisp': {
-    \     'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-    \   },
-    \   'vim': {
-    \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-    \   },
-    \   'html': {
-    \     'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-    \   },
-    \   'css': 0,
-    \   }
-    \}
-    nmap <Leader>rp :RainbowToggle<CR>
+    " let g:rainbow_active = 1
+    " let g:rainbow_conf = {
+    " \ 'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+    " \ 'ctermfgs': ['darkblue', 'lightyellow', 'red', 'darkgreen', 'darkmagenta'],
+    " \ 'operators': '_,_',
+    " \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+    " \ 'separately': {
+    " \   '*': {},
+    " \   'javascript': {
+    " \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/'],
+    " \   },
+    " \   'tex': {
+    " \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+    " \   },
+    " \   'lisp': {
+    " \     'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+    " \   },
+    " \   'vim': {
+    " \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+    " \   },
+    " \   'html': {
+    " \     'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+    " \   },
+    " \   'css': 0,
+    " \   }
+    " \}
+    " nmap <Leader>rp :RainbowToggle<CR>
 
     " vim-mustache-handlebars
     " let g:mustache_abbreviations = 1
@@ -438,11 +437,11 @@
     let g:jsx_ext_required = 0
 
     " vim-javascript
-    let g:javascript_enable_domhtmlcss = 1
-    let g:javascript_plugin_flow = 1
+    " let g:javascript_enable_domhtmlcss = 1
+    " let g:javascript_plugin_flow = 1
 
     " vim-flow
-    let g:flow#enable = 0
+    " let g:flow#enable = 0
 
     " tmuxline
     let g:tmuxline_preset = {
@@ -455,8 +454,22 @@
       \'z'            : ['#(whoami)']}
 
     " ale
-    " let g:ale_lint_on_save = 1
-    " let g:ale_lint_on_text_changed = 0
+    if filereadable(".eslintrc")
+      let g:ale_linters = { 'javascript': [ 'eslint' ] }
+    endif
+
+    if filereadable(".eslintrc.yml")
+      let g:ale_linters = { 'javascript': [ 'eslint' ] }
+    endif
+
+    if filereadable(".eslintrc.json")
+      let g:ale_linters = { 'javascript': [ 'eslint' ] }
+    endif
+
+
+    let g:ale_set_quickfix = 0
+    let g:ale_lint_on_save = 1
+    let g:ale_lint_on_text_changed = 0
 
   "}}}
 
@@ -487,3 +500,26 @@
   endif
 
 "}}}
+
+" matchit
+runtime macros/matchit.vim
+
+" syntaxes
+exe 'source' '~/.vim/syntaxes.vim'
+
+" NeoVIM support
+if has('nvim')
+
+	let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+	let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+	set viminfo+=n~/.vim/nviminfo
+
+else
+
+	set viminfo+=n~/.vim/viminfo
+
+endif
+
+if has('termguicolors')
+	set termguicolors
+endif

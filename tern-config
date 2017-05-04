@@ -7,9 +7,9 @@
  "plugins": {
      "complete_strings": {},
      "node": {},
-     "react": {},
      "modules": {},
      "es_modules": {},
+     "webpack": {},
      "doc_comment": {
        "fullDocs": true
      }
