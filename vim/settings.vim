@@ -37,6 +37,7 @@ set cursorline
 
 " indenting
 set autoindent
+set smarttab
 set expandtab
 set shiftround
 set shiftwidth=2
