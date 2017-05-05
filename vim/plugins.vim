@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-Plugin 'cookieengineer/vim-explorer'
+Plug 'cookiengineer/vim-explorer'
 " Plug 'scrooloose/nerdtree'
 
 Plug 'kien/ctrlp.vim'
