@@ -14,7 +14,7 @@ set equalalways
 set nolazyredraw
 
 set ruler
-set number relative
+set number relativenumber
 set numberwidth=3
 set colorcolumn=80
 
