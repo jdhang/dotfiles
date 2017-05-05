@@ -1,3 +1,6 @@
+" supertab
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
 " vim-mustache-handlebars
 let g:mustache_abbreviations = 1
 
