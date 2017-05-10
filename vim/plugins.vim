@@ -1,8 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'cookiengineer/vim-explorer'
 " Plug 'scrooloose/nerdtree'
 
+Plug 'mileszs/ack.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'

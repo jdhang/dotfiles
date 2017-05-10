@@ -26,7 +26,7 @@ eval "$(rbenv init - zsh)"
 # eval "$(docker-machine env)"
 
 # default editor
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Sourcing other files
 source $HOME/.dotfiles/zsh/aliases

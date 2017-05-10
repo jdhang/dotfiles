@@ -1,3 +1,9 @@
+" Ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+nnoremap <C-f> :Ack<Space>
+
 " supertab
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
