@@ -5,5 +5,5 @@ let g:tmuxline_preset = {
   \'c disabled'   : '',
   \'win'          : ['#I', '#W'],
   \'cwin'         : ['#I', '#W'],
-  \'y'            : ['%a', '%Y-%m-%d', '%H:%M'],
+  \'y'            : ['%a', '%Y-%m-%d', '%H:%M', '#(~/.tmux/plugins/tmux-battery/scripts/battery_percentage.sh) #(~/.tmux/plugins/tmux-battery/scripts/battery_remain.sh)'],
   \'z'            : ['#(whoami)']}
