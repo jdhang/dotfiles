@@ -57,3 +57,6 @@ set list
 set listchars=""
 set listchars=tab:\ \
 set listchars+=trail:.
+
+" clipboard
+set clipboard=unnamed
