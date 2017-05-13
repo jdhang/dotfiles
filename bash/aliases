@@ -1,10 +1,14 @@
 # editor
 alias nv='nvim'
 
-alias d='cd ~/.dotfiles'
+# shortcuts
 alias c='clear'
 alias lsa='ls -al'
-alias aliases='vim ~/.dotfiles/bash/aliases'
+
+# config files
+alias d='cd ~/.dotfiles'
+alias brc='nv ~/.bashrc'
+alias aliases='nv ~/.dotfiles/bash/aliases'
 
 # git
 alias ga='git add'
