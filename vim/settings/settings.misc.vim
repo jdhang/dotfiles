@@ -21,4 +21,4 @@ let g:deoplete#enable_at_startup = 1
 
 " NERDCommenter
 let g:NERDSpaceDelims = 1 " add space after each comment
-map <C-_> <plug>NERDCommenterToggle<CR>
+map <C-_> <plug>NERDCommenterToggle

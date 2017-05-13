@@ -4,7 +4,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="spaceship"
 # ZSH_THEME="jdhang2"
 
-plugin=(git brew osx vagrant wd gem npm)
+plugin=(git brew osx vagrant wd gem npm zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -30,7 +30,7 @@ export EDITOR='nvim'
 
 # Sourcing other files
 source $HOME/.dotfiles/zsh/aliases
-source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source ~/.oh-my-zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if [ -t 0 ]; then
   stty start ''
