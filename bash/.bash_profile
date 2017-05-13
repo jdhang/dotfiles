@@ -1,2 +1,3 @@
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-bind TAB:menu-complete
+if [ -f $HOME/.bashrc ]; then
+	source $HOME/.bashrc
+fi
