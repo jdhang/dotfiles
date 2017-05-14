@@ -14,10 +14,15 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # node
 export PATH="$HOME/.node/bin:$PATH"
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh)"
-
+# Default editor
 export EDITOR='nvim'
 
+# Import aliases
 source ~/.dotfiles/bash/aliases
+
+# Prompt config
+# export GIT_PS1_SHOWDIRTYSTATE=1
+# export GIT_PS1_SHOWUNTRACKEDFILES=1
+# export PS1="\e[1m\[\e[36m\]\w on \[\e[m\]$(__git_ps1 "[%s]") \e[1mvia \[\e[32m\]$(node -v)\[\e[m\]\n\e[1m\$\[\e[m\] "
+export PS1="\e[1m\[\e[36m\]\w \[\e[m\]$(spaceship_git)\e[1mvia \[\e[32m\]$(node -v)\[\e[m\]\n\e[1m\$\[\e[m\] "
+# export PS1="\e[1m\[\e[36m\]\w\[\e[m\] on \`parse_git_branch\` via \[\e[32m\]$(node -v)\[\e[m\]\n\e[1m\$\[\e[m\] "
