@@ -118,6 +118,7 @@ _prompt_section() {
 }
 
 # COLORS
+BLUE="\e[34m"
 MAGENTA="\e[35m"
 RED="\e[31m"
 YELLOW="\e[33m"
@@ -130,7 +131,8 @@ SPACESHIP_GIT_SHOW="${SPACESHIP_GIT_SHOW:=true}"
 # SPACESHIP_GIT_PREFIX="${SPACESHIP_GIT_PREFIX:="on "}"
 SPACESHIP_GIT_PREFIX="on "
 # SPACESHIP_GIT_SUFFIX="${SPACESHIP_GIT_SUFFIX:="$SPACESHIP_PROMPT_DEFAULT_SUFFIX"}"
-SPACESHIP_GIT_SUFFIX="${SPACESHIP_PROMPT_DEFAULT_SUFFIX}"
+# SPACESHIP_GIT_SUFFIX="${SPACESHIP_PROMPT_DEFAULT_SUFFIX}"
+SPACESHIP_GIT_SUFFIX="]"
 # SPACESHIP_GIT_SYMBOL="${SPACESHIP_GIT_SYMBOL:=" "}"
 # SPACESHIP_GIT_SYMBOL=" "
 SPACESHIP_GIT_SYMBOL="["
@@ -148,7 +150,7 @@ SPACESHIP_GIT_STATUS_SHOW="${SPACESHIP_GIT_STATUS_SHOW:=true}"
 # SPACESHIP_GIT_STATUS_PREFIX="["
 SPACESHIP_GIT_STATUS_PREFIX="|"
 # SPACESHIP_GIT_STATUS_SUFFIX="${SPACESHIP_GIT_STATUS_SUFFIX:="]"}"
-SPACESHIP_GIT_STATUS_SUFFIX="]"
+SPACESHIP_GIT_STATUS_SUFFIX=""
 # SPACESHIP_GIT_STATUS_COLOR="${SPACESHIP_GIT_STATUS_COLOR:="red"}"
 SPACESHIP_GIT_STATUS_COLOR="${RED}"
 # SPACESHIP_GIT_STATUS_UNTRACKED="${SPACESHIP_GIT_STATUS_UNTRACKED:="?"}"
@@ -172,10 +174,11 @@ SPACESHIP_GIT_STATUS_UNMERGED="="
 SPACESHIP_GIT_STATUS_AHEAD="⇡"
 SPACESHIP_GIT_STATUS_BEHIND="⇣"
 SPACESHIP_GIT_STATUS_DIVERGED="⇕"
+SPACESHIP_GIT_STATUS_CLEAN="✔"
 
 # GIT BRANCH
 # Show current git brunch using git_current_status from Oh-My-Zsh
-spaceship_git_branch() {
+function spaceship_git_branch() {
 
   _is_git || return
 
@@ -184,7 +187,8 @@ spaceship_git_branch() {
   # _prompt_section \
     # "$SPACESHIP_GIT_BRANCH_COLOR" \
     # "$SPACESHIP_GIT_BRANCH_PREFIX$(git_current_branch)$SPACESHIP_GIT_BRANCH_SUFFIX"
-  echo -e "${BOLD}${YELLOW}${SPACESHIP_GIT_BRANCH_PREFIX}${SPACESHIP_GIT_BRANCH_COLOR}${current_branch}${SPACESHIP_GIT_BRANCH_SUFFIX}"
+  # echo "${BOLD}${YELLOW}${SPACESHIP_GIT_BRANCH_PREFIX}${SPACESHIP_GIT_BRANCH_COLOR}${current_branch}${SPACESHIP_GIT_BRANCH_SUFFIX}"
+  printf "$SPACESHIP_GIT_BRANCH_COLOR$(git_current_branch)$SPACESHIP_GIT_BRANCH_SUFFIX"
 }
 
 # GIT STATUS
@@ -192,7 +196,7 @@ spaceship_git_branch() {
 # and show git status using git_prompt_status from Oh-My-Zsh
 # Reference:
 #   https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/git.zsh
-spaceship_git_status() {
+function spaceship_git_status() {
   [[ $SPACESHIP_GIT_STATUS_SHOW == false ]] && return
 
   _is_git || return
@@ -207,6 +211,7 @@ spaceship_git_status() {
   ZSH_THEME_GIT_PROMPT_AHEAD=$SPACESHIP_GIT_STATUS_AHEAD
   ZSH_THEME_GIT_PROMPT_BEHIND=$SPACESHIP_GIT_STATUS_BEHIND
   ZSH_THEME_GIT_PROMPT_DIVERGED=$SPACESHIP_GIT_STATUS_DIVERGED
+  ZSH_THEME_GIT_PROMPT_CLEAN=$SPACESHIP_GIT_STATUS_CLEAN
 
   local git_status="$(git_prompt_status)"
 
@@ -216,7 +221,7 @@ spaceship_git_status() {
       # "$SPACESHIP_GIT_STATUS_COLOR" \
       # "$SPACESHIP_GIT_STATUS_PREFIX$git_status$SPACESHIP_GIT_STATUS_SUFFIX"
     # echo "${SPACESHIP_GIT_STATUS_COLOR} ${SPACESHIP_GIT_STATUS_PREFIX}${git_status}${SPACESHIP_GIT_STATUS_SUFFIX}"
-    echo -e "${YELLOW}${SPACESHIP_GIT_STATUS_PREFIX}${SPACESHIP_GIT_STATUS_COLOR}${git_status}${YELLOW}${SPACESHIP_GIT_STATUS_SUFFIX}${RESET}"
+    printf "$BLUE$SPACESHIP_GIT_STATUS_PREFIX$SPACESHIP_GIT_STATUS_COLOR$git_status$SPACESHIP_GIT_STATUS_SUFFIX"
   fi
 }
 
@@ -225,7 +230,7 @@ spaceship_git_status() {
 #   spaceship_git_branch
 #   spaceship_git_status
 # Similar to _prompt_section
-spaceship_git() {
+function spaceship_git() {
   [[ $SPACESHIP_GIT_SHOW == false ]] && return
 
   local git_branch="$(spaceship_git_branch)" git_status="$(spaceship_git_status)"
@@ -237,6 +242,8 @@ spaceship_git() {
     # "$SPACESHIP_GIT_PREFIX" \
     # "${git_branch}${git_status}" \
     # "$SPACESHIP_GIT_SUFFIX"
-  echo -e "${BOLD}${SPACESHIP_GIT_PREFIX}${git_branch}${git_status}${SPACESHIP_GIT_SUFFIX}${RESET} "
+  # echo "${BOLD}${SPACESHIP_GIT_PREFIX}${git_branch}${git_status}${SPACESHIP_GIT_SUFFIX}${RESET} "
+  # echo -e "[$(git_current_branch)$git_status]"
+  printf "on $BLUE[$git_branch$git_status$BLUE]$RESET$BOLD "
 }
 
