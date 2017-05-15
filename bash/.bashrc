@@ -1,27 +1,29 @@
 source ~/.dotfiles/bash/.git-prompt.sh
 
-# Bash completion
+# bash completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 bind TAB:menu-complete
 
-# User configuration
+# user configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# postgres path
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
-# Heroku Path
+# heroku path
 export PATH="/usr/local/heroku/bin:$PATH"
 
-# node
+# node path
 export PATH="$HOME/.node/bin:$PATH"
 
-# pyenv
+# pyenv init
 eval "$(pyenv init -)"
 
-# Default editor
+# default editor
 export EDITOR='nvim'
 
-# Import aliases
+# import aliases
 source ~/.dotfiles/bash/aliases
 
-# Prompt config
+# prompt config
 export PS1="\e[1m\[\e[36m\]\w \`git_prompt\`\`node_prompt\`\n\e[1m\$\[\e[m\] "

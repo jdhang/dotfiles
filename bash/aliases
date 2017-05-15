@@ -1,5 +1,7 @@
 # editor
 alias nv='nvim'
+alias a='atom'
+alias c='code'
 
 # shortcuts
 alias c='clear'
@@ -8,8 +10,15 @@ alias lsa='ls -al'
 
 # config files
 alias d='cd ~/.dotfiles'
-alias brc='nv ~/.bashrc'
-alias aliases='nv ~/.dotfiles/bash/aliases'
+alias brc='$EDITOR ~/.bashrc'
+alias aliases='$EDITOR ~/.dotfiles/bash/aliases'
+alias gitprompt='$EDITOR ~/.dotfiles/bash/.git-prompt.sh'
+
+# Tmux
+alias tmux='TERM=screen-256color-bce tmux'
+alias tls='tmux list-sessions'
+alias tns='tmux new -s '
+alias tat='tmux attach -t '
 
 # git
 alias ga='git add'
@@ -52,9 +61,4 @@ alias est='ember start'
 alias msater='master'
 
 # Projects
-alias repos='cd C:\Repos'
-alias gsfc='cd C:\\Repos\\GSF-com\\GetSetFly\\Contents'
-alias gsf-com='cd C:\\Repos\\GSF-com'
-alias gsfa='cd C:\\Repos\\GSF-API'
 alias crop='cd ~/Desktop/craftops/craftops-redux'
-alias gitprompt='nv ~/.dotfiles/bash/.git-prompt.sh'
