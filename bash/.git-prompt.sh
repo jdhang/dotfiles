@@ -236,7 +236,7 @@ function spaceship_git_status() {
       # "$SPACESHIP_GIT_STATUS_COLOR" \
       # "$SPACESHIP_GIT_STATUS_PREFIX$git_status$SPACESHIP_GIT_STATUS_SUFFIX"
     # echo "${SPACESHIP_GIT_STATUS_COLOR} ${SPACESHIP_GIT_STATUS_PREFIX}${git_status}${SPACESHIP_GIT_STATUS_SUFFIX}"
-    printf "$BLUE$SPACESHIP_GIT_STATUS_PREFIX$SPACESHIP_GIT_STATUS_COLOR$git_status$SPACESHIP_GIT_STATUS_SUFFIX"
+    printf "$YELLOW$SPACESHIP_GIT_STATUS_PREFIX$SPACESHIP_GIT_STATUS_COLOR$git_status$SPACESHIP_GIT_STATUS_SUFFIX"
   fi
 }
 
@@ -259,7 +259,7 @@ function git_prompt() {
     # "$SPACESHIP_GIT_SUFFIX"
   # echo "${BOLD}${SPACESHIP_GIT_PREFIX}${git_branch}${git_status}${SPACESHIP_GIT_SUFFIX}${RESET} "
   # echo -e "[$(git_current_branch)$git_status]"
-  printf "$BLUE[$git_branch$git_status$BLUE]$RESET$BOLD "
+  printf "$YELLOW[$git_branch$git_status$YELLOW]$RESET$BOLD "
 }
 
 # NVM

@@ -3,6 +3,7 @@ alias nv='nvim'
 
 # shortcuts
 alias c='clear'
+alias ls="ls -GFh"
 alias lsa='ls -al'
 
 # config files
