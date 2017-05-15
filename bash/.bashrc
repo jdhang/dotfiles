@@ -26,4 +26,5 @@ export EDITOR='nvim'
 source ~/.dotfiles/bash/aliases
 
 # prompt config
-export PS1="\e[1m\[\e[36m\]\w \`git_prompt\`\`node_prompt\`\n\e[1m\$\[\e[m\] "
+export PS1="\[$BOLD\]\[$BLUE\][\[$RESET\]\[$GREEN\]\[\u\]\[$BOLD\]\[$BLUE\]]\[$RESETBOLD\] \[$CYAN\]\[\w\] \`git_prompt\`\`node_prompt\`\[\n\]\[$BOLD\]\[\$\]\[$RESET\] "
+

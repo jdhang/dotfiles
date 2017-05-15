@@ -8,13 +8,20 @@ alias c='clear'
 alias ls="ls -GFh"
 alias lsa='ls -al'
 
+# reload config files
+alias sbrc='source ~/.bashrc'
+
 # config files
-alias d='cd ~/.dotfiles'
 alias brc='$EDITOR ~/.bashrc'
 alias aliases='$EDITOR ~/.dotfiles/bash/aliases'
 alias gitprompt='$EDITOR ~/.dotfiles/bash/.git-prompt.sh'
+alias tmco='$EDITOR ~/.tmux.conf'
 
-# Tmux
+# projects
+alias d='cd ~/.dotfiles'
+alias crop='cd ~/Desktop/craftops/craftops-redux'
+
+# tmux
 alias tmux='TERM=screen-256color-bce tmux'
 alias tls='tmux list-sessions'
 alias tns='tmux new -s '
@@ -60,5 +67,3 @@ alias est='ember start'
 # misspells
 alias msater='master'
 
-# Projects
-alias crop='cd ~/Desktop/craftops/craftops-redux'
