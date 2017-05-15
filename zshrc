@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="spaceship-2"
+ZSH_THEME="spaceship"
 # ZSH_THEME="jdhang2"
 
 plugin=(git brew osx vagrant wd gem npm zsh-syntax-highlighting)
@@ -30,7 +30,7 @@ export EDITOR='nvim'
 
 # Sourcing other files
 source $HOME/.dotfiles/zsh/aliases
-# source ~/.oh-my-zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if [ -t 0 ]; then
   stty start ''

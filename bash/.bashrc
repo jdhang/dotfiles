@@ -25,5 +25,5 @@ source ~/.dotfiles/bash/aliases
 # export GIT_PS1_SHOWUNTRACKEDFILES=1
 # export PS1="\e[1m\[\e[36m\]\w on \[\e[m\]$(__git_ps1 "[%s]") \e[1mvia \[\e[32m\]$(node -v)\[\e[m\]\n\e[1m\$\[\e[m\] "
 # export PS1="\e[1m\[\e[36m\]\w \`spaceship_git\`via \[\e[32m\]$(node -v)\[\e[m\]\n\e[1m\$\[\e[m\] "
-export PS1="\e[1m\[\e[36m\]\w \`spaceship_git\`via \[\e[32m\]$(node -v)\[\e[m\]\n\e[1m\$\[\e[m\] "
+export PS1="\e[1m\[\e[36m\]\w \`git_prompt\`\`node_prompt\`\n\e[1m\$\[\e[m\] "
 # export PS1="\e[1m\[\e[36m\]\w\[\e[m\] on \`parse_git_branch\` via \[\e[32m\]$(node -v)\[\e[m\]\n\e[1m\$\[\e[m\] "
