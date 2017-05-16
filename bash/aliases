@@ -7,15 +7,22 @@ alias c='code'
 alias c='clear'
 alias ls="ls -GFh"
 alias lsa='ls -al'
+alias :q='exit'
+alias :Q='exit'
 
 # reload config files
 alias sbrc='source ~/.bashrc'
+alias svrc='source ~/.vim/init.vim'
 
 # config files
 alias brc='$EDITOR ~/.bashrc'
 alias aliases='$EDITOR ~/.dotfiles/bash/aliases'
 alias gitprompt='$EDITOR ~/.dotfiles/bash/.git-prompt.sh'
 alias tmco='$EDITOR ~/.tmux.conf'
+alias vrc='$EDITOR ~/.dotfiles/vim/.vimrc'
+alias vmap='$EDITOR ~/.dotfiles/vim/mappings.vim'
+alias vplug='$EDITOR ~/.dotfiles/vim/plugins.vim'
+alias vset='$EDITOR ~/.dotfiles/vim/settings.vim'
 
 # projects
 alias d='cd ~/.dotfiles'

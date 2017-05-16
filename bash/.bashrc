@@ -2,6 +2,7 @@ source ~/.dotfiles/bash/.git-prompt.sh
 
 # bash completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+bind 'set completion-ignore-case on'
 bind TAB:menu-complete
 
 # user configuration
