@@ -25,4 +25,4 @@ nnoremap <C-l> <C-w>l
 map <Leader>e :e <C-R>=escape(expand("%p:h"), ' ') . '/'<CR>
 
 " ctrl-a to select all
-nmap <C-a> ggVG
+nmap <C-A> ggVG

@@ -30,3 +30,17 @@ ln -s ~/.dotfiles/vim/settings ~/.vim/settings
 ln -s ~/.dotfiles/vim/syntax ~/.vim/syntax
 ln -s ~/.dotfiles/vim/syntaxes.vim ~/.vim/syntaxes.vim
 
+# install homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# install docker completion
+# for mac
+curl -L https://raw.githubusercontent.com/docker/docker/master/contrib/completion/bash/docker > `brew --prefix`/etc/bash_completion.d/docker
+# for linux
+# curl -L https://raw.githubusercontent.com/docker/docker/master/contrib/completion/bash/docker > /etc/bash_completion.d/docker
+
+# install docker-compose completion
+# for mac
+curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose version --short)/contrib/completion/bash/docker-compose -o `brew --prefix`/etc/bash_completion.d/docker-compose
+
+
