@@ -118,12 +118,15 @@ _prompt_section() {
 }
 
 # COLORS
+BLACK="\e[30m"
 RED="\e[31m"
 GREEN="\e[32m"
 YELLOW="\e[33m"
 BLUE="\e[34m"
 MAGENTA="\e[35m"
 CYAN="\e[36m"
+LTGRAY="\e[37m"
+DKGRAY="\e[90m"
 BOLD="\e[1m"
 RESET="\e[0m"
 RESETBOLD="$RESET$BOLD"
@@ -197,9 +200,9 @@ SPACESHIP_NODE_DEFAULT_VERSION=""
 SPACESHIP_NODE_COLOR="$GREEN"
 
 # USER
-USER_PREFIX="("
-USER_SUFFIX=")"
-USER_COLOR="$BLUE"
+USER_PREFIX="["
+USER_SUFFIX="]"
+USER_COLOR="$DKGRAY"
 
 # GIT BRANCH
 # Show current git brunch using git_current_status from Oh-My-Zsh
@@ -246,7 +249,7 @@ function spaceship_git_status() {
       # "$SPACESHIP_GIT_STATUS_COLOR" \
       # "$SPACESHIP_GIT_STATUS_PREFIX$git_status$SPACESHIP_GIT_STATUS_SUFFIX"
     # echo "${SPACESHIP_GIT_STATUS_COLOR} ${SPACESHIP_GIT_STATUS_PREFIX}${git_status}${SPACESHIP_GIT_STATUS_SUFFIX}"
-    printf "$SPACESHIP_GIT_STATUS_COLOR$SPACESHIP_GIT_STATUS_PREFIX$git_status$SPACESHIP_GIT_STATUS_SUFFIX"
+    printf "$SPACESHIP_GIT_STATUS_COLOR $SPACESHIP_GIT_STATUS_PREFIX$git_status$SPACESHIP_GIT_STATUS_SUFFIX"
   fi
 }
 
@@ -269,7 +272,7 @@ function git_prompt() {
     # "$SPACESHIP_GIT_SUFFIX"
   # echo "${BOLD}${SPACESHIP_GIT_PREFIX}${git_branch}${git_status}${SPACESHIP_GIT_SUFFIX}${RESET} "
   # echo -e "[$(git_current_branch)$git_status]"
-  printf "$RESETBOLD$SPACESHIP_GIT_PREFIX$git_branch $git_status$SPACESHIP_GIT_SUFFIX"
+  printf "$RESETBOLD$SPACESHIP_GIT_PREFIX$git_branch$git_status$SPACESHIP_GIT_SUFFIX"
 }
 
 # NVM
