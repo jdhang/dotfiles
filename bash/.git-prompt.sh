@@ -197,9 +197,9 @@ SPACESHIP_NODE_DEFAULT_VERSION=""
 SPACESHIP_NODE_COLOR="$GREEN"
 
 # USER
-USER_PREFIX="$RESETBOLD["
-USER_SUFFIX="$RESETBOLD]$RESET"
-USER_COLOR="$GREEN"
+USER_PREFIX="("
+USER_SUFFIX=")"
+USER_COLOR="$BLUE"
 
 # GIT BRANCH
 # Show current git brunch using git_current_status from Oh-My-Zsh
@@ -269,7 +269,7 @@ function git_prompt() {
     # "$SPACESHIP_GIT_SUFFIX"
   # echo "${BOLD}${SPACESHIP_GIT_PREFIX}${git_branch}${git_status}${SPACESHIP_GIT_SUFFIX}${RESET} "
   # echo -e "[$(git_current_branch)$git_status]"
-  printf "$SPACESHIP_GIT_PREFIX$git_branch $git_status$SPACESHIP_GIT_SUFFIX"
+  printf "$RESETBOLD$SPACESHIP_GIT_PREFIX$git_branch $git_status$SPACESHIP_GIT_SUFFIX"
 }
 
 # NVM
@@ -305,5 +305,5 @@ function node_prompt() {
 }
 
 function user_prompt() {
-  printf "$USER_PREFIX$USER_COLOR$(whoami)$USER_SUFFIX"
+  printf "$RESETBOLD$USER_COLOR$USER_PREFIX$(whoami)$USER_SUFFIX$RESET"
 }
