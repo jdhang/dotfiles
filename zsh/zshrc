@@ -13,6 +13,8 @@ source $ZSH/oh-my-zsh.sh
 
 # user configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# postgres
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 # heroku
@@ -24,6 +26,9 @@ export PATH="$HOME/.node/bin:$PATH"
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
+
+# pyenv
+eval "$(pyenv init -)"
 
 # docker
 # eval "$(docker-machine env)"
