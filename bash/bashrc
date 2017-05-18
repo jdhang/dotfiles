@@ -1,4 +1,4 @@
-source ~/.dotfiles/bash/.git-prompt.sh
+source ~/.dotfiles/bash/git-prompt.sh
 
 # bash completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion

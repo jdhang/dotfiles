@@ -17,7 +17,7 @@ alias svrc='source ~/.vim/init.vim'
 # config files
 alias brc='$EDITOR ~/.bashrc'
 alias aliases='$EDITOR ~/.dotfiles/bash/aliases'
-alias gitprompt='$EDITOR ~/.dotfiles/bash/.git-prompt.sh'
+alias gitprompt='$EDITOR ~/.dotfiles/bash/git-prompt.sh'
 alias tmco='$EDITOR ~/.tmux.conf'
 alias vrc='$EDITOR ~/.dotfiles/vim/.vimrc'
 alias vmap='$EDITOR ~/.dotfiles/vim/mappings.vim'

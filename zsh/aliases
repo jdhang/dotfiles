@@ -1,3 +1,4 @@
+# editor
 alias vim='/usr/local/bin/vim'
 alias ack='ag'
 alias amend="git commit --amend"
@@ -144,13 +145,13 @@ alias rn='react-native'
 alias rnios='react-native run-ios'
 alias rnand='react-native run-android'
 
-# Tmux
+# tmux
 alias tmux='TERM=screen-256color-bce tmux'
 alias tls='tmux list-sessions'
 alias tns='tmux new -s '
 alias tat='tmux attach -t '
 
-# Fullstack
+# fullstack
 alias fs=' cd ~/dropbox/prog/js/fullstack'
 alias ff=' cd ~/dropbox/prog/js/fullstack/foundations'
 alias fst=' cd ~/dropbox/prog/js/fullstack/foundations/FullstackTestFirst'
@@ -164,9 +165,9 @@ alias fsl='cd ~/dropbox/prog/js/fullstack/1604-Library'
 alias ld='cd ~/Desktop/learndot/newlearn'
 alias ldt='cd ~/Desktop/learndot/newlearn && tmux new -s learndot'
 
-# Projects
+# projects
 alias crop='cd ~/Desktop/craftops/craftops-redux'
 alias wolf='cd ~/Desktop/wolfui/wolfui'
 
-# Docker
+# docker
 alias drmx='docker ps -aq --no-trunc | xargs docker rm'

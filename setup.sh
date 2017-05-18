@@ -2,20 +2,24 @@
 echo 'Symlinking dotfiles'
 
 # bash settings
-ln -s ~/.dotfiles/bash/.bash_profile ~/.bash_profile
-ln -s ~/.dotfiles/bash/.bashrc ~/.bashrc
+ln -s ~/.dotfiles/bash/bash_profile ~/.bash_profile
+ln -s ~/.dotfiles/bash/bashrc ~/.bashrc
 
 # zsh settings
-ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
+ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
 
-ln -s ~/.dotfiles/.editor_config ~/.editor_config
+# ctags
 
-# get settings
+# editor config
+ln -s ~/.dotfiles/editor_config ~/.editor_config
+
+# git settings
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/gitignore ~/.gitignore
 ln -s ~/.dotfiles/gitmessage ~/.gitmessage
 ln -s ~/.dotfiles/git_template ~/.git_template
 
+# tern config
 ln -s ~/.dotfiles/tern-config ~/.tern-config
 
 # tmux
@@ -23,8 +27,8 @@ ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/tmux-osx.conf ~/.tmux-osx.conf
 
 # vim/neovim settings
-ln -s ~/.dotfiles/vim/.vimrc ~/.vimrc
-ln -s ~/.dotfiles/vim/.vimrc ~/.vim/init.vim
+ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
+ln -s ~/.dotfiles/vim/vimrc ~/.vim/init.vim
 ln -s ~/.dotfiles/vim/colors ~/.vim/colors
 ln -s ~/.dotfiles/vim/mappings.vim ~/.vim/mappings.vim
 ln -s ~/.dotfiles/vim/plugins.vim ~/.vim/plugins.vim
@@ -32,6 +36,13 @@ ln -s ~/.dotfiles/vim/settings.vim ~/.vim/settings.vim
 ln -s ~/.dotfiles/vim/settings ~/.vim/settings
 ln -s ~/.dotfiles/vim/syntax ~/.vim/syntax
 ln -s ~/.dotfiles/vim/syntaxes.vim ~/.vim/syntaxes.vim
+
+# install plug.vim for neovim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# install vim/neovim plugins
+nvim +PlugInstall +qall
 
 # install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
