@@ -26,3 +26,9 @@ map <Leader>e :e <C-R>=escape(expand("%p:h"), ' ') . '/'<CR>
 
 " ctrl-a to select all
 nmap <Leader>a ggVG
+
+" CTags
+" brew install ctags
+" $ ctags -R .
+map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+map <C-\> :tnext<CR>

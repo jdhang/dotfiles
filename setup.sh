@@ -8,12 +8,13 @@ ln -s ~/.dotfiles/bash/bashrc ~/.bashrc
 # zsh settings
 ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
 
-# ctags
+# ctags conf
+ln -s ~/.dotfiles/ctags.cnf ~/.ctags.cnf
 
 # editor config
 ln -s ~/.dotfiles/editor_config ~/.editor_config
 
-# git settings
+# git config
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/gitignore ~/.gitignore
 ln -s ~/.dotfiles/gitmessage ~/.gitmessage
@@ -22,7 +23,7 @@ ln -s ~/.dotfiles/git_template ~/.git_template
 # tern config
 ln -s ~/.dotfiles/tern-config ~/.tern-config
 
-# tmux
+# tmux config
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/tmux-osx.conf ~/.tmux-osx.conf
 
@@ -46,6 +47,10 @@ nvim +PlugInstall +qall
 
 # install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# install brew install
+echo "Installing packages"
+brew install git bash-completion neovim/neovim/neovim node reattach-to-user-namespace tmux
 
 # install docker completion
 # for mac

@@ -9,7 +9,7 @@ for file in split(globpath('~/.vim/settings', 'settings.*.vim'), '\n')
   exe 'source' file
 endfor
 
-runtime macros/matchit.vim
+:runtime macros/matchit.vim
 
 " NeoVIM support
 if has('nvim')
