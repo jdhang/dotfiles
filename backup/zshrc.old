@@ -1,0 +1,32 @@
+# added by travis gem
+[ -f /Users/jdhang/.travis/travis.sh ] && source /Users/jdhang/.travis/travis.sh
+
+# learndot setups
+export NODE_ENV="development"
+# function chpwd {
+#   check_node_version
+# }
+
+# export GEMFURY_URL=https://npm-proxy.fury.io/{You\'ll be given this code when you set up}/me/
+
+# Ensure Node Version is Stable
+function check_node_version {
+  local node_v=`node -v`
+  local node_latest=`n --stable`
+  local curr_folder=`pwd`
+  if [[ ${curr_folder} =~ 'newlearn' || ${curr_folder} =~ 'learndot'  ]]; then
+    if [[ ${node_v} == 'v6.1.0' ]]; then return
+    else
+      echo "Switching to Node 6.1.0"
+      n 6.1.0
+    fi
+  else
+    if [[ v${node_latest} == ${node_v} ]]; then return
+    else
+      echo "Switching to Node stable"
+      n stable
+    fi
+  fi
+}
+# Run function at start
+# check_node_version
