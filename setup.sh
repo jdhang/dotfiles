@@ -5,6 +5,9 @@ echo 'Symlinking dotfiles'
 ln -s ~/.dotfiles/bash/.bash_profile ~/.bash_profile
 ln -s ~/.dotfiles/bash/.bashrc ~/.bashrc
 
+# zsh settings
+ln -s ~/.dotfiles/zsh/.zshrc ~/.zshrc
+
 ln -s ~/.dotfiles/.editor_config ~/.editor_config
 
 # get settings
