@@ -11,6 +11,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'scrooloose/nerdcommenter'
+Plug 'jeetsukumaran/vim-buffergator'
 
 " status lines
 Plug 'vim-airline/vim-airline'

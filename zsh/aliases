@@ -21,6 +21,8 @@ alias drop='cd ~/dropbox'
 alias -g G='| grep'
 alias jan='cd ~/.janus'
 
+alias tmco="$EDITOR ~/.tmux.conf"
+
 # git
 alias ga='git add'
 alias gaa='git add --all .'
