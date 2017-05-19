@@ -7,7 +7,7 @@ ZSH_THEME="spaceship"
 SPACESHIP_PROMPT_SYMBOL="$"
 SPACESHIP_DOCKER_SHOW=false
 
-plugins=(git osx gem node npm ruby bower kubectl pip postgres redis-cli tmux vagrant wd yarn zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git osx gem node npm ruby bower kubectl pip postgres redis-cli tmux vagrant wd yarn zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 

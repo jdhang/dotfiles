@@ -1,27 +1,65 @@
 # editor
-alias vim='/usr/local/bin/vim'
-alias ack='ag'
-alias amend="git commit --amend"
-alias aliases='nv ~/.dotfiles/zsh/aliases'
+alias nv='nvim'
+alias a='atom'
+alias v='vim'
+alias vi='vim'
+alias m='mvim'
 
-alias b='bin/rspec'
-alias bake='bundle exec rake'
-alias bi='bundle install -j 8'
-alias be='bundle exec'
-alias bo='cd ~/code/boardwalk'
-alias br='bin/rspec'
-alias ber='bundle exec rspec'
-alias bu='bundle update'
-alias bunbang='bundle install && !!'
+# shortcuts
 alias c='clear'
-alias d='cd ~/.dotfiles'
-alias dbprep='rdm && rdtp'
-alias dr='cd ~/dropbox'
-alias drop='cd ~/dropbox'
+alias ls="ls -GFh"
+alias lsa='ls -al'
+alias :q='exit'
+alias :Q='exit'
+alias u='cd ..'
+alias get='sudo apt-get install'
 alias -g G='| grep'
-alias jan='cd ~/.janus'
+alias -g M='| more'
 
-alias tmco="$EDITOR ~/.tmux.conf"
+# config files
+alias brc='$EDITOR ~/.bashrc'
+alias zrc='$EDITOR ~/.zshrc'
+alias zal='$EDITOR ~/.dotfiles/zsh/aliases'
+alias bal='$EDITOR ~/.dotfiles/bash/aliases'
+alias gitprompt='$EDITOR ~/.dotfiles/bash/git-prompt.sh'
+alias tmco='$EDITOR ~/tmux/tmux.conf'
+alias vrc='$EDITOR ~/.dotfiles/vim/vimrc'
+alias vmap='$EDITOR ~/.dotfiles/vim/mappings.vim'
+alias vplug='$EDITOR ~/.dotfiles/vim/plugins.vim'
+alias vset='$EDITOR ~/.dotfiles/vim/settings.vim'
+
+# reload config files
+alias sbrc="source ~/.bashrc"
+alias szrc="source ~/.zshrc"
+
+# folders
+alias d='cd ~/.dotfiles'
+alias dr='cd ~/dropbox'
+alias projs='cd ~/dropbox/prog/js/projects'
+alias testjs='cd ~/dropbox/prog/js/test_env'
+alias cw='cd ~/dropbox/prog/js/codewars'
+
+# projects
+alias crop='cd ~/Desktop/craftops/craftops-redux'
+alias wolf='cd ~/Desktop/wolfui/wolfui'
+
+# tmux
+alias tmux='TERM=screen-256color-bce tmux'
+alias tls='tmux list-sessions'
+alias tns='tmux new -s '
+alias tat='tmux attach -t '
+
+# ember
+alias ese='ember serve'
+
+# docker
+alias drmx='docker ps -aq --no-trunc | xargs docker rm'
+alias dps='docker ps -a'
+alias di='docker images'
+alias drmi='docker rmi'
+alias drm='docker rm'
+alias dc='docker-compose'
+alias dcu='docker-compose up -d'
 
 # git
 alias ga='git add'
@@ -56,102 +94,34 @@ alias grc='git rebase --continue'
 alias gs='git status'
 alias gsb='git show-branch'
 
-alias get='sudo apt-get install'
-alias grake='rspec --drb spec/ && cucumber --drb features/'
-alias gurad='guard'
-alias h='sync'
+alias repush="gpr && git push"
+alias review="git diff master"
+alias squash='git rebase -i master'
+alias stage='git push staging head:master && staging open'
+alias track='git checkout -t'
+
+# heroku
 alias herkou='heroku'
 alias hpr='hub pull-request'
 alias hpush='git push heroku'
 alias hlogs='heroku logs'
 alias hltail='heroku logs --tail'
 alias hpsql='heroku pg:psql'
-
-alias irb='irb --readline -r irb/completion'
-alias js='jekyll serve'
-alias -g M='| more'
-alias mastre='master'
-alias newscreen="tmux"
-alias pc='production-console'
-alias reguard='killall -9 ruby ; guard'
-alias rerake='!! && rake'
-alias repush="gpr && git push"
-alias review="git diff master"
-alias rc='bin/rails console'
-alias remigrate='rake db:migrate && rake db:migrate:redo && rake db:schema:dump
-&& rake db:test:prepare'
-alias rdm="bin/rake db:migrate"
-alias rdtp="bin/rake db:test:prepare"
-alias rs='bundle install && rails server -p 3000'
-alias safepush='git pull --rebase && bundle install && rdm && rake && git push'
-alias shpush='rake && hpush'
-alias sc='staging-console'
-alias so='source ~/.dotfiles/zsh/aliases'
-alias sp='safepush'
-alias squash='git rebase -i master'
-alias ss='spring stop'
-alias stage='git push staging head:master && staging open'
-alias startpostgres='pg_ctl -D /usr/local/var/postgres -l
-/usr/local/var/postgres/server.log start'
-alias startredis='redis-server /usr/local/etc/redis.conf &'
-alias stoppostgres='pg_ctl -D /usr/local/var/postgres -l
-/usr/local/var/postgres/server.log stop'
-alias status='vim ~/Dropbox/work/thoughtbot/notes/prime -c "Ex"'
-alias sync='git add -u . && git commit -m "Minor changes. Commit message
-skipped." && repush'
 alias tail-logs='heroku logs -t'
-alias track='git checkout -t'
-alias u='cd ..'
-alias undeployed='git fetch --multiple production origin && git log
-production/master..origin/master'
-alias tcinode='docker run -it quay.io/travisci/travis-node-js /bin/bash'
 
-# Terminal
-alias nv='nvim'
-alias m='mvim'
-alias a='atom'
-alias v='vim'
-alias vi='vim'
-alias sv='sudo vim'
-alias zrc='nvim ~/.zshrc'
-alias vrc='nvim ~/.vimrc'
-alias gvrc='nvim ~/.gvimrc'
-alias vrca='nvim ~/.vimrc.after'
-alias vrcb='nvim ~/.vimrc.before'
-alias gvrca='nvim ~/.gvimrc.after'
+# typos
+alias mastre='master'
 
-# Extras
-alias tlc1='cd ~/dropbox/prog/tealeaf/course1'
-alias tlc2='cd ~/dropbox/prog/tealeaf/course2'
-alias tlc3='cd ~/dropbox/prog/tealeaf/course3'
-alias blog='cd ~/dropbox/prog/blog'
-alias jserve='bundle exec jekyll serve'
-alias jservep='bundle exec jekyll serve --profile'
-alias jserved='bundle exec jekyll serve --drafts'
-alias jservedp='bundle exec jekyll serve --drafts --profile'
-alias vundle='nvim ~/.vimrc.bundles'
-alias :q='exit'
-alias :Q='exit'
-alias tmr='~/.dotfiles/rails-tmux.sh'
-alias apps='~/dropbox/prog/rails'
-alias met='~/dropbox/prog/js/meteor'
-alias mnt='sudo mount -t vboxsf dropbox ~/dropbox'
+# ssh
 alias sshpi='ssh jdhang@192.168.1.108 -p 4022'
 alias sshpc='ssh pewtercity'
 alias sshdo='ssh jdhang@159.203.97.188'
 alias sftpdo='sftp jdhang@159.203.97.188'
-alias projs='cd ~/dropbox/prog/js/projects'
-alias testjs='cd ~/dropbox/prog/js/test_env'
-alias cw='cd ~/dropbox/prog/js/codewars'
+
+# react native
 alias rn='react-native'
 alias rnios='react-native run-ios'
 alias rnand='react-native run-android'
-
-# tmux
-alias tmux='TERM=screen-256color-bce tmux'
-alias tls='tmux list-sessions'
-alias tns='tmux new -s '
-alias tat='tmux attach -t '
 
 # fullstack
 alias fs=' cd ~/dropbox/prog/js/fullstack'
@@ -167,9 +137,8 @@ alias fsl='cd ~/dropbox/prog/js/fullstack/1604-Library'
 alias ld='cd ~/Desktop/learndot/newlearn'
 alias ldt='cd ~/Desktop/learndot/newlearn && tmux new -s learndot'
 
-# projects
-alias crop='cd ~/Desktop/craftops/craftops-redux'
-alias wolf='cd ~/Desktop/wolfui/wolfui'
+# misc
+alias pc='production-console'
+alias sc='staging-console'
+alias sp='safepush'
 
-# docker
-alias drmx='docker ps -aq --no-trunc | xargs docker rm'

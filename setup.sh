@@ -24,8 +24,8 @@ ln -s ~/.dotfiles/git_template ~/.git_template
 ln -s ~/.dotfiles/tern-config ~/.tern-config
 
 # tmux config
-ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-ln -s ~/.dotfiles/tmux-osx.conf ~/.tmux-osx.conf
+ln -s ~/.dotfiles/tmux/tmux.conf ~/.tmux.conf
+ln -s ~/.dotfiles/tmux/tmux-osx.conf ~/.tmux-osx.conf
 
 # vim/neovim settings
 ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
