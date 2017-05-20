@@ -1,4 +1,5 @@
 " tmuxline
+let g:tmuxline_theme = 'powerline'
 let g:tmuxline_preset = {
   \'a'            : '#S:#I',
   \'b'            : '#W',

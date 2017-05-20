@@ -1,5 +1,15 @@
 " color schemes
-colorscheme cookie
+set background=dark
+" set t_Co=256
+" colorscheme cookie
+" colorscheme grb256
+" colorscheme spacegray
+" colorscheme base16-jason
+" colorscheme base16-ashes
+" colorscheme base16-chalk
+" colorscheme base16-jasonV2
+colorscheme neodark
+let g:neodark#background = '#121212'
 syntax enable
 
 " file settings

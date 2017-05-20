@@ -19,6 +19,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 
 " syntax
+Plug 'pangloss/vim-javascript'
+Plug 'isRuslan/vim-es6'
 Plug 'mxw/vim-jsx'
 Plug 'jdhang/vim-mustache-handlebars'
 
@@ -33,6 +35,12 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+" linting
 Plug 'w0rp/ale'
+
+" colorschemes
+Plug 'chriskempson/base16-vim'
+Plug 'KeitaNakamura/neodark.vim'
+Plug 'ajh17/Spacegray.vim'
 
 call plug#end()

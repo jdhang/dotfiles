@@ -10,6 +10,9 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 " vim-mustache-handlebars
 let g:mustache_abbreviations = 1
 
+" vim-javascript
+" let g:javascript_plugin_flow = 1
+
 " vim-jsx
 let g:jsx_ext_required = 0
 
@@ -22,3 +25,6 @@ let g:deoplete#enable_at_startup = 1
 " NERDCommenter
 let g:NERDSpaceDelims = 1 " add space after each comment
 map <C-_> <plug>NERDCommenterToggle
+
+" neodark
+let g:neodark#background = '#151515'
