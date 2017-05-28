@@ -2,10 +2,13 @@
   "plugins": [
     "react"
   ],
-  "extends": ["fullstack", "eslint:recommended", "plugin:react/recommended"],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "parser": "babel-eslint",
-  "ecmaFeatures": {
-    "jsx": true
+  "parserOptions": {
+    "ecmaVersion": 6
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "rules": {
     "no-unused-vars": 0,

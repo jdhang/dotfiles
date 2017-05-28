@@ -3,6 +3,10 @@ if filereadable(".eslintrc")
   let g:ale_linters = { 'javascript': [ 'eslint' ] }
 endif
 
+if filereadable(".eslintrc.js")
+  let g:ale_linters = { 'javascript': [ 'eslint' ] }
+endif
+
 if filereadable(".eslintrc.yml")
   let g:ale_linters = { 'javascript': [ 'eslint' ] }
 endif

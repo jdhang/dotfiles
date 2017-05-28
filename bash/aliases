@@ -66,8 +66,10 @@ alias dcu='docker-compose up -d'
 alias g='git'
 __git_complete g __git_main
 alias ga='git add'
+__git_complete ga _git_add
 alias gaa='git add --all .'
 alias gb='git branch'
+__git_complete gb _git_branch
 alias gba='git branch -a'
 alias gbc='gdc'
 alias gbd='git branch -d'
@@ -79,6 +81,7 @@ alias gcl='git clone'
 alias gcm="git commit -m"
 alias gcb='git checkout -b'
 alias gco='git checkout'
+__git_complete gco _git_checkout
 alias gcom='git checkout master'
 alias gd='git diff'
 alias gdc='git diff --cached'
