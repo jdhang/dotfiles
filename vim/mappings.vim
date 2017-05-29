@@ -22,7 +22,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
 " create and open new file
-map <Leader>e :e <C-R>=escape(expand("%p:h"), ' ') . '/'<CR>
+map <Leader>e :e <C-R>=escape(expand("%:p:h"), ' ') . '/'<CR>
 
 " ctrl-a to select all
 nmap <Leader>a ggVG
