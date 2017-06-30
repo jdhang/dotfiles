@@ -34,6 +34,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'alvan/vim-closetag'
 
 " linting
 Plug 'w0rp/ale'

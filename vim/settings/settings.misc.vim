@@ -28,3 +28,7 @@ map <C-_> <plug>NERDCommenterToggle
 
 " neodark
 let g:neodark#background = '#151515'
+
+" vim-closetag
+let g:closetag_filenames = "*.xml,*.html,*.xhtml,*.phtml,*.php,*.js,*.jsx,*.hbs"
+au FileType xml,html,phtml,php,xhtml,js,jsx let b:delimitMate_matchpairs = "(:),[:],{:}"
