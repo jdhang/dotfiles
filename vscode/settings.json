@@ -2,19 +2,20 @@
   "http.proxyStrictSSL": false,
   // editor
   "editor.fontSize": 11,
-  // "editor.fontFamily": "Fira Mono",
-  "editor.fontFamily": "Roboto Mono",
+  // "editor.fontFamily": "Fira Mono for Powerline",
+  // "editor.fontFamily": "Roboto Mono",
   // "editor.fontFamily": "Menlo",
   "editor.rulers": [80],
   "editor.tabSize": 2,
   "editor.lineNumbers": "relative",
   // terminal
   // "terminal.integrated.shell.windows": "C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\powershell.exe",
-  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  // "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
   "terminal.integrated.fontSize": 12,
+  "terminal.integrated.fontFamily": "Inconsolata for Powerline",
   // workbench
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "IR_Black",
+  "workbench.colorTheme": "One Dark Pro Vivid",
   "workbench.welcome.enabled": false,
   // search
   "search.exclude": {
@@ -49,4 +50,5 @@
   "vsicons.projectDetection.disableDetect": true,
   "vsicons.dontShowNewVersionMessage": true,
   "material-icon-theme.showUpdateMessage": false,
+  "vim.disableAnnoyingNeovimMessage": true,
 }

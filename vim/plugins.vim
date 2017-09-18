@@ -26,6 +26,7 @@ Plug 'jdhang/vim-mustache-handlebars'
 
 " dir
 Plug 'tpope/vim-vinegar'
+Plug 'pbrisbin/vim-mkdir'
 
 " movement
 Plug 'justinmk/vim-sneak'
