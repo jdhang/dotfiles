@@ -30,7 +30,7 @@
 [include]
   path = ~/.gitconfig.local
 [user]
-	email = dev.jdhang@gmail.com
+	email = jason.hang@fareportal.com
 	name = Jason Hang
 [filter "lfs"]
 	clean = git-lfs clean %f

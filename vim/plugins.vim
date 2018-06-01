@@ -12,6 +12,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'scrooloose/nerdcommenter'
 Plug 'jeetsukumaran/vim-buffergator'
+Plug 'nathanaelkane/vim-indent-guides'
 
 " status lines
 Plug 'vim-airline/vim-airline'
@@ -33,6 +34,7 @@ Plug 'justinmk/vim-sneak'
 
 " autocomplete
 Plug 'Raimondi/delimitMate'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'alvan/vim-closetag'

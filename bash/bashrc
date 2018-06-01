@@ -1,3 +1,4 @@
+# initialize with git-prompt
 source ~/.dotfiles/bash/git-prompt.sh
 
 # bash completion
@@ -27,4 +28,5 @@ export EDITOR='nvim'
 source ~/.dotfiles/bash/aliases
 
 # prompt config
-export PS1="\[$BOLD\]\[$CYAN\]\[\w\] \`git_prompt\` \`node_prompt\`\[\n\]\[$BOLD$GREEN\]\[\$\]\[$RESET\] "
+# export PS1="\[$BOLD\]\[$CYAN\]\[\w\] \`git_prompt\` \`node_prompt\`\[\n\]\[$BOLD$GREEN\]\[\$\]\[$RESET\] "
+export PS1="\[$BOLD\]\[$BLUE\]\[\w\] \`git_prompt\` \`node_prompt\`\[\n\]\[$BOLD$GREEN\]\[>\]\[$RESET\] "
