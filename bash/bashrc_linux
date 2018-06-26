@@ -33,4 +33,4 @@ source ~/.dotfiles/bash/aliases
 
 # prompt config
 # export PS1="\[$BOLD\]\[$CYAN\]\[\w\] \`git_prompt\` \`node_prompt\`\[\n\]\[$BOLD$GREEN\]\[\$\]\[$RESET\] "
-export PS1="\[$BOLD\]\[$BLUE\]\[\u\]\[$YELLOW\]@\[$RESET\]\[$RED\]\[\h\]\[$RESET\] \[$BOLD\]| \[$BLUE\]\[\w\] \`git_prompt\` \`node_prompt\`\[\n\]\[$BOLD$GREEN\]\[>\]\[$RESET\] "
+export PS1="\[$BLUE\]\[\u\]\[$RESET$BOLD\] at \[$RESET\]\[$RED\]\[\h\]\[$RESET\]\[$BOLD\] in \[$BLUE\]\[\w\] \`git_prompt\` \`node_prompt\`\[\n\]\[$BOLD$GREEN\]\[>\]\[$RESET\] "
