@@ -1,0 +1,36 @@
+# fix sed issue
+export LC_CTYPE=C
+export LANG=C
+
+# initialize with git-prompt
+source ~/.dotfiles/bash/git-prompt.sh
+
+# bash completion
+[ -f /usr/share/bash-completion ] && . /usr/share/bash-completion
+bind 'set completion-ignore-case on'
+bind TAB:menu-complete
+
+# user configuration
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# postgres path
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+# heroku path
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# node path
+export PATH="$HOME/.node/bin:$PATH"
+
+# pyenv init
+#eval "$(pyenv init -)"
+
+# default editor
+export EDITOR='vim'
+
+# import aliases
+source ~/.dotfiles/bash/aliases
+
+# prompt config
+# export PS1="\[$BOLD\]\[$CYAN\]\[\w\] \`git_prompt\` \`node_prompt\`\[\n\]\[$BOLD$GREEN\]\[\$\]\[$RESET\] "
+export PS1="\[$BOLD\]\[$BLUE\]\[\u\]\[$YELLOW\]@\[$RESET\]\[$RED\]\[\h\]\[$RESET\] \[$BOLD\]| \[$BLUE\]\[\w\] \`git_prompt\` \`node_prompt\`\[\n\]\[$BOLD$GREEN\]\[>\]\[$RESET\] "
