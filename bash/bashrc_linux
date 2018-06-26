@@ -29,7 +29,7 @@ export PATH="$HOME/.node/bin:$PATH"
 export EDITOR='vim'
 
 # import aliases
-source ~/.dotfiles/bash/aliases
+source ~/.dotfiles/bash/aliases_linux
 
 # prompt config
 # export PS1="\[$BOLD\]\[$CYAN\]\[\w\] \`git_prompt\` \`node_prompt\`\[\n\]\[$BOLD$GREEN\]\[\$\]\[$RESET\] "

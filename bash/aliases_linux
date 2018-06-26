@@ -1,0 +1,150 @@
+# editor
+alias nv='nvim'
+alias a='atom'
+alias v='vim'
+alias vi='vim'
+alias m='mvim'
+
+# shortcuts
+alias c='clear'
+alias ls="ls -GFh"
+alias lsa='ls -al'
+alias :q='exit'
+alias :Q='exit'
+alias u='cd ..'
+alias get='sudo apt-get install'
+alias brup='brew update && brew upgrade && brew cleanup && brew prune'
+# alias -g G='| grep'
+# alias -g M='| more'
+
+# config files
+alias brc='$EDITOR ~/.bashrc'
+alias zrc='$EDITOR ~/.zshrc'
+alias zal='$EDITOR ~/.dotfiles/zsh/aliases'
+alias bal='$EDITOR ~/.dotfiles/bash/aliases'
+alias gitprompt='$EDITOR ~/.dotfiles/bash/git-prompt.sh'
+alias tmco='$EDITOR ~/.dotfiles/tmux/tmux.conf'
+alias vrc='$EDITOR ~/.dotfiles/vim/vimrc'
+alias vmap='$EDITOR ~/.dotfiles/vim/mappings.vim'
+alias vplug='$EDITOR ~/.dotfiles/vim/plugins.vim'
+alias vset='$EDITOR ~/.dotfiles/vim/settings.vim'
+
+# reload config files
+alias sbrc="source ~/.bashrc"
+alias szrc="source ~/.zshrc"
+
+# folders
+alias d='cd ~/.dotfiles'
+alias dr='cd ~/dropbox'
+alias projs='cd ~/dropbox/prog/js/projects'
+alias testjs='cd ~/dropbox/prog/js/test_env'
+alias cw='cd ~/dropbox/prog/js/codewars'
+
+# projects
+alias crop='cd ~/Desktop/craftops/craftops-redux'
+alias wolf='cd ~/Desktop/wolfui/wolfui'
+
+# tmux
+alias tmux='TERM=screen-256color-bce tmux'
+alias tls='tmux list-sessions'
+alias tns='tmux new -s '
+alias tat='tmux attach -t '
+
+# ember
+alias ese='ember serve'
+
+# docker
+alias drmx='docker ps -aq --no-trunc | xargs docker rm'
+alias dps='docker ps -a'
+alias di='docker images'
+alias drmi='docker rmi'
+alias drm='docker rm'
+alias dc='docker-compose'
+alias dcu='docker-compose up -d'
+
+# git
+alias g='git'
+# __git_complete g __git_main
+alias ga='git add'
+#__git_complete ga _git_add
+alias gaa='git add --all .'
+alias gb='git branch'
+# __git_complete gb _git_branch
+alias gba='git branch -a'
+alias gbc='gdc'
+alias gbd='git branch -d'
+alias gbD='git branch -D'
+alias gbv='git branch -v'
+alias gca='git commit -a'
+alias gcaa='git commit -a --amend -C HEAD'
+alias gcl='git clone'
+alias gcm="git commit -m"
+alias gcb='git checkout -b'
+alias gco='git checkout'
+# __git_complete gco _git_checkout
+alias gcom='git checkout master'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gdm='git diff master'
+alias gg='git lg'
+alias gl='git log'
+alias gm='git merge'
+alias gmm='git merge master'
+alias gmmff='git merge master --no-ff'
+alias gp='git push'
+alias gpf='git push -f'
+alias gpr='git pull --rebase'
+alias gpuo='git push --set-upstream origin'
+alias gpush='echo "Use gp!" && git push'
+alias grc='git rebase --continue'
+alias gs='git status'
+alias gsb='git show-branch'
+
+alias repush="gpr && git push"
+alias review="git diff master"
+alias squash='git rebase -i master'
+alias stage='git push staging head:master && staging open'
+alias track='git checkout -t'
+
+# heroku
+alias herkou='heroku'
+alias hpr='hub pull-request'
+alias hpush='git push heroku'
+alias hlogs='heroku logs'
+alias hltail='heroku logs --tail'
+alias hpsql='heroku pg:psql'
+alias tail-logs='heroku logs -t'
+
+# typos
+alias mastre='master'
+
+# ssh
+alias sshpi='ssh jdhang@192.168.1.108 -p 4022'
+alias sshpc='ssh pewtercity'
+alias sshdo='ssh jdhang@159.203.97.188'
+alias sftpdo='sftp jdhang@159.203.97.188'
+
+# react native
+alias rn='react-native'
+alias rnios='react-native run-ios'
+alias rnand='react-native run-android'
+
+# fullstack
+alias fs=' cd ~/dropbox/prog/js/fullstack'
+alias ff=' cd ~/dropbox/prog/js/fullstack/foundations'
+alias fst=' cd ~/dropbox/prog/js/fullstack/foundations/FullstackTestFirst'
+alias fs1='cd ~/dropbox/prog/js/fullstack/week1'
+alias fs2='cd ~/dropbox/prog/js/fullstack/week2'
+alias fs3='cd ~/dropbox/prog/js/fullstack/week3'
+alias fs4='cd ~/dropbox/prog/js/fullstack/week4'
+alias fs5='cd ~/dropbox/prog/js/fullstack/week5'
+alias fs6='cd ~/dropbox/prog/js/fullstack/week6'
+alias fsl='cd ~/dropbox/prog/js/fullstack/1604-Library'
+alias ld='cd ~/Desktop/learndot/newlearn'
+alias ldt='cd ~/Desktop/learndot/newlearn && tmux new -s learndot'
+
+# misc
+alias pc='production-console'
+alias sc='staging-console'
+alias sp='safepush'
+
