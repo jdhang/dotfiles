@@ -23,7 +23,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="$HOME/.node/bin:$PATH"
 
 # pyenv init
-#eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 
 # default editor
 export EDITOR='vim'
