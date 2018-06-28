@@ -144,6 +144,9 @@ alias fsl='cd ~/dropbox/prog/js/fullstack/1604-Library'
 alias ld='cd ~/Desktop/learndot/newlearn'
 alias ldt='cd ~/Desktop/learndot/newlearn && tmux new -s learndot'
 
+# raspberry pi
+alias temp='/opt/vc/bin/vcgencmd measure_temp'
+
 # misc
 alias pc='production-console'
 alias sc='staging-console'
