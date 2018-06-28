@@ -30,6 +30,7 @@ alias vrc='$EDITOR ~/.dotfiles/vim/vimrc'
 alias vmap='$EDITOR ~/.dotfiles/vim/mappings.vim'
 alias vplug='$EDITOR ~/.dotfiles/vim/plugins.vim'
 alias vset='$EDITOR ~/.dotfiles/vim/settings.vim'
+alias hosts='sudo $EDITOR /etc/hosts'
 
 # reload config files
 alias sbrc="source ~/.bashrc"

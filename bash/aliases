@@ -1,4 +1,4 @@
-source ./aliases_linux
+source ~/.dotfiles/bash/aliases_linux
 
 # git
 __git_complete g __git_main
