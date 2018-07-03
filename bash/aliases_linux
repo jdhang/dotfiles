@@ -1,6 +1,5 @@
 # editor
 alias nv='nvim'
-alias n='nvim'
 alias a='atom'
 alias v='vim'
 alias vi='vim'
