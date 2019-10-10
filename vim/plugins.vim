@@ -34,7 +34,7 @@ Plug 'justinmk/vim-sneak'
 
 " autocomplete
 Plug 'Raimondi/delimitMate'
-" Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'alvan/vim-closetag'

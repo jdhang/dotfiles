@@ -13,6 +13,7 @@ let g:neodark#background = '#121212'
 syntax enable
 
 " file settings
+ filetype plugin indent on
 set autoread
 set path+=**
 set wildmode=longest,list
