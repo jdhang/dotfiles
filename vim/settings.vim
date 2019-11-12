@@ -1,19 +1,19 @@
 " color schemes
 set background=dark
-" set t_Co=256
+set t_Co=256
 " colorscheme cookie
 " colorscheme grb256
-" colorscheme spacegray
+ colorscheme spacegray
 " colorscheme base16-jason
 " colorscheme base16-ashes
 " colorscheme base16-chalk
 " colorscheme base16-jasonV2
-colorscheme neodark
-let g:neodark#background = '#121212'
+" colorscheme neodark
+" let g:neodark#background = '#121212'
 syntax enable
 
 " file settings
- filetype plugin indent on
+filetype plugin indent on
 set autoread
 set path+=**
 set wildmode=longest,list
@@ -27,7 +27,9 @@ set nolazyredraw
 set ruler
 set number relativenumber
 set numberwidth=3
-set colorcolumn=80
+set colorcolumn=100
+
+set laststatus=2
 
 " backup settings
 set nobackup
