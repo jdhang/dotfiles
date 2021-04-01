@@ -1,13 +1,13 @@
 if &compatible | set nocompatible | endif
 
 " NeoVIM support
-"if has('nvim')
-"  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-"  set viminfo+=n~/.vim/nviminfo
-"else
-"  set viminfo+=n~/.vim/nviminfo
-"endif
+if has('nvim')
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+  set viminfo+=n~/.vim/nviminfo
+else
+  set viminfo+=n~/.vim/nviminfo
+endif
 
 if has('termguicolors')
   set termguicolors
