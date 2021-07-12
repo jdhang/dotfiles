@@ -47,7 +47,7 @@ alias crop='cd ~/Desktop/craftops/craftops-redux'
 alias wolf='cd ~/Desktop/wolfui/wolfui'
 
 # propensely
-alias prop='cd ~/Documents/code/propensely'
+alias prop='cd ~/code/propensely'
 
 # tmux
 alias tmux='TERM=screen-256color-bce tmux'

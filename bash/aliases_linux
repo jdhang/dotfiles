@@ -204,3 +204,6 @@ alias kcln='kubectl logs -n'
 alias kccv='kubectl config view'
 alias ka='sudo kubeadm'
 alias kl='kubelet'
+
+# rpi
+alias temp='vcgencmd measure_temp'
