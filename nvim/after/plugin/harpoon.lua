@@ -1,0 +1,5 @@
+vim.keymap.set('n', '<leader>ha', require('harpoon.mark').add_file, { desc = '[H]arpoon - [A]dd file' })
+vim.keymap.set('n', '<leader>hr', require('harpoon.mark').rm_file, { desc = '[H]arpoon - [R]emove file' })
+vim.keymap.set('n', '<leader>hn', require('harpoon.ui').nav_next, { desc = '[H]arpoon - [N]ext file' })
+vim.keymap.set('n', '<leader>hm', require('harpoon.ui').nav_prev, { desc = '[H]arpoon - [P]revious file' })
+vim.keymap.set('n', '<leader>hf', '<Cmd>Telescope harpoon marks<CR>', { desc = '[H]arpoon - [F]ind files' })
