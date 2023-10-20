@@ -39,25 +39,35 @@ require('lazy').setup({
 
   { 'folke/zen-mode.nvim',  opts = {} },
 
+  {
+    'folke/trouble.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    opts = {},
+  },
+
   { 'theprimeagen/harpoon',  opts = {} },
 
   {
     'windwp/nvim-autopairs',
     opts = {
-      disable_filetype = { "TelescopePrompt" , "vim" },
+      disable_filetype = { 'TelescopePrompt' , 'vim' },
     }
   },
   { 'windwp/nvim-ts-autotag', opts = {} },
+
+  -- Folding
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = { 'kevinhwang91/promise-async' },
+    opts = {},
+  },
 
   -- Add indentation guides even on blank lines
   {
     'lukas-reineke/indent-blankline.nvim',
     main = "ibl",
     opts = {
-      indent = {
-        highlight = { 'VertSplit' },
-        char = '│',
-      }
+
     },
   },
 
