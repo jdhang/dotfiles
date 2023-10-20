@@ -22,22 +22,22 @@ require('lazy').setup({
 
   {
     'rose-pine/neovim',
-    config = function()end,
+    config = function() end,
     opts = {
       disable_background = true,
     }
   },
 
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',     opts = {} },
 
   { 'nvim-lualine/lualine.nvim', opts = {} },
 
-  { 'lewis6991/gitsigns.nvim', opts = {} },
+  { 'lewis6991/gitsigns.nvim',   opts = {} },
 
-    -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim', opts = {} },
+  -- Useful plugin to show you pending keybinds.
+  { 'folke/which-key.nvim',      opts = {} },
 
-  { 'folke/zen-mode.nvim',  opts = {} },
+  { 'folke/zen-mode.nvim',       opts = {} },
 
   {
     'folke/trouble.nvim',
@@ -45,12 +45,12 @@ require('lazy').setup({
     opts = {},
   },
 
-  { 'theprimeagen/harpoon',  opts = {} },
+  { 'theprimeagen/harpoon',   opts = {} },
 
   {
     'windwp/nvim-autopairs',
     opts = {
-      disable_filetype = { 'TelescopePrompt' , 'vim' },
+      disable_filetype = { 'TelescopePrompt', 'vim' },
     }
   },
   { 'windwp/nvim-ts-autotag', opts = {} },
@@ -66,9 +66,7 @@ require('lazy').setup({
   {
     'lukas-reineke/indent-blankline.nvim',
     main = "ibl",
-    opts = {
-
-    },
+    opts = {},
   },
 
   -- Surround selection
@@ -77,9 +75,7 @@ require('lazy').setup({
     version = '*', -- Use for stability; omit to use `main` branch for the latest features
     event = 'VeryLazy',
     config = function()
-      require('nvim-surround').setup({
-        -- Configuration here, or leave empty to use defaults
-      })
+      require('nvim-surround').setup()
     end
   },
 
@@ -117,7 +113,7 @@ require('lazy').setup({
   { 'nvim-treesitter/nvim-treesitter-context', opts = {} },
   {
     'nvim-treesitter/playground',
-    config = function()end,
+    config = function() end,
     opts = {}
   },
 
@@ -138,13 +134,13 @@ require('lazy').setup({
 
       -- Useful status updates for LSP
       -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+      { 'j-hui/fidget.nvim',       tag = 'legacy', opts = {} },
 
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
 
       -- null-ls for prettier
-      'jose-elias-alvarez/null-ls.nvim'
+      -- 'jose-elias-alvarez/null-ls.nvim'
     },
   },
 
