@@ -20,18 +20,34 @@ require('lazy').setup({
 
   'nvim-lua/plenary.nvim',
 
-  'rose-pine/neovim',
+  {
+    'rose-pine/neovim',
+    config = function()end,
+    opts = {
+      disable_background = true,
+    }
+  },
 
   { 'numToStr/Comment.nvim', opts = {} },
 
   { 'nvim-lualine/lualine.nvim', opts = {} },
 
+  { 'lewis6991/gitsigns.nvim', opts = {} },
+
+    -- Useful plugin to show you pending keybinds.
+  { 'folke/which-key.nvim', opts = {} },
+
   { 'folke/zen-mode.nvim',  opts = {} },
 
   { 'theprimeagen/harpoon',  opts = {} },
 
-  { 'windwp/nvim-autopairs', opts = {} },
-  -- { 'windwp/nvim-ts-autotag', opts = {} },
+  {
+    'windwp/nvim-autopairs',
+    opts = {
+      disable_filetype = { "TelescopePrompt" , "vim" },
+    }
+  },
+  { 'windwp/nvim-ts-autotag', opts = {} },
 
   -- Add indentation guides even on blank lines
   {
@@ -45,13 +61,13 @@ require('lazy').setup({
     },
   },
 
-  -- surround selection
+  -- Surround selection
   {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
+    'kylechui/nvim-surround',
+    version = '*', -- Use for stability; omit to use `main` branch for the latest features
+    event = 'VeryLazy',
     config = function()
-      require("nvim-surround").setup({
+      require('nvim-surround').setup({
         -- Configuration here, or leave empty to use defaults
       })
     end
@@ -93,6 +109,13 @@ require('lazy').setup({
     'nvim-treesitter/playground',
     config = function()end,
     opts = {}
+  },
+
+  -- Typescript integration
+  {
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    opts = {},
   },
 
   -- LSP Configuration & Plugins
