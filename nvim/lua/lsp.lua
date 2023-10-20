@@ -52,7 +52,8 @@ local servers = {
   -- rust_analyzer = {},
   eslint = {},
   -- tsserver = {},
-  -- html = { filetypes = { 'html', 'twig', 'hbs' } },
+  html = { filetypes = { 'html', 'twig', 'hbs' } },
+  -- htmx = {},
 
   lua_ls = {
     Lua = {
@@ -71,8 +72,8 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- for folding
 capabilities.textDocument.foldingRange = {
-    dynamicRegistration = false,
-    lineFoldingOnly = true
+  dynamicRegistration = false,
+  lineFoldingOnly = true
 }
 
 mason_lspconfig.setup {

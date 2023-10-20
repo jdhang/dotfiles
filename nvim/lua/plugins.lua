@@ -163,4 +163,7 @@ require('lazy').setup({
       'rafamadriz/friendly-snippets',
     },
   },
+
+  -- Custom plugins
+  require('kickstart.plugins.autoformat'),
 })
