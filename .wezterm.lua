@@ -16,6 +16,37 @@ config.font = wezterm.font_with_fallback {
   },
   'PingFang SC',
 }
+config.font_rules = {
+  {
+    intensity = 'Bold',
+    italic = true,
+    font = wezterm.font {
+      family = 'JetBrainsMono Nerd Font Mono',
+      italic = false,
+      style = 'Normal',
+      weight = 'Bold',
+    }
+  },
+  {
+    intensity = 'Half',
+    italic = true,
+    font = wezterm.font {
+      family = 'JetBrainsMono Nerd Font Mono',
+      italic = false,
+      style = 'Normal',
+      weight = 'ExtraLight',
+    }
+  },
+  {
+    intensity = 'Normal',
+    italic = true,
+    font = wezterm.font {
+      family = 'JetBrainsMono Nerd Font Mono',
+      italic = false,
+      style = 'Normal',
+    }
+  }
+}
 config.font_size = 13.0
 
 -- color scheme
