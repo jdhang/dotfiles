@@ -1,8 +1,58 @@
-set -g theme_nerd_fonts yesA
+# add homebrew path
+fish_add_path /opt/homebrew/bin
 
+set -g theme_nerd_fonts yes
+
+set -x LANG en_US.UTF-8
 set -x EDITOR "nvim"
 
+# ALIASES
+# general
+alias ..='cd ..'
+alias c='clear'
 alias nv='nvim'
+alias cfish='$EDITOR ~/.config/fish/config.fish'
+alias sfish='source ~/.config/fish/config.fish'
+
+# git
+alias g='git'
+alias ga='git add'
+alias gaa='git add .'
+alias gbd='git branch -d'
+alias gbD='git branch -D'
+alias gs='git status'
+alias gco='git checkout'
+alias gcb='git checkout -b'
+alias gd='git diff'
+alias gdmc='git diff --name-only --diff-filter=U --relative'
+alias gpuo='git push -u origin'
+alias gp='git pull'
+alias gpy='git pull && yarn'
+alias gP='git push'
+
+# tmux
+alias ta='tmux attach -t'
+alias tad='tmux attach -d t'
+alias tn='tmux new -s'
+alias tk='tmux kill-server'
+alias tkt='tmux kill-server -t'
+alias ts='tmux-sessionizer\n'
+
+# code shortcuts
+alias wp='cd ~/src/apps/web-portal'
+alias wl='cd ~/src/apps/legacy'
+alias inv='cd ~/src/apps/app-inventory'
+alias ivc='cd ~/src/apps/web-app-invoices'
+alias sa='cd ~/src/apps/web-app-sales-activity'
+alias as='cd ~/src/apps/web-app-account-and-setup'
+alias vr='cd ~/src/apps/web-app-virtual-terminal'
+alias calc='cd ~/src/libs/calc'
+alias cos='cd ~/src/apps/server'
+
+# functions
+function clean
+  git reset --soft HEAD~$argv[1]
+end
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
