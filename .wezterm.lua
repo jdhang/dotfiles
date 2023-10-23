@@ -9,8 +9,7 @@ end
 -- fonts
 config.font = wezterm.font_with_fallback {
   {
-
-    family = 'JetBrainsMono Nerd Font Mono',
+    family = 'JetBrainsMono Nerd Font',
     italic = false,
     style = 'Normal',
     harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
@@ -20,10 +19,7 @@ config.font = wezterm.font_with_fallback {
 config.font_size = 13.0
 
 -- color scheme
--- config.color_scheme = 'Pastel White (terminal.sexy)'
--- config.color_scheme = 'Dark Pastel (Gogh)'
 config.color_scheme = 'Builtin Pastel Dark'
-
 
 -- enable scrollbar
 config.enable_scroll_bar = true
