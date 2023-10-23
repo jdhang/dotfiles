@@ -9,7 +9,7 @@ end
 -- fonts
 config.font = wezterm.font_with_fallback {
   {
-    family = 'JetBrainsMono Nerd Font',
+    family = 'JetBrainsMono Nerd Font Mono',
     italic = false,
     style = 'Normal',
     harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
