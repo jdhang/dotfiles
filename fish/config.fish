@@ -52,6 +52,9 @@ alias vr='cd ~/src/apps/web-app-virtual-terminal'
 alias calc='cd ~/src/libs/calc'
 alias cos='cd ~/src/apps/server'
 
+# config shortcuts
+alias d='cd $HOME/.dotfiles'
+
 # functions
 function clean
   git reset --soft HEAD~$argv[1]
