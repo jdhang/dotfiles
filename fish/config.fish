@@ -36,6 +36,7 @@ alias gs='git status'
 # tmux
 alias ta='tmux attach -t'
 alias tad='tmux attach -d t'
+alias tl='tmux list-session'
 alias tn='tmux new -s'
 alias tk='tmux kill-server'
 alias tkt='tmux kill-server -t'

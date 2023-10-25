@@ -45,7 +45,11 @@ require('lazy').setup({
     opts = {},
   },
 
-  { 'theprimeagen/harpoon',   opts = {} },
+  {
+    'theprimeagen/harpoon',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = {},
+  },
 
   {
     'windwp/nvim-autopairs',
@@ -53,7 +57,8 @@ require('lazy').setup({
       disable_filetype = { 'TelescopePrompt', 'vim' },
     }
   },
-  { 'windwp/nvim-ts-autotag', opts = {} },
+
+  { 'windwp/nvim-ts-autotag',                  opts = {} },
 
   -- Folding
   {
@@ -105,7 +110,12 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
-      'JoosepAlviste/nvim-ts-context-commentstring',
+      {
+        'JoosepAlviste/nvim-ts-context-commentstring',
+        config = function()
+          require('ts_context_commentstring').setup {}
+        end
+      },
     },
     build = ':TSUpdate',
   },

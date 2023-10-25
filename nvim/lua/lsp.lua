@@ -6,7 +6,7 @@ if not (mason_status_ok and mason_lspconfig_ok) then
   return
 end
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
   -- In this case, we create a function that lets us more easily define mappings specific
   -- for LSP related items. It sets the mode, buffer and description for us each time.
   local nmap = function(keys, func, desc)
@@ -44,17 +44,30 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
+
+  -- Add custom autoformat and save for eslint
+  if client.name == 'eslint' then
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end
 end
 
 local servers = {
-  -- clangd = {},
   -- gopls = {},
-  -- pyright = {},
   -- rust_analyzer = {},
+  -- jedi_language_server = {},
+  -- pyls = {},
+  -- pyright = {},
   eslint = {},
-  -- tsserver = {},
+  tsserver = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
   -- htmx = {},
+  -- cssls = {},
+  -- tailwindcss = {},
+  -- kotlin_language_server = {},
+  -- java_language_server = {},
 
   lua_ls = {
     Lua = {
