@@ -7,14 +7,14 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- theprimeagen remaps
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv") -- move highlighted text up
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv") -- move highlighted text down
 
-vim.keymap.set('n', 'J', 'mzJ`z')
-vim.keymap.set('n', '<C-d>', '<C-d>zz')
-vim.keymap.set('n', '<C-u>', '<C-u>zz')
-vim.keymap.set('n', 'n', 'nzzzv')
-vim.keymap.set('n', 'N', 'Nzzzv')
+vim.keymap.set('n', 'J', 'mzJ`z')            -- move below line to current line
+vim.keymap.set('n', '<C-d>', '<C-d>zz')      -- center page down
+vim.keymap.set('n', '<C-u>', '<C-u>zz')      -- center page up
+vim.keymap.set('n', 'n', 'nzzzv')            -- center forwards search
+vim.keymap.set('n', 'N', 'Nzzzv')            -- center backwards search
 
 -- greatest remap ever
 vim.keymap.set('x', '<leader>p', [["_dP]])
@@ -24,14 +24,15 @@ vim.keymap.set('n', '<leader>Y', [["+Y]])
 
 vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
 
+-- disable
+vim.keymap.set('n', 'q:', '<nop>')
 vim.keymap.set('n', 'Q', '<nop>')
+
 vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
 
 -- format
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = '[F]ormat file' })
--- vim.keymap.set('n', '<leader>ff', '<cmd>silent %!prettierd --stdin-filepath %<CR>')
--- vim.keymap.set('n', '<leader>fw', '<cmd>silent %!prettierd --stdin-filepath %<CR><cmd>write<CR>', { desc = '[F]ormat and [W]rite file' })
-vim.keymap.set('n', '<leader>fw', '<cmd>EslintFixAll<CR><cmd>write<CR>', { desc = '[F]ormat and [W]rite file' })
+-- vim.keymap.set('n', '<leader>fw', '<cmd>EslintFixAll<CR><cmd>write<CR>', { desc = '[F]ormat and [W]rite file' })
 
 -- don't yank on x
 vim.keymap.set('n', 'x', '"_x')
@@ -46,8 +47,20 @@ vim.keymap.set('n', 'sv', ':vsplit<CR><C-w>w')
 -- buffer delete
 vim.keymap.set('n', 'bd', ':bd<CR>')
 
+-- buffer movement
+vim.keymap.set('n', "[b", "<cmd>bprevious<CR>", { silent = true })
+vim.keymap.set('n', "]b", "<cmd>bnext<CR>", { silent = true })
+vim.keymap.set('n', "[B", "<cmd>bfirst<CR>", { silent = true })
+vim.keymap.set('n', "]B", "<cmd>blast<CR>", { silent = true })
+
+-- write hotkey
+vim.keymap.set('n', '<leader>w', '<cmd>w<CR>')
+
 -- close window
-vim.keymap.set('n', 'cw', ':close<CR>')
+vim.keymap.set('n', '<leader>c', '<cmd>close<CR>')
+
+-- close panel hotkey
+vim.keymap.set('n', '<leader>wq', '<cmd>wq<CR>')
 
 -- delete word backwards
 vim.keymap.set('n', 'dw', 'vb"_d')

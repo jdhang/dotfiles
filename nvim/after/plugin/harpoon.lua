@@ -1,3 +1,9 @@
+require('harpoon').setup {
+  menu = {
+    width = vim.api.nvim_win_get_width(0) - 4,
+  }
+}
+
 vim.keymap.set('n', '<leader>ha', require('harpoon.mark').add_file, { desc = '[H]arpoon - [A]dd file' })
 vim.keymap.set('n', '<leader>hr', require('harpoon.mark').rm_file, { desc = '[H]arpoon - [R]emove file' })
 vim.keymap.set('n', '<leader>hm', require('harpoon.ui').toggle_quick_menu, { desc = '[H]arpoon - [M]enu' })

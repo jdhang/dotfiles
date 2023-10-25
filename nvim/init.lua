@@ -1,3 +1,4 @@
+require('au')
 require('set')
 require('highlights')
 require('maps')
