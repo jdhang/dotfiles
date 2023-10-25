@@ -6,7 +6,6 @@ vim.defer_fn(function()
     return
   end
 
-
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = {
@@ -87,4 +86,8 @@ vim.defer_fn(function()
       },
     },
   }
+
+  vim.keymap.set('n', '[c', function()
+    require("treesitter-context").go_to_context()
+  end, { silent = true })
 end, 0)

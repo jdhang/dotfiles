@@ -1,4 +1,4 @@
-local telescope_ok, telescope = pcall(require, 'telescope')
+local telescope_ok = pcall(require, 'telescope')
 
 if not telescope_ok then
   print('telescope is not installed!')
@@ -7,6 +7,7 @@ end
 
 require('telescope').setup {
   defaults = {
+    layout_strategy = 'vertical',
     mappings = {
       i = {
         ['<C-u>'] = false,
@@ -38,4 +39,6 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
-vim.keymap.set('n', '<C-p>', require('telescope.builtin').git_files, { desc = 'Search Git Files' })
+vim.keymap.set('n', '<C-p>', function()
+  require('telescope.builtin').git_files(require('telescope.themes').get_dropdown({ winblend = 10 }))
+end, { desc = 'Search [G]it [F]iles - Dropdown' })
