@@ -1,3 +1,10 @@
+local ts_tools_ok = pcall(require, 'typescript-tools')
+
+if not ts_tools_ok then
+  print('typescript-tools is not installed!')
+  return
+end
+
 require('typescript-tools').setup {
   settings = {
     expose_as_code_actions = {

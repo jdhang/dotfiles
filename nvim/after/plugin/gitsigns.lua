@@ -1,4 +1,11 @@
-require('gitsigns').setup {
+local gitsigns_ok, gitsigns = pcall(require, 'gitsigns')
+
+if not gitsigns_ok then
+  print('gitsigns not installed!')
+  return
+end
+
+gitsigns.setup {
   signs = {
     add = { text = '+' },
     change = { text = '~' },

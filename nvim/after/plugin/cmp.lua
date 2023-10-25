@@ -1,5 +1,11 @@
-local cmp = require 'cmp'
-local luasnip = require 'luasnip'
+local cmp_ok, cmp = pcall(require, 'cmp')
+local luasnip_ok, luasnip = pcall(require, 'luasnip')
+
+if not (cmp_ok and luasnip_ok) then
+  print('cmp and/or luasnip not installed!')
+  return
+end
+
 require('luasnip.loaders.from_vscode').lazy_load()
 luasnip.config.setup {}
 

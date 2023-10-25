@@ -1,3 +1,10 @@
+local zen_mode_ok = pcall(require, 'zen-mode')
+
+if not zen_mode_ok then
+  print('zen-mode is not installed!')
+  return
+end
+
 vim.keymap.set("n", "<leader>zz", function()
   require("zen-mode").setup {
     window = {

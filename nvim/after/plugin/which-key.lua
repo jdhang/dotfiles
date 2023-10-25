@@ -1,3 +1,10 @@
+local which_key_ok = pcall(require, 'which-key')
+
+if not which_key_ok then
+  print('which-key is not installed!')
+  return
+end
+
 -- document existing key chains
 require('which-key').register({
   ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },

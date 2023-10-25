@@ -1,3 +1,10 @@
+local telescope_ok, telescope = pcall(require, 'telescope')
+
+if not telescope_ok then
+  print('telescope is not installed!')
+  return
+end
+
 require('telescope').setup {
   defaults = {
     mappings = {

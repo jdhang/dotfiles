@@ -1,4 +1,12 @@
 vim.defer_fn(function()
+  local ts_ok = pcall(require, 'nvim-treesitter')
+
+  if not ts_ok then
+    print('nvim-treesitter is not installed!')
+    return
+  end
+
+
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
     ensure_installed = {
@@ -9,11 +17,12 @@ vim.defer_fn(function()
       'javascript',
       'json',
       'lua',
+      -- 'markdown',
       'python',
       'rust',
       'tsx',
       'typescript',
-      -- 'vimdoc'
+      'vimdoc'
     },
 
     -- Install parses synchronously (only applied to `ensure_installed`)

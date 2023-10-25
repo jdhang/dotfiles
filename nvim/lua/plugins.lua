@@ -113,7 +113,7 @@ require('lazy').setup({
       {
         'JoosepAlviste/nvim-ts-context-commentstring',
         config = function()
-          require('ts_context_commentstring').setup {}
+          require('ts_context_commentstring').setup({})
         end
       },
     },
@@ -153,8 +153,25 @@ require('lazy').setup({
       -- Additional lua configuration, makes nvim stuff amazing!
       'folke/neodev.nvim',
 
-      -- null-ls for prettier
+      -- null-ls
       -- 'jose-elias-alvarez/null-ls.nvim'
+    },
+  },
+
+  -- lspsaga for better lsp ui
+  {
+    'nvimdev/lspsaga.nvim',
+    event = 'BufRead',
+    config = function()
+      require('lspsaga').setup({
+        symbol_in_winbar = {
+          enable = false
+        },
+      })
+    end,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons'
     },
   },
 

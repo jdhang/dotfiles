@@ -1,3 +1,10 @@
+local trouble_ok = pcall(require, 'trouble')
+
+if not trouble_ok then
+  print('Trouble is not installed!')
+  return
+end
+
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set('n', '<leader>xx', function() require('trouble').toggle() end, opts)

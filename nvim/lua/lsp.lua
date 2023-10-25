@@ -1,4 +1,4 @@
-local mason_status_ok, mason = pcall(require, 'mason')
+local mason_status_ok = pcall(require, 'mason')
 local mason_lspconfig_ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
 
 if not (mason_status_ok and mason_lspconfig_ok) then
@@ -55,7 +55,8 @@ local on_attach = function(client, bufnr)
 end
 
 local servers = {
-  -- gopls = {},
+  gopls = {},
+  templ = {},
   -- rust_analyzer = {},
   -- jedi_language_server = {},
   -- pyls = {},
