@@ -18,12 +18,29 @@ require('lazy').setup({
 
   'mbbill/undotree',
 
+  -- colorschemes
   {
     'rose-pine/neovim',
+    priority = 1000,
     config = function() end,
     opts = {
       disable_background = true,
     }
+  },
+
+  {
+    'folke/tokyonight.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {}
+  },
+
+  {
+    'rebelot/kanagawa.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {}
+
   },
 
   { 'numToStr/Comment.nvim',     opts = {} },
@@ -155,23 +172,6 @@ require('lazy').setup({
       -- 'jose-elias-alvarez/null-ls.nvim'
     },
   },
-
-  -- lspsaga for better lsp ui
-  -- {
-  --   'nvimdev/lspsaga.nvim',
-  --   event = 'BufRead',
-  --   config = function()
-  --     require('lspsaga').setup({
-  --       symbol_in_winbar = {
-  --         enable = false
-  --       },
-  --     })
-  --   end,
-  --   dependencies = {
-  --     'nvim-treesitter/nvim-treesitter',
-  --     'nvim-tree/nvim-web-devicons'
-  --   },
-  -- },
 
   -- Autocompletion
   {
