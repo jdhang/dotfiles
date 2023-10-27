@@ -1,0 +1,28 @@
+format="""
+$time\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$package\
+$golang\
+$nodejs\
+$python\
+$rust\
+$conda\
+$gcloud\
+$line_break\
+$character"""
+
+[character]
+# success_symbol = '[➜](bold green)'
+# error_symbol = '[➜](bold red)'
+
+[directory]
+format = 'in [$path]($style)[$read_only]($read_only_style) '
+
+[time]
+disabled = false
+format = '[$time]($style) '

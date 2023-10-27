@@ -9,7 +9,7 @@ end
 -- fonts
 config.font = wezterm.font_with_fallback {
   {
-    family = 'JetBrainsMono Nerd Font Mono',
+    family = 'FiraCode Nerd Font Mono',
     italic = false,
     style = 'Normal',
     harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
@@ -21,7 +21,7 @@ config.font_rules = {
     intensity = 'Bold',
     italic = true,
     font = wezterm.font {
-      family = 'JetBrainsMono Nerd Font Mono',
+      family = 'FiraCode Nerd Font Mono',
       italic = false,
       style = 'Normal',
       weight = 'Bold',
@@ -31,7 +31,7 @@ config.font_rules = {
     intensity = 'Half',
     italic = true,
     font = wezterm.font {
-      family = 'JetBrainsMono Nerd Font Mono',
+      family = 'FiraCode Nerd Font Mono',
       italic = false,
       style = 'Normal',
       weight = 'ExtraLight',
@@ -41,7 +41,7 @@ config.font_rules = {
     intensity = 'Normal',
     italic = true,
     font = wezterm.font {
-      family = 'JetBrainsMono Nerd Font Mono',
+      family = 'FiraCode Nerd Font Mono',
       italic = false,
       style = 'Normal',
     }
