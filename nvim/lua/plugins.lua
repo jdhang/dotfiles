@@ -40,7 +40,14 @@ require('lazy').setup({
     lazy = false,
     priority = 1000,
     opts = {}
+  },
 
+  {
+    "catppuccin/nvim",
+    lazy = false,
+    name = "catppuccin",
+    priority = 1000,
+    opts = {}
   },
 
   { 'numToStr/Comment.nvim',     opts = {} },
