@@ -50,7 +50,7 @@ config.font_rules = {
 config.font_size = 13.0
 
 -- color scheme
-config.color_scheme = 'Builtin Pastel Dark'
+config.color_scheme = 'Catppuccin Mocha'
 
 -- enable scrollbar
 config.enable_scroll_bar = true
