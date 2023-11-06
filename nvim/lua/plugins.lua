@@ -200,6 +200,9 @@ require('lazy').setup({
     opts = {},
   },
 
+  -- copilot
+  'github/copilot.vim',
+
   -- Custom plugins
   require('kickstart.plugins.autoformat'),
 })
