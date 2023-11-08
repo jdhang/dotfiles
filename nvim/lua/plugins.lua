@@ -193,6 +193,18 @@ require('lazy').setup({
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-nvim-lua',
+      {
+        'tzachar/cmp-tabnine',
+        build = './install.sh',
+        opts = {
+          max_lines = 1000,
+          max_num_results = 3,
+          sort = true,
+        },
+        config = function(_, opts)
+          require("cmp_tabnine.config"):setup(opts)
+        end,
+      },
 
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
@@ -211,11 +223,10 @@ require('lazy').setup({
   'github/copilot.vim',
 
   -- tabnine
-  {
-    'codota/tabnine-nvim',
-    build = "./dl_binaries.sh"
-  },
-
+  -- {
+  --   'codota/tabnine-nvim',
+  --   build = "./dl_binaries.sh"
+  -- },
 
   -- Custom plugins
   require('kickstart.plugins.autoformat'),

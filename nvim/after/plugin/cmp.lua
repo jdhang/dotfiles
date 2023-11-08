@@ -46,15 +46,18 @@ cmp.setup {
   },
   formatting = {
     format = function(entry, vim_item)
+      print(entry.source.name)
       vim_item.menu = ({
         nvim_lsp = '[LSP]',
         luasnip = '[LuaSnip]',
-        buffer = '[Buffer]',
+        cmp_tabnine = '[Tabnine]',
         path = '[Path]',
+        buffer = '[Buffer]',
       })[entry.source.name]
       vim_item.dup = ({
         nvim_lsp = 0,
         luasnip = 0,
+        cmp_tabnine = 0,
         buffer = 1,
         path = 1,
       })[entry.source.name] or 0
@@ -64,6 +67,7 @@ cmp.setup {
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'cmp_tabnine' },
     { name = 'path' },
     { name = 'buffer' },
   }),
