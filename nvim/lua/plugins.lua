@@ -211,10 +211,10 @@ require('lazy').setup({
   'github/copilot.vim',
 
   -- tabnine
-  -- {
-  --   'codota/tabnine-nvim',
-  --   build = "./dl_binaries.sh"
-  -- },
+  {
+    'codota/tabnine-nvim',
+    build = "./dl_binaries.sh"
+  },
 
 
   -- Custom plugins

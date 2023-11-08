@@ -27,7 +27,7 @@ require('lualine').setup {
           hint = ' '
         }
       },
-      -- 'tabnine',
+      'tabnine',
       'encoding',
       'fileformat',
       'filetype',

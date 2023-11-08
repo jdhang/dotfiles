@@ -43,9 +43,17 @@ vim.keymap.set('n', 'te', ':tabedit', { desc = '[T]ab [E]dit' })
 -- split window
 vim.keymap.set('n', 'ss', ':split<CR><C-w>w')
 vim.keymap.set('n', 'sv', ':vsplit<CR><C-w>w')
+vim.keymap.set('n', '<leader>w=', '<C-w>=')
+
+-- quick move to window
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 -- buffer delete
-vim.keymap.set('n', 'bd', ':bd<CR>')
+vim.keymap.set('n', '<leader>bd', ':bd<CR>')
+vim.keymap.set('n', '<leader>bD', ':bd!<CR>')
 
 -- buffer movement
 vim.keymap.set('n', "[b", "<cmd>bprevious<CR>", { silent = true })
@@ -55,6 +63,7 @@ vim.keymap.set('n', "]B", "<cmd>blast<CR>", { silent = true })
 
 -- write hotkey
 vim.keymap.set('n', '<leader>w', '<cmd>w<CR>')
+vim.keymap.set('n', '<C-s>', '<cmd>w<CR>')
 
 -- close window
 vim.keymap.set('n', '<leader>c', '<cmd>close<CR>')
@@ -66,7 +75,7 @@ vim.keymap.set('n', '<leader>wq', '<cmd>wq<CR>')
 vim.keymap.set('n', 'dw', 'vb"_d')
 
 -- select all
-vim.keymap.set('n', '<C-a>', 'gg<S-v>G')
+vim.keymap.set('n', '<C-A>', 'gg<S-v>G')
 
 -- Diagnostic keymaps
 -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
