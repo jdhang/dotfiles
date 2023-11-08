@@ -50,7 +50,7 @@ cmp.setup {
       vim_item.menu = ({
         nvim_lsp = '[LSP]',
         luasnip = '[LuaSnip]',
-        cmp_tabnine = '[Tabnine]',
+        cmp_tabnine = '[TN]',
         path = '[Path]',
         buffer = '[Buffer]',
       })[entry.source.name]
@@ -65,9 +65,9 @@ cmp.setup {
     end,
   },
   sources = cmp.config.sources({
+    { name = 'cmp_tabnine' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
-    { name = 'cmp_tabnine' },
     { name = 'path' },
     { name = 'buffer' },
   }),
