@@ -210,6 +210,13 @@ require('lazy').setup({
   -- copilot
   'github/copilot.vim',
 
+  -- tabnine
+  {
+    'codota/tabnine-nvim',
+    build = "./dl_binaries.sh"
+  },
+
+
   -- Custom plugins
   require('kickstart.plugins.autoformat'),
 })
