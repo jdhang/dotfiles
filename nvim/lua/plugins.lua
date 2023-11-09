@@ -80,7 +80,6 @@ require('lazy').setup({
     }
   },
 
-  { 'windwp/nvim-ts-autotag', opts = {} },
 
   -- Folding
   {
@@ -131,14 +130,18 @@ require('lazy').setup({
   {
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
-      'nvim-treesitter/nvim-treesitter-context',
       'nvim-treesitter/nvim-treesitter-textobjects',
+      {
+        'nvim-treesitter/nvim-treesitter-context',
+        opts = { mode = "cursor", max_lines = 3 },
+      },
       {
         'JoosepAlviste/nvim-ts-context-commentstring',
         config = function()
           require('ts_context_commentstring').setup({})
         end
       },
+      { 'windwp/nvim-ts-autotag', opts = {} },
     },
     build = ':TSUpdate',
   },
