@@ -50,6 +50,13 @@ require('lazy').setup({
     opts = {}
   },
 
+  {
+    "craftzdog/solarized-osaka.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
+
   { 'numToStr/Comment.nvim',     opts = {} },
 
   { 'nvim-lualine/lualine.nvim', opts = {} },
