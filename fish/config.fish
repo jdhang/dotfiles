@@ -66,7 +66,13 @@ function clean
 end
 
 if status is-interactive
+and not set -q TMUX
     # Commands to run in interactive sessions can go here
+    if tmux has-session -t home
+        exec tmux attach-session -t home
+    else
+        tmux new-session -s home
+    end
 end
 
 # >>> conda initialize >>>
