@@ -22,6 +22,7 @@ require('telescope').setup {
     find_files = {
       winblend = 10,
       theme = "dropdown",
+      previewer = false,
       layout_config = {
         height = winheight,
         width = winwidth,
