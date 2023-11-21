@@ -1,5 +1,8 @@
 local telescope_ok = pcall(require, 'telescope')
 
+local winheight = 0.5
+local winwidth = 0.75
+
 if not telescope_ok then
   print('telescope is not installed!')
   return
@@ -15,6 +18,25 @@ require('telescope').setup {
       },
     },
   },
+  pickers = {
+    find_files = {
+      winblend = 10,
+      theme = "dropdown",
+      layout_config = {
+        height = winheight,
+        width = winwidth,
+      }
+    },
+    current_buffer_fuzzy_find = {
+      winblend = 10,
+      theme = "dropdown",
+      previewer = false,
+      layout_config = {
+        height = winheight,
+        width = winwidth,
+      }
+    }
+  }
 }
 require("telescope").load_extension('harpoon')
 
@@ -24,13 +46,8 @@ pcall(require('telescope').load_extension, 'fzf')
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', function()
-  -- You can pass additional configuration to telescope to change theme, layout, etc.
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
-end, { desc = '[/] Fuzzily search in current buffer' })
+vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find,
+  { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
@@ -41,5 +58,5 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
 vim.keymap.set('n', '<C-p>', function()
-  require('telescope.builtin').git_files(require('telescope.themes').get_dropdown({ winblend = 10 }))
+  require('telescope.builtin').git_files(require('telescope.themes').get_dropdown({ winblend = 10, layout_config = { height = winheight, width = winwidth } }))
 end, { desc = 'Search [G]it [F]iles - Dropdown' })

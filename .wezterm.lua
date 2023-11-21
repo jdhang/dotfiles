@@ -57,6 +57,7 @@ config.enable_scroll_bar = true
 
 -- tab bar
 config.hide_tab_bar_if_only_one_tab = true
+config.tab_bar_at_bottom = true
 
 -- disable close confirmation
 config.window_close_confirmation = 'NeverPrompt'
