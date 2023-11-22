@@ -1,3 +1,14 @@
+-- local rose_pine_ok = pcall(require, 'rose-pine')
+--
+-- if not rose_pine_ok then
+--   print('rose-pine was not installed!')
+--   return
+-- end
+
+-- require('rose-pine').setup({
+--   disable_background = true,
+-- })
+
 vim.cmd.colorscheme('rose-pine')
 -- vim.cmd.colorscheme('catppuccin-mocha')
 
