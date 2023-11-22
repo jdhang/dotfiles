@@ -1,19 +1,19 @@
--- local rose_pine_ok = pcall(require, 'rose-pine')
---
--- if not rose_pine_ok then
---   print('rose-pine was not installed!')
---   return
--- end
+local rose_pine_ok = pcall(require, 'rose-pine')
 
--- require('rose-pine').setup({
---   disable_background = true,
--- })
+if not rose_pine_ok then
+  print('rose-pine was not installed!')
+  return
+end
+
+require('rose-pine').setup({
+  disable_background = true,
+})
 
 vim.cmd.colorscheme('rose-pine')
 -- vim.cmd.colorscheme('catppuccin-mocha')
 
--- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
--- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 
 vim.keymap.set('n', '<leader>cc', '<cmd>colorscheme catppuccin-mocha<CR>',
   { desc = 'set [c]olorscheme: [c]atppuccin-mocha' })
