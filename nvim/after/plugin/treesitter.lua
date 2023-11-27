@@ -15,6 +15,7 @@ vim.defer_fn(function()
       'go',
       'html',
       'javascript',
+      'jsdoc',
       'json',
       'lua',
       -- 'markdown',
