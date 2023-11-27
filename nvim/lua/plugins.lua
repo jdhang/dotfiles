@@ -51,10 +51,9 @@ require('lazy').setup({
   },
 
   {
-    "craftzdog/solarized-osaka.nvim",
+    "nyoom-engineering/oxocarbon.nvim",
     lazy = false,
     priority = 1000,
-    opts = {},
   },
 
   { 'numToStr/Comment.nvim',     opts = {} },
