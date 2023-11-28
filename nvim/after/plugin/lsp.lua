@@ -59,7 +59,7 @@ local servers = {
   svelte = {},
   jsonls = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
-  htmx = {},
+  -- htmx = {},
   cssls = {},
   tailwindcss = {},
   -- kotlin_language_server = {},
