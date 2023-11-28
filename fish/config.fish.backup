@@ -83,6 +83,3 @@ end
 # <<< conda initialize <<<
 
 starship init fish | source
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/jason.hang/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/jason.hang/Downloads/google-cloud-sdk/path.fish.inc'; end
