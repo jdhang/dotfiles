@@ -202,6 +202,14 @@ require('lazy').setup({
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-nvim-lua',
+      -- copilot.lua cmp
+      -- {
+      --   "zbirenbaum/copilot-cmp",
+      --   config = function()
+      --     require("copilot_cmp").setup()
+      --   end
+      -- },
+      -- tabnine cmp
       {
         'tzachar/cmp-tabnine',
         build = './install.sh',
@@ -230,6 +238,12 @@ require('lazy').setup({
 
   -- copilot
   'github/copilot.vim',
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   config = function()
+  --     require("copilot").setup()
+  --   end,
+  -- },
 
   -- tabnine
   -- {

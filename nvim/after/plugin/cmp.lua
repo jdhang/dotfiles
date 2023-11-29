@@ -51,6 +51,7 @@ cmp.setup {
         nvim_lsp = '[LSP]',
         luasnip = '[LuaSnip]',
         cmp_tabnine = '[TN]',
+        -- copilot = '[CP]',
         path = '[Path]',
         buffer = '[Buffer]',
       })[entry.source.name]
@@ -66,6 +67,7 @@ cmp.setup {
   },
   sources = cmp.config.sources({
     { name = 'cmp_tabnine' },
+    -- { name = 'copilot' },
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'path' },
