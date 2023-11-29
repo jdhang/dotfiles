@@ -12,7 +12,6 @@ $nodejs\
 $python\
 $rust\
 $conda\
-$gcloud\
 $line_break\
 $character"""
 
