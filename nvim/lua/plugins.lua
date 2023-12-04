@@ -194,7 +194,10 @@ require('lazy').setup({
     'hrsh7th/nvim-cmp',
     dependencies = {
       -- Snippet Engine & its associated nvim-cmp source
-      'L3MON4D3/LuaSnip',
+      {
+        'L3MON4D3/LuaSnip',
+        version = "v2.0.0",
+      },
       'saadparwaiz1/cmp_luasnip',
 
       -- Adds LSP completion capabilities
@@ -229,15 +232,15 @@ require('lazy').setup({
   },
 
   -- Movement
-  {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    ---@type Flash.Config
-    opts = {},
-  },
+  -- {
+  --   "folke/flash.nvim",
+  --   event = "VeryLazy",
+  --   ---@type Flash.Config
+  --   opts = {},
+  -- },
 
   -- copilot
-  -- 'github/copilot.vim',
+  'github/copilot.vim',
   -- {
   --   "zbirenbaum/copilot.lua",
   --   config = function()
@@ -246,10 +249,10 @@ require('lazy').setup({
   -- },
 
   -- tabnine
-  {
-    'codota/tabnine-nvim',
-    build = "./dl_binaries.sh"
-  },
+  -- {
+  --   'codota/tabnine-nvim',
+  --   build = "./dl_binaries.sh"
+  -- },
 
   -- Custom plugins
   require('kickstart.plugins.autoformat'),
