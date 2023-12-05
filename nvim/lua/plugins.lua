@@ -35,12 +35,12 @@ require('lazy').setup({
     opts = {}
   },
 
-  {
-    'rebelot/kanagawa.nvim',
-    lazy = false,
-    priority = 1000,
-    opts = {}
-  },
+  -- {
+  --   'rebelot/kanagawa.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {}
+  -- },
 
   {
     "catppuccin/nvim",
@@ -50,22 +50,22 @@ require('lazy').setup({
     opts = {}
   },
 
-  {
-    "nyoom-engineering/oxocarbon.nvim",
-    lazy = false,
-    priority = 1000,
-  },
+  -- {
+  --   "nyoom-engineering/oxocarbon.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  -- },
 
-  { 'numToStr/Comment.nvim',     opts = {} },
+  { 'numToStr/Comment.nvim', opts = {} },
 
-  { 'nvim-lualine/lualine.nvim', opts = {} },
+  -- { 'nvim-lualine/lualine.nvim', opts = {} },
 
-  { 'lewis6991/gitsigns.nvim',   opts = {} },
+  -- { 'lewis6991/gitsigns.nvim',   opts = {} },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',      opts = {} },
+  { 'folke/which-key.nvim',  opts = {} },
 
-  { 'folke/zen-mode.nvim',       opts = {} },
+  { 'folke/zen-mode.nvim',   opts = {} },
 
   {
     'folke/trouble.nvim',
@@ -79,13 +79,12 @@ require('lazy').setup({
     opts = {},
   },
 
-  {
-    'windwp/nvim-autopairs',
-    opts = {
-      disable_filetype = { 'TelescopePrompt', 'vim' },
-    }
-  },
-
+  -- {
+  --   'windwp/nvim-autopairs',
+  --   opts = {
+  --     disable_filetype = { 'TelescopePrompt', 'vim' },
+  --   }
+  -- },
 
   -- Folding
   {
@@ -95,21 +94,21 @@ require('lazy').setup({
   },
 
   -- Add indentation guides even on blank lines
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    main = "ibl",
-    opts = {},
-  },
+  -- {
+  --   'lukas-reineke/indent-blankline.nvim',
+  --   main = "ibl",
+  --   opts = {},
+  -- },
 
   -- Surround selection
-  {
-    'kylechui/nvim-surround',
-    version = '*', -- Use for stability; omit to use `main` branch for the latest features
-    event = 'VeryLazy',
-    config = function()
-      require('nvim-surround').setup()
-    end
-  },
+  -- {
+  --   'kylechui/nvim-surround',
+  --   version = '*', -- Use for stability; omit to use `main` branch for the latest features
+  --   event = 'VeryLazy',
+  --   config = function()
+  --     require('nvim-surround').setup()
+  --   end
+  -- },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -194,10 +193,7 @@ require('lazy').setup({
     'hrsh7th/nvim-cmp',
     dependencies = {
       -- Snippet Engine & its associated nvim-cmp source
-      {
-        'L3MON4D3/LuaSnip',
-        version = "v2.0.0",
-      },
+      'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
 
       -- Adds LSP completion capabilities
@@ -231,16 +227,10 @@ require('lazy').setup({
     },
   },
 
-  -- Movement
-  -- {
-  --   "folke/flash.nvim",
-  --   event = "VeryLazy",
-  --   ---@type Flash.Config
-  --   opts = {},
-  -- },
-
   -- copilot
-  'github/copilot.vim',
+  -- 'github/copilot.vim',
+
+  -- copilot: lua version
   -- {
   --   "zbirenbaum/copilot.lua",
   --   config = function()
@@ -249,10 +239,10 @@ require('lazy').setup({
   -- },
 
   -- tabnine
-  -- {
-  --   'codota/tabnine-nvim',
-  --   build = "./dl_binaries.sh"
-  -- },
+  {
+    'codota/tabnine-nvim',
+    build = "./dl_binaries.sh"
+  },
 
   -- Custom plugins
   require('kickstart.plugins.autoformat'),

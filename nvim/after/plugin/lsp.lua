@@ -20,15 +20,18 @@ local on_attach = function(client, bufnr)
   nmap('<leader>r', vim.lsp.buf.references, '[R]eferences')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
-  -- nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
-  nmap('gd', function() require('telescope.builtin').lsp_definitions({ reuse_win = true }) end, '[G]oto [D]efinition')
-  nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+  -- nmap('gd', function() vim.lsp.buf.definition() end, '[G]oto [D]efinition')
+  -- nmap('gd', function() require('telescope.builtin').lsp_definitions({ reuse_win = true }) end, '[G]oto [D]efinition')
+  nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+  -- nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
   nmap('gl', vim.diagnostic.open_float, 'Diagnostics')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+  -- nmap('gr', function() vim.lsp.buf.references() end, '[G]oto [R]eferences')
   nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
   nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
-  nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+  -- nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
   nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+  -- nmap('<leader>ws', function() vim.lsp.buf.workspace_symbol() end, '[W]orkspace [S]ymbols')
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
@@ -56,7 +59,7 @@ local servers = {
   -- pyright = {},
   tsserver = {},
   eslint = {},
-  biome = {},
+  -- biome = {},
   svelte = {},
   jsonls = {},
   html = { filetypes = { 'html', 'twig', 'hbs' } },
