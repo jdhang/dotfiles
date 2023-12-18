@@ -101,14 +101,14 @@ require('lazy').setup({
   -- },
 
   -- Surround selection
-  -- {
-  --   'kylechui/nvim-surround',
-  --   version = '*', -- Use for stability; omit to use `main` branch for the latest features
-  --   event = 'VeryLazy',
-  --   config = function()
-  --     require('nvim-surround').setup()
-  --   end
-  -- },
+  {
+    'kylechui/nvim-surround',
+    version = '*', -- Use for stability; omit to use `main` branch for the latest features
+    event = 'VeryLazy',
+    config = function()
+      require('nvim-surround').setup()
+    end
+  },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -228,7 +228,7 @@ require('lazy').setup({
   },
 
   -- copilot
-  -- 'github/copilot.vim',
+  'github/copilot.vim',
 
   -- copilot: lua version
   -- {
@@ -239,10 +239,10 @@ require('lazy').setup({
   -- },
 
   -- tabnine
-  {
-    'codota/tabnine-nvim',
-    build = "./dl_binaries.sh"
-  },
+  -- {
+  --   'codota/tabnine-nvim',
+  --   build = "./dl_binaries.sh"
+  -- },
 
   -- Custom plugins
   require('kickstart.plugins.autoformat'),
