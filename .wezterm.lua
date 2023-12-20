@@ -64,6 +64,6 @@ config.tab_bar_at_bottom = true
 config.window_close_confirmation = 'NeverPrompt'
 
 -- background opacity
-config.window_background_opacity = 0.9
+config.window_background_opacity = 0.875
 
 return config
