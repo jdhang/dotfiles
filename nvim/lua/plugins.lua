@@ -63,7 +63,7 @@ require('lazy').setup({
   -- { 'lewis6991/gitsigns.nvim',   opts = {} },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  -- { 'folke/which-key.nvim',  opts = {} },
 
   { 'folke/zen-mode.nvim',   opts = {} },
 
