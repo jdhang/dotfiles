@@ -53,6 +53,7 @@ cmp.setup {
         nvim_lsp = '[LSP]',
         luasnip = '[LuaSnip]',
         cmp_tabnine = '[TN]',
+        codeium = '[Codeium]',
         -- copilot = '[CP]',
         path = '[Path]',
         buffer = '[Buffer]',
@@ -60,6 +61,7 @@ cmp.setup {
       vim_item.dup = ({
         nvim_lsp = 0,
         luasnip = 0,
+        codeium = 0,
         cmp_tabnine = 0,
         buffer = 1,
         path = 1,
@@ -68,6 +70,7 @@ cmp.setup {
     end,
   },
   sources = cmp.config.sources({
+    { name = 'codeium' },
     { name = 'cmp_tabnine' },
     -- { name = 'copilot' },
     { name = 'nvim_lsp' },
