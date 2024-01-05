@@ -1,0 +1,8 @@
+-- local codeium_ok, codeium = pcall(require, 'codeium')
+--
+-- if not codeium_ok then
+--   print('codeium not installed!')
+--   return
+-- end
+--
+-- vim.g.codeium_no_map_tab = 1

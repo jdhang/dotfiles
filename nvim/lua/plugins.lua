@@ -238,6 +238,9 @@ require('lazy').setup({
   --   end,
   -- },
 
+  -- codeium
+  -- 'Exafunction/codeium.vim',
+
   -- tabnine
   -- {
   --   'codota/tabnine-nvim',
