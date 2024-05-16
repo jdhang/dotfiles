@@ -1,5 +1,6 @@
 # add homebrew path
 fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/sbin
 
 set -g theme_nerd_fonts yes
 
@@ -13,6 +14,7 @@ alias c='clear'
 alias nv='nvim'
 alias cfish='$EDITOR ~/.config/fish/config.fish'
 alias sfish='source ~/.config/fish/config.fish'
+alias lsal='ls -al'
 
 # git
 alias g='git'
@@ -32,6 +34,9 @@ alias gp='git pull'
 alias gpy='git pull && yarn'
 alias gP='git push'
 alias gs='git status'
+alias grs='git restore --staged'
+alias gr='git restore'
+alias gm='git merge'
 
 # tmux
 alias ta='tmux attach -t'
@@ -56,6 +61,10 @@ alias sa='cd ~/src/apps/web-app-sales-activity'
 alias vr='cd ~/src/apps/web-app-virtual-terminal'
 alias calc='cd ~/src/libs/calc'
 alias cos='cd ~/src/apps/server'
+alias pup='cd ~/src/apps/puppet'
+alias arch='cd ~/src/apps/architecture'
+alias apps='cd ~/src/apps'
+alias temps='cd ~/src/templates'
 
 # config shortcuts
 alias d='cd $HOME/.dotfiles'
@@ -65,21 +74,30 @@ function clean
   git reset --soft HEAD~$argv[1]
 end
 
-if status is-interactive
-and not set -q TMUX
-    # Commands to run in interactive sessions can go here
-    if tmux has-session -t home
-        exec tmux attach-session -t home
-    else
-        tmux new-session -s home
-    end
-end
+# if status is-interactive
+# and not set -q TMUX
+#     # Commands to run in interactive sessions can go here
+#     if tmux has-session -t home
+#         exec tmux attach-session -t home
+#     else
+#         tmux new-session -s home
+#     end
+# end
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-if test -f /Users/jdhang/miniconda3/bin/conda
-    eval /Users/jdhang/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+if test -f /Users/jason.hang/miniconda3/bin/conda
+    eval /Users/jason.hang/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "/Users/jason.hang/miniconda3/etc/fish/conf.d/conda.fish"
+        . "/Users/jason.hang/miniconda3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "/Users/jason.hang/miniconda3/bin" $PATH
+    end
 end
 # <<< conda initialize <<<
 
 starship init fish | source
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jason.hang/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/jason.hang/Downloads/google-cloud-sdk/path.fish.inc'; end

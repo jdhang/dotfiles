@@ -8,6 +8,7 @@ end
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", opts)
+vim.keymap.set('n', '<leader>tt', function() require('trouble').toggle() end, opts)
 
 -- vim.keymap.set('n', '<leader>xx', function() require('trouble').toggle() end, opts)
 -- vim.keymap.set('n', '<leader>xw', function() require('trouble').toggle('workspace_diagnostics') end, opts)

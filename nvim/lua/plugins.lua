@@ -136,10 +136,10 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
-      {
-        'nvim-treesitter/nvim-treesitter-context',
-        opts = { mode = "cursor", max_lines = 3 },
-      },
+      -- {
+      --   'nvim-treesitter/nvim-treesitter-context',
+      --   opts = { mode = "cursor", max_lines = 3 },
+      -- },
       {
         'JoosepAlviste/nvim-ts-context-commentstring',
         config = function()
@@ -209,18 +209,18 @@ require('lazy').setup({
       --   end
       -- },
       -- tabnine cmp
-      {
-        'tzachar/cmp-tabnine',
-        build = './install.sh',
-        opts = {
-          max_lines = 1000,
-          max_num_results = 3,
-          sort = true,
-        },
-        config = function(_, opts)
-          require("cmp_tabnine.config"):setup(opts)
-        end,
-      },
+      -- {
+      --   'tzachar/cmp-tabnine',
+      --   build = './install.sh',
+      --   opts = {
+      --     max_lines = 1000,
+      --     max_num_results = 3,
+      --     sort = true,
+      --   },
+      --   config = function(_, opts)
+      --     require("cmp_tabnine.config"):setup(opts)
+      --   end,
+      -- },
 
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
@@ -228,7 +228,7 @@ require('lazy').setup({
   },
 
   -- copilot
-  'github/copilot.vim',
+  -- 'github/copilot.vim',
 
   -- copilot: lua version
   -- {
