@@ -10,7 +10,7 @@ end
 
 local pickers_opts = {
   winblend = 10,
-  theme = "dropdown",
+  -- theme = "dropdown",
   previewer = false,
   layout_config = {
     height = winheight,
