@@ -35,12 +35,12 @@ require('lazy').setup({
     opts = {}
   },
 
-  -- {
-  --   'rebelot/kanagawa.nvim',
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {}
-  -- },
+  {
+    'rebelot/kanagawa.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {}
+  },
 
   {
     "catppuccin/nvim",
@@ -50,22 +50,28 @@ require('lazy').setup({
     opts = {}
   },
 
-  -- {
-  --   "nyoom-engineering/oxocarbon.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  -- },
+  {
+    "nyoom-engineering/oxocarbon.nvim",
+    lazy = false,
+    priority = 1000,
+  },
 
-  { 'numToStr/Comment.nvim', opts = {} },
+  {
+    "EdenEast/nightfox.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+
+  { 'numToStr/Comment.nvim',   opts = {} },
 
   -- { 'nvim-lualine/lualine.nvim', opts = {} },
 
-  -- { 'lewis6991/gitsigns.nvim',   opts = {} },
+  { 'lewis6991/gitsigns.nvim', opts = {} },
 
   -- Useful plugin to show you pending keybinds.
   -- { 'folke/which-key.nvim',  opts = {} },
 
-  { 'folke/zen-mode.nvim',   opts = {} },
+  { 'folke/zen-mode.nvim',     opts = {} },
 
   {
     'folke/trouble.nvim',
@@ -73,10 +79,18 @@ require('lazy').setup({
     opts = {},
   },
 
+  -- harpoon v1
+  -- {
+  --   'theprimeagen/harpoon',
+  --   dependencies = { 'nvim-lua/plenary.nvim' },
+  --   opts = {},
+  -- },
+
+  -- harpoon2
   {
-    'theprimeagen/harpoon',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    opts = {},
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" }
   },
 
   -- {

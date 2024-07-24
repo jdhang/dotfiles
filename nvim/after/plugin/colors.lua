@@ -1,11 +1,16 @@
-vim.cmd.colorscheme('rose-pine')
+-- vim.cmd.colorscheme('rose-pine')
+-- vim.cmd.colorscheme('tokyonight-night')
 -- vim.cmd.colorscheme('catppuccin-mocha')
+-- vim.cmd.colorscheme('kanagawa-dragon')
+-- vim.cmd.colorscheme('oxocarbon')
+vim.cmd.colorscheme('carbonfox')
 
 vim.opt.background = 'dark'
 
 vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none' })
 
 vim.keymap.set('n', '<leader>cc', '<cmd>colorscheme catppuccin-mocha<CR>',
   { desc = 'set [c]olorscheme: [c]atppuccin-mocha' })

@@ -1,7 +1,7 @@
 local telescope_ok = pcall(require, 'telescope')
 
-local winheight = 0.6
-local winwidth = 0.75
+local winheight = 0.65
+local winwidth = 0.8
 
 if not telescope_ok then
   print('telescope is not installed!')
@@ -41,21 +41,49 @@ require('telescope').setup {
     live_grep = pickers_opts,
   }
 }
-require("telescope").load_extension('harpoon')
+-- require("telescope").load_extension('harpoon')
+-- basic telescope configuration
+local conf = require("telescope.config").values
+local function toggle_telescope(harpoon_files)
+  local file_paths = {}
+  for _, item in ipairs(harpoon_files.items) do
+    table.insert(file_paths, item.value)
+  end
+
+  require("telescope.pickers").new({}, {
+    prompt_title = "Harpoon",
+    finder = require("telescope.finders").new_table({
+      results = file_paths,
+    }),
+    previewer = conf.file_previewer({}),
+    sorter = conf.generic_sorter({}),
+  }):find()
+end
+
+vim.keymap.set("n", "<C-w>", function() toggle_telescope(require('harpoon'):list()) end,
+  { desc = "Open harpoon window" })
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
 
 -- See `:help telescope.builtin`
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
+-- vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find,
-  { desc = '[/] Fuzzily search in current buffer' })
+-- vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find,
+--   { desc = '[/] Fuzzily search in current buffer' })
 
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
--- vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
+vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
+-- vim.keymap.set('n', '<leader>gws', function()
+--   local word = vim.fn.expand("<cword>")
+--   require('telescope.builtin').grep_string({ search = word })
+-- end)
+-- vim.keymap.set('n', '<leader>gWs', function()
+--   local word = vim.fn.expand("<cWORD>")
+--   require('telescope.builtin').grep_string({ search = word })
+-- end)
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 -- vim.keymap.set('n', '<leader>sS', require('telescope.builtin').symbols, { desc = '[S]earch [S]ymbols' })
 -- vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
