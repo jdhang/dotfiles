@@ -28,7 +28,7 @@ local pickers_opts = {
 
 require('telescope').setup {
   defaults = {
-    layout_strategy = 'vertical',
+    -- layout_strategy = 'vertical',
     mappings = {
       i = {
         ['<C-u>'] = false,
@@ -36,12 +36,12 @@ require('telescope').setup {
       },
     },
   },
-  pickers = {
-    buffers = pickers_opts,
-    find_files = pickers_opts,
-    git_files = pickers_opts,
-    current_buffer_fuzzy_find = pickers_opts,
-  }
+  -- pickers = {
+  -- buffers = pickers_opts,
+  -- find_files = pickers_opts,
+  -- git_files = pickers_opts,
+  -- current_buffer_fuzzy_find = pickers_opts,
+  -- }
 }
 
 local builtin = require('telescope.builtin')

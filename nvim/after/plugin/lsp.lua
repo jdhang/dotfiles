@@ -52,20 +52,20 @@ local on_attach = function(client, bufnr)
 end
 
 local servers = {
-  gopls = {},
-  templ = {},
+  -- gopls = {},
+  -- templ = {},
   -- rust_analyzer = {},
   -- pyls = {},
   -- pyright = {},
   tsserver = {},
   eslint = {},
-  -- biome = {},
-  svelte = {},
   jsonls = {},
-  html = { filetypes = { 'html', 'twig', 'hbs' } },
+  svelte = {},
+  html = { filetypes = { 'html', 'hbs' } },
   -- htmx = {},
   cssls = {},
-  tailwindcss = {},
+  -- tailwindcss = {},
+  -- biome = {},
   -- kotlin_language_server = {},
   -- java_language_server = {},
 
