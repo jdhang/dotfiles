@@ -1,5 +1,5 @@
-vim.opt.termguicolors = true
-vim.opt.background = 'dark'
+-- vim.opt.termguicolors = true
+-- vim.opt.background = 'dark'
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`

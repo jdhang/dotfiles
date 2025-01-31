@@ -4,12 +4,8 @@ vim.g.maplocalleader = ' '
 -- fat cursor
 vim.opt.guicursor = ''
 
--- Set highlight on search
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
 -- Make line numbers default
-vim.wo.number = true
+-- vim.wo.number = true
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -22,11 +18,17 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
-vim.opt.autoindent = true
-vim.opt.breakindent = true
+-- vim.opt.autoindent = true
+-- vim.opt.breakindent = true
 vim.opt.smartindent = true
 
 vim.opt.wrap = false
+
+-- Set highlight on search
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+
+vim.opt.termguicolors = true
 
 -- Save undo history
 vim.opt.swapfile = false
@@ -39,8 +41,9 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
+vim.wo.scrolloff = 0 -- 10
 vim.wo.signcolumn = 'yes'
-vim.wo.scrolloff = 10
+vim.opt.isfname:append("@-@")
 
 -- Decrease update time
 vim.o.updatetime = 50

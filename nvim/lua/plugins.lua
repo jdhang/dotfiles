@@ -22,16 +22,39 @@ require('lazy').setup({
   {
     'rose-pine/neovim',
     priority = 1000,
-    config = function() end,
-    opts = {
-      disable_background = true,
-    }
+    config = function()
+      require('rose-pine').setup({
+        disable_background = true,
+        styles = {
+          italic = false,
+        },
+      })
+    end,
+    opts = {}
   },
 
   {
     'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000,
+    config = function()
+      require("tokyonight").setup({
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        style = "storm",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+        transparent = true,     -- Enable this to disable setting the background color
+        terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
+        styles = {
+          -- Style to be applied to different syntax groups
+          -- Value is any valid attr-list value for `:help nvim_set_hl`
+          comments = { italic = false },
+          keywords = { italic = false },
+          -- Background styles. Can be "dark", "transparent" or "normal"
+          sidebars = "dark", -- style for sidebars, see below
+          floats = "dark",   -- style for floating windows
+        },
+      })
+    end,
     opts = {}
   },
 
@@ -58,6 +81,12 @@ require('lazy').setup({
 
   {
     "EdenEast/nightfox.nvim",
+    lazy = false,
+    priority = 1000,
+  },
+
+  {
+    "ficcdaf/ashen.nvim",
     lazy = false,
     priority = 1000,
   },
@@ -115,14 +144,15 @@ require('lazy').setup({
   -- },
 
   -- Surround selection
-  {
-    'kylechui/nvim-surround',
-    version = '*', -- Use for stability; omit to use `main` branch for the latest features
-    event = 'VeryLazy',
-    config = function()
-      require('nvim-surround').setup()
-    end
-  },
+  -- {
+  --   'kylechui/nvim-surround',
+  --   version = '*', -- Use for stability; omit to use `main` branch for the latest features
+  --   event = 'VeryLazy',
+  --   config = function()
+  --     require('nvim-surround').setup()
+  --   end
+  -- },
+  { 'echasnovski/mini.surround', version = false },
 
   -- Fuzzy Finder (files, lsp, etc)
   {

@@ -1,7 +1,6 @@
-import = ["/Users/jason.hang/.config/alacritty/custom-themes//builtin_pastel_dark.toml"]
 
 [font]
-size = 13.5
+size = 14
 
 [font.bold]
 family = "JetBrainsMono Nerd Font Mono"
@@ -26,6 +25,9 @@ multiplier = 3
 [window.padding]
 x = 0
 y = 0
+
+[general]
+import = ["/Users/jason.hang/.config/alacritty/custom-themes//builtin_pastel_dark.toml"]
 
 [window]
 opacity = 0.85

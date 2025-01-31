@@ -47,7 +47,7 @@ config.font_rules = {
     }
   }
 }
-config.font_size = 13.0
+config.font_size = 15.0
 
 -- color scheme
 -- config.color_scheme = 'Catppuccin Mocha'

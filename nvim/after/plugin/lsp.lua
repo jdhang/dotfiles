@@ -5,6 +5,12 @@ if not (mason_status_ok and mason_lspconfig_ok) then
   return
 end
 
+local prettier = {
+  formatCanRange = true,
+  formatCommand = 'prettierd "${INPUT}"',
+  formatStdin = true,
+}
+
 local on_attach = function(client, bufnr)
   -- In this case, we create a function that lets us more easily define mappings specific
   -- for LSP related items. It sets the mode, buffer and description for us each time.
@@ -57,13 +63,35 @@ local servers = {
   -- rust_analyzer = {},
   -- pyls = {},
   -- pyright = {},
-  tsserver = {},
+  -- tsserver = {},
   eslint = {},
   jsonls = {},
   svelte = {},
   html = { filetypes = { 'html', 'hbs' } },
   -- htmx = {},
-  cssls = {},
+  cssls = {
+    init_options = { provideFormatter = false },
+    settings = {
+      css = {
+        lint = { unknownAtRules = 'ignore' },
+      }
+    }
+  },
+  efm = {
+    filetypes = { 'css', 'scss' },
+    init_options = {
+      documentFormatting = true,
+      documentRangeFormatting = true,
+      provideFormatter = true,
+    },
+    settings = {
+      rootMarkers = { '.git/ ' },
+      languages   = {
+        css = { prettier },
+        scss = { prettier },
+      }
+    }
+  },
   -- tailwindcss = {},
   -- biome = {},
   -- kotlin_language_server = {},
@@ -102,6 +130,7 @@ mason_lspconfig.setup_handlers {
       on_attach = on_attach,
       settings = servers[server_name],
       filetypes = (servers[server_name] or {}).filetypes,
+      init_options = (servers[server_name] or {}).init_options,
     }
   end
 }
