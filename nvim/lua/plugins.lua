@@ -85,12 +85,6 @@ require('lazy').setup({
     priority = 1000,
   },
 
-  {
-    "ficcdaf/ashen.nvim",
-    lazy = false,
-    priority = 1000,
-  },
-
   { 'numToStr/Comment.nvim',   opts = {} },
 
   -- { 'nvim-lualine/lualine.nvim', opts = {} },
@@ -108,6 +102,38 @@ require('lazy').setup({
     opts = {},
   },
 
+  -- {
+  --   "bassamsdata/namu.nvim",
+  --   config = function()
+  --     require("namu").setup({
+  --       -- Enable the modules you want
+  --       namu_symbols = {
+  --         enable = true,
+  --         options = {}, -- here you can configure namu
+  --       },
+  --       -- Optional: Enable other modules if needed
+  --       ui_select = { enable = false }, -- vim.ui.select() wrapper
+  --       colorscheme = {
+  --         enable = false,
+  --         options = {
+  --           -- NOTE: if you activate persist, then please remove any vim.cmd("colorscheme ...") in your config, no needed anymore
+  --           persist = true,      -- very efficient mechanism to Remember selected colorscheme
+  --           write_shada = false, -- If you open multiple nvim instances, then probably you need to enable this
+  --         },
+  --       },
+  --     })
+  --     -- === Suggested Keymaps: ===
+  --     vim.keymap.set("n", "<leader>sd", ":Namu symbols<cr>", {
+  --       desc = "Jump to LSP symbol",
+  --       silent = true,
+  --     })
+  --     vim.keymap.set("n", "<leader>th", ":Namu colorscheme<cr>", {
+  --       desc = "Colorscheme Picker",
+  --       silent = true,
+  --     })
+  --   end,
+  -- },
+
   -- harpoon v1
   -- {
   --   'theprimeagen/harpoon',
@@ -117,7 +143,7 @@ require('lazy').setup({
 
   -- harpoon2
   {
-    "ThePrimeagen/harpoon",
+    'ThePrimeagen/harpoon',
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" }
   },
@@ -146,13 +172,30 @@ require('lazy').setup({
   -- Surround selection
   -- {
   --   'kylechui/nvim-surround',
+  --   --   version = false,
   --   version = '*', -- Use for stability; omit to use `main` branch for the latest features
   --   event = 'VeryLazy',
   --   config = function()
   --     require('nvim-surround').setup()
   --   end
   -- },
-  { 'echasnovski/mini.surround', version = false },
+  {
+    'echasnovski/mini.surround',
+    version = false,
+    config = function()
+      require('mini.surround').setup({
+        mappings = {
+          add = "gsa",            -- Add surrounding in Normal and Visual modes
+          delete = "gsd",         -- Delete surrounding
+          find = "gsf",           -- Find surrounding (to the right)
+          find_left = "gsF",      -- Find surrounding (to the left)
+          highlight = "gsh",      -- Highlight surrounding
+          replace = "gsr",        -- Replace surrounding
+          update_n_lines = "gsn", -- Update `n_lines`
+        },
+      })
+    end
+  },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -216,63 +259,23 @@ require('lazy').setup({
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
 
-      -- Useful status updates for LSP
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      {
-        'j-hui/fidget.nvim',
-        tag = 'legacy',
-        opts = {},
-      },
-
-      -- Additional lua configuration, makes nvim stuff amazing!
-      'folke/neodev.nvim',
-
-      -- null-ls
-      -- 'jose-elias-alvarez/null-ls.nvim'
+      'saghen/blink.cmp'
     },
   },
 
   -- Autocompletion
   {
-    'hrsh7th/nvim-cmp',
+    'saghen/blink.cmp',
     dependencies = {
-      -- Snippet Engine & its associated nvim-cmp source
       'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip',
-
-      -- Adds LSP completion capabilities
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-nvim-lua',
-      -- copilot.lua cmp
-      -- {
-      --   "zbirenbaum/copilot-cmp",
-      --   config = function()
-      --     require("copilot_cmp").setup()
-      --   end
-      -- },
-      -- tabnine cmp
-      -- {
-      --   'tzachar/cmp-tabnine',
-      --   build = './install.sh',
-      --   opts = {
-      --     max_lines = 1000,
-      --     max_num_results = 3,
-      --     sort = true,
-      --   },
-      --   config = function(_, opts)
-      --     require("cmp_tabnine.config"):setup(opts)
-      --   end,
-      -- },
-
-      -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
     },
+    version = '*',
+    opts_extend = { "sources.default" }
   },
 
   -- copilot
-  -- 'github/copilot.vim',
+  'github/copilot.vim',
 
   -- copilot: lua version
   -- {
@@ -283,9 +286,6 @@ require('lazy').setup({
   -- },
 
   -- codeium
-  -- {
-  --   "Exafunction/codeium.vim",
-  -- },
   -- {
   --   "Exafunction/codeium.nvim",
   --   dependencies = {

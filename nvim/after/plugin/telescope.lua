@@ -47,7 +47,8 @@ require('telescope').setup {
 local builtin = require('telescope.builtin')
 
 -- Enable telescope fzf native, if installed
-pcall(require('telescope').load_extension, 'fzf')
+-- pcall(require('telescope').load_extension, 'fzf')
+pcall(require('telescope').load_extension, 'fzy_native')
 
 -- require("telescope").load_extension('harpoon')
 -- basic telescope configuration for harpoon
@@ -73,10 +74,10 @@ vim.keymap.set("n", "<leader>e", function() toggle_telescope(require('harpoon'):
 -- See `:help telescope.builtin`
 -- vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
 vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = '[ ] Find existing buffers' })
--- vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find,
---   { desc = '[/] Fuzzily search in current buffer' })
+vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find,
+  { desc = '[/] Fuzzily search in current buffer' })
 
-vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = '[S]earch [G]it Files' })
+vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = '[S]earch Git Files' })
 vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 -- vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
@@ -91,8 +92,9 @@ end, { desc = '[S]earch [W]ord' })
 vim.keymap.set('n', '<leader>ss', function()
   builtin.grep_string({ search = vim.fn.input("Grep > ") })
 end, { desc = '[S]earch Grep' })
-vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by Live Grep' })
--- vim.keymap.set('n', '<leader>sS', require('telescope.builtin').symbols, { desc = '[S]earch [S]ymbols' })
+vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by Live [G]rep' })
+-- vim.keymap.set('n', '<leader>sa', require('telescope.builtin').symbols, { desc = '[S]earch Symbols' })
+vim.keymap.set('n', '<leader>sd', builtin.lsp_document_symbols, { desc = '[S]earch Symbols' })
 -- vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
 -- vim.keymap.set('n', '<C-p>', function()
