@@ -5,10 +5,10 @@ vim.keymap.set('v', 'J', ":m '>+1<cr>gv=gv") -- move highlighted text up
 vim.keymap.set('v', 'K', ":m '<-2<cr>gv=gv") -- move highlighted text down
 
 vim.keymap.set('n', 'J', 'mzJ`z')            -- move below line to current line
-vim.keymap.set('n', '<C-y>', '<C-d>zz')      -- center page down
-vim.keymap.set('n', '<C-u>', '<C-u>zz')      -- center page up
 vim.keymap.set('n', 'n', 'nzzzv')            -- center forwards search
 vim.keymap.set('n', 'N', 'Nzzzv')            -- center backwards search
+-- vim.keymap.set('n', '<C-y>', '<C-d>zz')      -- center page down
+-- vim.keymap.set('n', '<C-u>', '<C-u>zz')      -- center page up
 
 -- greatest remap ever
 vim.keymap.set('x', '<leader>p', [["_dP]])
