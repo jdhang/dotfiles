@@ -239,6 +239,7 @@ require('lazy').setup({
   -- LSP Configuration & Plugins
   {
     'neovim/nvim-lspconfig',
+    event = 'InsertEnter',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
       { 'williamboman/mason.nvim', config = true },
@@ -254,21 +255,33 @@ require('lazy').setup({
     dependencies = {
       { 'L3MON4D3/LuaSnip', version = 'v2.*' },
       'rafamadriz/friendly-snippets',
+      -- 'giuxtaposition/blink-cmp-copilot',
     },
     version = '*',
     opts_extend = { "sources.default" }
   },
 
   -- copilot
-  'github/copilot.vim',
+  -- 'github/copilot.vim',
 
   -- copilot: lua version
-  -- {
-  --   "zbirenbaum/copilot.lua",
-  --   config = function()
-  --     require("copilot").setup()
-  --   end,
-  -- },
+  {
+    'zbirenbaum/copilot.lua',
+    -- cmd = 'Copilot',
+    event = 'BufReadPost',
+    config = function()
+      require('copilot').setup({
+        suggestion = {
+          auto_trigger = true,
+          hide_during_completion = false,
+          keymap = {
+            accept = '<Tab>',
+          },
+        },
+        panel = { enabled = false },
+      })
+    end,
+  },
 
   -- codeium
   -- {

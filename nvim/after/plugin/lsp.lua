@@ -63,8 +63,8 @@ local servers = {
   -- rust_analyzer = {},
   -- pyls = {},
   -- pyright = {},
-  -- tsserver = {},
-  eslint = {},
+  -- ts_ls = {},
+  eslint = { validate = false },
   jsonls = {},
   svelte = {},
   html = { filetypes = { 'html', 'hbs' } },
@@ -107,13 +107,17 @@ local servers = {
 
 -- blink.cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('blink.cmp').get_lsp_capabilities()
+capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities({}, false))
 
 -- for folding
-capabilities.textDocument.foldingRange = {
-  dynamicRegistration = false,
-  lineFoldingOnly = true
-}
+capabilities = vim.tbl_deep_extend('force', capabilities, {
+  textDocument = {
+    foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true
+    }
+  }
+})
 
 mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
