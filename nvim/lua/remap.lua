@@ -84,9 +84,9 @@ vim.keymap.set('n', '<leader>bD', ':bd!<cr>')
 -- vim.keymap.set('n', "<leader>bb", "<cmd>e #<cr>", { silent = true })
 
 -- quickfix movement
-vim.keymap.set('n', '<leader>cc', '<cmd>:cc<cr>', { silent = true })
-vim.keymap.set('n', "<C-.", "<cmd>:cnext<cr>", { silent = true })
-vim.keymap.set('n', "<C-,", "<cmd>:cprev<cr>", { silent = true })
+vim.keymap.set('n', '<leader>c', '<cmd>cc<cr>', { silent = true })
+vim.keymap.set('n', "<C-b>", "<cmd>cnext<cr>", { silent = true })
+vim.keymap.set('n', "<C-v>", "<cmd>cprev<cr>", { silent = true })
 
 -- write hotkey
 -- vim.keymap.set('n', '<leader>w', '<cmd>w<cr>')
