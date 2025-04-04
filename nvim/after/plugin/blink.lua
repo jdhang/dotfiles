@@ -100,7 +100,7 @@ blink.setup {
   -- elsewhere in your config, without redefining it, due to `opts_extend`
   sources = {
     default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
-    -- default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
+    -- default = { 'avante', 'lazydev', 'lsp', 'path', 'snippets', 'buffer', 'copilot' },
     providers = {
       -- copilot = {
       --   name = "copilot",
@@ -116,6 +116,13 @@ blink.setup {
       --     end
       --     return items
       --   end,
+      -- },
+      -- avante = {
+      --   module = 'blink-cmp-avante',
+      --   name = 'Avante',
+      --   opts = {
+      --       -- options for blink-cmp-avante
+      --   }
       -- },
       lazydev = {
         name = 'LazyDev',

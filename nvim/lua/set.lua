@@ -59,3 +59,6 @@ vim.opt.colorcolumn = '80'
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_win_size = 25
+
+-- for avante.nvim
+vim.opt.laststatus = 3
