@@ -268,18 +268,26 @@ require('lazy').setup({
   -- copilot: lua version
   {
     'zbirenbaum/copilot.lua',
-    -- cmd = 'Copilot',
-    event = 'BufReadPost',
+    cmd = 'Copilot',
+    event = 'InsertEnter',
     config = function()
       require('copilot').setup({
         suggestion = {
-          auto_trigger = true,
+          enabled = true,
+          auto_trigger = false,
           hide_during_completion = false,
+          debounce = 25,
           keymap = {
-            accept = '<Tab>',
+            accept = false,
+            accept_word = false,
+            accept_line = "<Tab>",
+            next = false,
+            prev = false,
+            dismiss = false,
           },
         },
         panel = { enabled = false },
+        copilot_node_command = "/opt/homebrew/bin/node", -- Node.js version must be > 20
       })
     end,
   },
