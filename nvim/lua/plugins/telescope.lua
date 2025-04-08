@@ -42,6 +42,9 @@ return {
 
       vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = '[S]earch Git Files' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
+      vim.keymap.set('n', '<leader>sc', function()
+        builtin.find_files({ cwd = vim.fn.stdpath("config") })
+      end, { desc = '[S]earch [c]onfig files' })
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sw',
         function()
