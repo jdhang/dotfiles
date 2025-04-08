@@ -15,16 +15,35 @@ return {
 
     config = function()
       require('telescope').setup({
-        defaults = require('telescope.themes').get_ivy(),
+        defaults = require('telescope.themes').get_ivy({
+          layout_config = { height = 0.30 },
+        }),
         pickers = {
           git_files = {
+            -- borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
             winblend = 10,
-            theme = 'dropdown',
             previewer = false,
+            theme = "dropdown",
+            -- layout_strategy = "vertical",
             layout_config = {
-              height = 0.8,
-              width = 0.5,
-            }
+              height = function(_, _, rows)
+                return math.floor(rows * 0.90)
+              end,
+              width = 0.40,
+            },
+            --   vertical = {
+            --     mirror = true,
+            --     prompt_position = 'top',
+            --     width = function(_, cols, _)
+            --       return math.min(math.floor(0.80 * cols), 75)
+            --     end,
+            --     height = function(_, _, rows)
+            --       return math.floor(rows * 0.90)
+            --     end,
+            --     preview_cutoff = 10,
+            --     preview_height = 0.4,
+            --   },
+            -- }
           }
         },
         extensions = {
@@ -41,7 +60,8 @@ return {
       vim.keymap.set('n', '<leader><space>', builtin.buffers)
       vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find)
       vim.keymap.set('n', '<leader>sh', builtin.help_tags)
-      vim.keymap.set('n', '<leader>sg', require("custom.telescope.multi-ripgrep"), { desc = '[S]earch by Live Multi-rip[g]rep' })
+      vim.keymap.set('n', '<leader>sg', require("custom.telescope.multi-ripgrep"),
+        { desc = '[S]earch by Live Multi-rip[g]rep' })
 
       vim.keymap.set('n', '<leader>sw',
         function()

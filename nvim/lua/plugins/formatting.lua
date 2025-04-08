@@ -9,12 +9,16 @@ return {
 
   keys = {
     {
-      -- Customize or remove this keymap to your liking
       "<leader>f",
       function()
-        require("conform").format({ async = true })
+        require("conform").format({
+          timeout_ms = 3000,
+          async = true,
+          quiet = true,
+          lsp_format = "fallback",
+        })
       end,
-      mode = "",
+      mode = { "n", "v" },
       desc = "Format buffer",
     },
   },
