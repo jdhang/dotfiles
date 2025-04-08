@@ -40,7 +40,6 @@ return {
     vim.keymap.set('n', '<leader>ss', function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end,
       { desc = '[S]earch Grep' })
     vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by Live [G]rep' })
-    vim.keymap.set('n', '<leader>sd', builtin.lsp_document_symbols, { desc = '[S]earch Symbols' })
     vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
   end
 }

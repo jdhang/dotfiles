@@ -45,20 +45,22 @@ return {
             dynamicRegistration = false,
             lineFoldingOnly = true
           }
-          -- eslint = { validate = false },
         }
       })
       lspconfig[server].setup(config)
     end
 
-    local builtin = require('telescope.builtin')
-    vim.keymap.set('n', '<leader>n', vim.lsp.buf.rename, { desc = 'LSP: [R]e[n]ame' })
-    vim.keymap.set('n', '<leader>r', vim.lsp.buf.references, { desc = 'LSP: [R]eferences' })
-    vim.keymap.set('n', '<leader>a', vim.lsp.buf.code_action, { desc = 'LSP: [C]ode [A]ction' })
-    vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = 'LSP: [G]oto [D]efinition' })
-    vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = 'LSP: [G]oto [R]eferences' })
-    vim.keymap.set('n', 'gI', builtin.lsp_implementations, { desc = 'LSP: [G]oto [I]mplementation' })
-    vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'LSP: Diagnostics' })
-    vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, { desc = 'LSP: Type [D]efinition' })
+    vim.keymap.set('n', '<leader>n', vim.lsp.buf.rename, { desc = 'LSP: Re[n]ame' })
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'LSP: [R]eferences' })
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'LSP: [G]oto [D]efinition' })
+    -- vim.keymap.set('n', '<leader>', vim.lsp.buf.code_action, { desc = 'LSP: [C]ode [A]ction' })
+    -- vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'LSP: Diagnostics' })
+
+    -- telescope
+    -- local builtin = require('telescope.builtin')
+    -- vim.keymap.set('n', 'gd', builtin.lsp_definitions, { desc = 'LSP: [G]oto [D]efinition' })
+    -- vim.keymap.set('n', 'gr', builtin.lsp_references, { desc = 'LSP: [G]oto [R]eferences' })
+    -- vim.keymap.set('n', 'gI', builtin.lsp_implementations, { desc = 'LSP: [G]oto [I]mplementation' })
+    -- vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, { desc = 'LSP: Type [D]efinition' })
   end
 }
