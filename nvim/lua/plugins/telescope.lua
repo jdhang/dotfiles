@@ -15,9 +15,16 @@ return {
 
     config = function()
       require('telescope').setup({
+        defaults = require('telescope.themes').get_ivy(),
         pickers = {
-          find_files = {
-            theme = "ivy"
+          git_files = {
+            winblend = 10,
+            theme = 'dropdown',
+            previewer = false,
+            layout_config = {
+              height = 0.8,
+              width = 0.5,
+            }
           }
         },
         extensions = {
@@ -33,10 +40,9 @@ return {
       vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find,
         { desc = '[/] Fuzzily search in current buffer' })
 
-      -- vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = '[S]earch Git Files' })
+      vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = '[S]earch Git Files' })
       vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-      -- vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
       vim.keymap.set('n', '<leader>sw',
         function()
           local word = vim.fn.expand("<cword>")
