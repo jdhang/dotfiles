@@ -85,8 +85,8 @@ vim.keymap.set('n', '<leader>bD', ':bd!<cr>')
 
 -- quickfix movement
 -- vim.keymap.set('n', '<leader>c', '<cmd>cc<cr>', { silent = true })
-vim.keymap.set('n', '<leader>q', '<cmd>botright copen<cr>', { silent = true })
-vim.keymap.set('n', '<leader>Q', '<cmd>cclose<cr>', { silent = true })
+-- vim.keymap.set('n', '<leader>q', '<cmd>botright copen<cr>', { silent = true })
+-- vim.keymap.set('n', '<leader>Q', '<cmd>cclose<cr>', { silent = true })
 vim.keymap.set('n', "<C-b>", "<cmd>cnext<cr>", { silent = true })
 vim.keymap.set('n', "<C-v>", "<cmd>cprev<cr>", { silent = true })
 

@@ -14,17 +14,17 @@ return {
     },
 
     config = function()
+      local defaults = vim.tbl_deep_extend('force',
+        require('telescope.themes').get_ivy({ layout_config = { height = 0.30 }, }), {})
+
       require('telescope').setup({
-        defaults = require('telescope.themes').get_ivy({
-          layout_config = { height = 0.30 },
-        }),
+        defaults = defaults,
         pickers = {
           git_files = {
             -- borderchars = { '─', '│', '─', '│', '┌', '┐', '┘', '└' },
             winblend = 10,
             previewer = false,
             theme = "dropdown",
-            -- layout_strategy = "vertical",
             layout_config = {
               height = function(_, _, rows)
                 return math.floor(rows * 0.90)
@@ -34,8 +34,8 @@ return {
           }
         },
         extensions = {
-          fzf = {}
-        }
+          fzf = {},
+        },
       })
 
       require('telescope').load_extension('fzf')
