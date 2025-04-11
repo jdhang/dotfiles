@@ -31,19 +31,6 @@ return {
               end,
               width = 0.40,
             },
-            --   vertical = {
-            --     mirror = true,
-            --     prompt_position = 'top',
-            --     width = function(_, cols, _)
-            --       return math.min(math.floor(0.80 * cols), 75)
-            --     end,
-            --     height = function(_, _, rows)
-            --       return math.floor(rows * 0.90)
-            --     end,
-            --     preview_cutoff = 10,
-            --     preview_height = 0.4,
-            --   },
-            -- }
           }
         },
         extensions = {
@@ -57,7 +44,9 @@ return {
 
       vim.keymap.set('n', '<leader>sf', builtin.find_files)
       vim.keymap.set('n', '<C-p>', builtin.git_files)
-      vim.keymap.set('n', '<leader><space>', builtin.buffers)
+      vim.keymap.set('n', '<leader><space>', function()
+        builtin.buffers({ sort_mru = true })
+      end, { desc = '[] Find existing buffers' })
       vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find)
       vim.keymap.set('n', '<leader>sh', builtin.help_tags)
       vim.keymap.set('n', '<leader>sg', require("custom.telescope.multi-ripgrep"),

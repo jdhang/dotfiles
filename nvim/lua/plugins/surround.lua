@@ -1,19 +1,20 @@
 return {
-  -- {
-  --   'kylechui/nvim-surround',
-  --   --   version = false,
-  --   version = '*', -- Use for stability; omit to use `main` branch for the latest features
-  --   event = 'VeryLazy',
-  --   config = function()
-  --     require('nvim-surround').setup()
-  --   end
-  -- },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    enabled = true,
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        move_cursor = false,
+      })
+    end,
+  },
 
   {
     'echasnovski/mini.surround',
-
+    enabled = true,
     version = false,
-
     config = function()
       require('mini.surround').setup({
         mappings = {

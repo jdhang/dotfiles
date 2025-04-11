@@ -111,9 +111,8 @@ vim.keymap.set('v', '<', '<gv')
 vim.keymap.set('v', '>', '>gv')
 
 -- lua execution
-vim.keymap.set('n', '<space><space>x', '<cmd>source %<CR>')
-vim.keymap.set('n', '<space>x', ':.lua<CR>')
-vim.keymap.set('v', '<space>x', ':lua<CR>')
+vim.keymap.set("n", "<leader>x", "<cmd>.lua<CR>", { desc = "Execute the current line" })
+vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<CR>", { desc = "Execute the current file" })
 
 -- Diagnostic keymaps
 -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
