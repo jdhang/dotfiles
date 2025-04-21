@@ -12,6 +12,9 @@ return {
     require('typescript-tools').setup {
       settings = {
         expose_as_code_actions = { 'all' },
+        tsserver_file_preferences = {
+          quotePreference = "single",
+        },
       },
     }
   end
