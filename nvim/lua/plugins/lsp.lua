@@ -29,6 +29,7 @@ return {
             }
           }
         },
+        gopls = {},
         lua_ls = {}
       }
       require("mason").setup()
@@ -37,7 +38,7 @@ return {
         automatic_installation = true,
       })
 
-      local lspconfig = require('lspconfig')
+      -- local lspconfig = require('lspconfig')
       for server, config in pairs(servers) do
         config.capabilities = vim.tbl_deep_extend('force', require('blink.cmp').get_lsp_capabilities(), {
           textDocument = {
@@ -47,7 +48,7 @@ return {
             }
           }
         })
-        lspconfig[server].setup(config)
+        vim.lsp.config(server, config)
       end
 
 
